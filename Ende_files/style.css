@@ -1,0 +1,155 @@
+.section {
+  height: 100vh;
+  border-bottom: solid;
+}
+
+body {
+  background: #fff;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  transition: background-color 2s ease-in-out;
+}
+
+.color-ende {
+  background-color: #ffffff;
+}
+.color-portafolio {
+  background-color: #fab813;
+}
+.color-gente {
+  background-color: #720d09;
+}
+.color-mensajes {
+  background-color: #071b44;
+}
+
+.move {
+  box-sizing: border-box;
+  text-align: center;
+  font: 5vh "Trebuchet MS";
+  font-weight: bold;
+  text-decoration: none;
+  color: #111;
+  animation: text-slide-left 20s infinite;
+  overflow: hidden;
+  height: 5%;
+  margin-top: 5%;
+  
+}
+
+@keyframes text-slide-left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}
+
+.left-panel {
+  width: 20%;
+  height: 102%;
+  position: absolute;
+  border-right: solid;
+  border-color: #e7291e;
+  margin-top: -1.6%;
+}
+
+.logo {
+  width: 70%;
+  margin: 15%;
+}
+
+.content-first{
+  margin-left: 25%;
+  margin-right: 5%;
+  border-top: solid;
+  border-color: #ec5850;
+  margin-top: 3%;
+}
+
+.banner{
+  padding-top: 4vh;
+  width: 70%;
+  margin-left: 20%;
+}
+
+
+
+ .slide-a {
+  padding-top: 7%;
+  position: absolute;
+  bottom: 1%;
+  left: 29%;
+}
+.slide-a span {
+  position: absolute;
+  top: 0;
+  width: 5vh;
+  height: 5vh;
+  border-left: 4px solid #e7291e;
+  border-bottom: 4px solid #e7291e;
+  -webkit-transform: rotate(-45deg);
+  animation: sdb05 1.5s infinite;
+}
+
+.a-whats {
+  padding-top: 7%;
+  position: absolute;
+  bottom: 1%;
+  left: 90%;
+}
+.a-whats img {
+  position: absolute;
+  top: 0;
+  width: 9vh;
+  height: 9vh;
+  
+ 
+}
+@-webkit-keyframes sdb05 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb05 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+
+  
+}
+.left-text{
+  margin: 10%;
+  padding-top: 2vh;
+  margin-top: 30vh;
+  border-top: solid;
+  color: #e7291e;
+  font-weight: bold;
+}
+.reserve{
+  font-size: 3vh;
+    margin-left: 42%;
+    margin-top: 10%;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: #e7291e;
+}
+.social-icon{
+  width: 6%;
+    margin-top: 2%;
+    margin-right: 1%;
+}
