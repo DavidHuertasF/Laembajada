@@ -1,6 +1,6 @@
 .section {
   height: 100vh;
-  border-bottom: solid;
+  /* border-bottom: solid; */
 }
 
 body {
@@ -27,11 +27,12 @@ body {
 .move {
   box-sizing: border-box;
   text-align: center;
-  font: 5vh "Trebuchet MS";
+  font-size: 3vw ;
   font-weight: bold;
   text-decoration: none;
-  color: #111;
+  color: #071b44;
   animation: text-slide-left 20s infinite;
+padding-bottom: 4.2%;
   overflow: hidden;
   height: 5%;
   margin-top: 5%;
@@ -43,7 +44,7 @@ body {
     margin-left: 100%;
   }
   to {
-    margin-left: -100%;
+    margin-left: -60%;
   }
 }
 
@@ -57,8 +58,8 @@ body {
 }
 
 .logo {
-  width: 70%;
-  margin: 15%;
+  width: 45%;
+  margin-left: 27%;
 }
 
 .content-first{
@@ -94,6 +95,24 @@ body {
   animation: sdb05 1.5s infinite;
 }
 
+
+.slide-b {
+  top: 190%;
+  position: absolute;
+  bottom: 1%;
+  left: 29%;
+}
+.slide-b span {
+  position: absolute;
+  top: 0;
+  width: 5vh;
+  height: 5vh;
+  border-left: 4px solid #e7291e;
+  border-bottom: 4px solid #e7291e;
+  -webkit-transform: rotate(-45deg);
+  animation: sdb05 1.5s infinite;
+}
+
 .a-whats {
   padding-top: 7%;
   position: absolute;
@@ -103,8 +122,8 @@ body {
 .a-whats img {
   position: absolute;
   top: 0;
-  width: 9vh;
-  height: 9vh;
+  width: 7vh;
+  
   
  
 }
@@ -134,22 +153,35 @@ body {
 }
 .left-text{
   margin: 10%;
-  padding-top: 2vh;
-  margin-top: 30vh;
+  padding-top: 2.2vh;
+  padding:1vh;
+  margin-top: 35vh;
   border-top: solid;
   color: #e7291e;
   font-weight: bold;
 }
 .reserve{
-  font-size: 3vh;
+  font-size: 3.2vh;
     margin-left: 42%;
     margin-top: 7%;
     font-weight: bold;
+    color: #071b44;
+    text-underline-position: under; 
     text-decoration: underline;
     text-decoration-color: #e7291e;
 }
 .social-icon{
-  width: 5%;
+  width: 2.8vw;
     margin-top: 2%;
     margin-right: 1%;
 }
+
+@font-face {
+  font-family: "belwe";
+  src: url(fonts/BelweBoldBT.ttf);
+  }
+
+    
+        .font{
+          font-family: 'belwe', Arial, sans-serif;
+        }
