@@ -12,12 +12,15 @@ $('#brand_id').click(function(){
 
   $(window).scroll(function() {
 	  int = $(window).scrollTop();
+	  
 	  section_register();
 	  $(".section").each(function(index) {
 	  	if (int >= section_position[index]) {
 		  	$('nav li').removeClass('active');
 		  	$('.'+$(this).attr('id')).addClass('active');
+		
 		  	$('body, .xcolor').removeClass().addClass('color-'+$(this).attr('id'));
+		
 	  		}
 	  	});
 	  });
