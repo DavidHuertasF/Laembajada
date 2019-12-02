@@ -288,14 +288,14 @@ body {
 }
 
 .photo-on {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 3;
-  margin-left: 52%;
-  margin-top: -2%;
-  height: 24%;
-  width: 50%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    margin-left: 53%;
+    margin-top: -15%;
+    height: 50%;
+    width: 50%;
 }
 
 .photo-on-b {
