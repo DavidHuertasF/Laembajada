@@ -288,14 +288,14 @@ body {
 }
 
 .photo-on {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 3;
-    margin-left: 53%;
-    margin-top: -15%;
-    height: 50%;
-    width: 50%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  margin-left: 53%;
+  margin-top: -15%;
+  height: 50%;
+  width: 50%;
 }
 
 .photo-on-b {
@@ -307,19 +307,37 @@ body {
   width: 30%;
 }
 
-#container-c {
-  width: 70%;
-  margin-left: 24%;
-  padding: 1%;
-  padding-top: 10%;
-  padding-bottom: 5%;
-  height: 33%;
-  /* min-height: 10em; */
-  vertical-align: middle;
-  border: solid;
-  border-color: white;
+.photo-on-c {
   position: absolute;
-  z-index: 1;
+  z-index: -3;
+  margin-top: 10%;
+  height: 40vw;
+  width: 30vw;
+  margin-left: -47%;
+}
+
+.photo-on-d {
+  position: absolute;
+  z-index: -4;
+  margin-top: -5%;
+  height: 25vw;
+  width: 38vw;
+  margin-left: -36%;
+}
+
+
+#container-c {
+    width: 72%;
+    margin-left: 22%;
+    padding: 1%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    height: 33%;
+    vertical-align: middle;
+    border: solid;
+    border-color: white;
+    position: absolute;
+    z-index: 1;
 }
 
 #container-c-a {
@@ -356,16 +374,14 @@ body {
 }
 
 .footer-a {
-    position: absolute;
-    bottom: -309%;
-    left: 25%;
-    border-top: solid;
-    border-color: #e7291e;
-    width: 72%;
-    display: flex;
-    flex-direction: row-reverse;
-    padding-top: 1%;
-    z-index: 4;
+  position: absolute;
+  left: 25%;
+  border-top: solid;
+  border-color: #e7291e;
+  width: 72%;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 4;
 }
 
 .footer-a p {
