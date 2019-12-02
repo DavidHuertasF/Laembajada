@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="left-panel">
+    <div class="left-panel dinamic-background">
       <img class="logo " src="img/svg/logo.svg" alt="" />
       <div class="left-text font">
         <p style="margin-left:10%; margin-top:30%">_LA EMBAJADA</p>
@@ -91,12 +91,7 @@
           Info@laembajada.com//+ 57 3112876154 // SAN FELIPE Carrera 24 # 10 -
           20
         </p>
-        <img src="img/logo-m.png" alt="Smiley face" style="
-    width: 11%;
-    height: 68%;
-    /* background: #071b44; */
-    margin-right: 2%;
-">
+        <img class="dinamic-background" src="img/logo-m.png" alt="Smiley face" style="width: 10%; padding-top: 2%; margin-right: 2%; background-color: rgb(7, 27, 68);">
       </div>
     </div>
     <div id="equipo" class="section">
@@ -107,7 +102,7 @@
             padding-top: 5%;"
       >
         <div
-          class="left-panel no-border"
+          class="dinamic-background no-border"
           style="
     width: 6.7%;
     height: 10%;
@@ -148,7 +143,7 @@
         var bodyStyle = window.getComputedStyle(document.body, null);
         bgColor = bodyStyle.backgroundColor;
 
-        var elements = document.getElementsByClassName("left-panel"); // get all elements
+        var elements = document.getElementsByClassName("dinamic-background"); // get all elements
         for (var i = 0; i < elements.length; i++) {
           elements[i].style.backgroundColor = bgColor;
         }
