@@ -55,7 +55,7 @@ body {
   position: fixed;
   border-right: solid;
   border-color: #e7291e;
-  margin-top: -1.6%;
+  margin-top: -5.6%;
   margin-left: -2%;
   z-index: 3;
 }
@@ -165,7 +165,7 @@ body {
   margin: 10%;
   padding-top: 2.2vh;
   padding: 1vh;
-  margin-top: 35vh;
+  margin-top: 105%;
   border-top: solid;
   color: #e7291e;
   font-weight: bold;
