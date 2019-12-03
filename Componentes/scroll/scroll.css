@@ -1,7 +1,7 @@
 #scroll-component-right-a, #scroll-component-right-b,  #scroll-component-right-c{
     position: fixed;
     z-index: 5;
-    right: 0%;
+    right: -0.3%;
     width: 2%;
     height: 39%;
     margin-bottom: 5%;
@@ -59,7 +59,7 @@
 
 
 ::-webkit-scrollbar {
-    width: 0.5%;
+    width: 0%;
   }
   
   /* Track */

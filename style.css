@@ -229,6 +229,7 @@ body {
 
 #circle svg {
   position: absolute;
+  z-index: 3;
   left: 0;
   top: 0;
   width: 100%;
@@ -323,9 +324,9 @@ body {
 
 .photo-on-c {
   position: absolute;
-  z-index: -3;
-  margin-top: 10%;
-  height: 40vw;
+  z-index: -4;
+  margin-top: 12%;
+  height: 38vw;
   width: 30vw;
   margin-left: -47%;
 }
@@ -333,10 +334,10 @@ body {
 .photo-on-d {
   position: absolute;
   z-index: -4;
-  margin-top: -5%;
-  height: 25vw;
-  width: 38vw;
-  margin-left: -36%;
+  margin-top: -10%;
+  height: 40vw;
+  width: 35vw;
+  margin-left: -37%;
 }
 
 
