@@ -2,6 +2,20 @@
   height: 100vh;
 }
 
+
+.button-idiom{
+  background: none;
+  border: none;
+  font-family: "belwe", Arial, sans-serif;
+  color: #e7291e;
+  font-size: 1.2vw;
+}
+html:lang(en) {
+  /* display: none; */
+}
+html:lang(es) {
+  /* display: none; */
+}
 body {
   background: #fff;
   -webkit-transition: background-color 0.5s ease-in-out;
@@ -163,10 +177,9 @@ body {
 
 .left-text {
   margin: 10%;
-  margin-left: 15%;
-  padding-top: 2.2vh;
+  margin-left: 20%;
   padding: 1vh;
-  margin-top: 105%;
+  margin-top: 5%;
   border-top: solid;
   color: #e7291e;
   font-weight: bold;

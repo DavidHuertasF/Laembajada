@@ -12,7 +12,7 @@ $(window).scroll(function() {
 
 
   $divblue.css({
-    "top": ((-windowHeight / 100) + 14) *1.4 + "%"
+    "top": ((-windowHeight / 100) + 14) *2 + "%"
   });
 
 
