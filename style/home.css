@@ -204,7 +204,7 @@ body {
 
 @font-face {
   font-family: "belwe";
-  src: url(fonts/BelweBoldBT.ttf);
+  src: url(../fonts/BelweBoldBT.ttf);
 }
 
 .font {
