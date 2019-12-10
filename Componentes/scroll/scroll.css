@@ -46,15 +46,12 @@
     width: 45%;
     height: 50%;
 }
-.div-red{
-    background:#e5190d;
-}
+
 
 .div-blue{
     position: absolute;
     left: 40%;
     top: 15%;
-    background: #071b44;
 }
 
 
