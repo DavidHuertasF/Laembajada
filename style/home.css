@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "belwe";
+  src: url(../fonts/BelweBoldBT.ttf);
+}
+
+.font {
+  font-family: "belwe", sans-serif;
+}
+
+@font-face {
+  font-family: "belwel";
+  src: url(../fonts/BelweLightBT.ttf);
+}
+
+.fontl {
+  font-family: "belwel", sans-serif;
+}
+
 .section {
   height: 100vh;
 }
@@ -32,7 +50,7 @@ body {
   background-color: #fab813;
 }
 
-.color-pola-comida {
+.color-como-jugar {
   background-color: #071b44;
 }
 .color-gente {
@@ -205,16 +223,23 @@ body {
   }
 }
 
-.left-text {
+.left-text-div {
   margin: 10%;
-  margin-left: 20%;
+  margin-left: 25%;
   padding: 1vh;
   margin-top: 5%;
-  border-top: solid;
-  color: #e7291e;
-  font-weight: bold;
+  border-top: solid #e7291e;
+  
+  
 }
 
+
+
+.left-text {
+  color: #e7291e;
+  font-weight: bold;
+  text-decoration: none;
+}
 .reserve {
   font-size: 3.2vh;
   margin-left: 42%;
@@ -232,14 +257,7 @@ body {
   margin-right: 1%;
 }
 
-@font-face {
-  font-family: "belwe";
-  src: url(../fonts/BelweBoldBT.ttf);
-}
 
-.font {
-  font-family: "belwe", Arial, sans-serif;
-}
 
 #container {
   margin: 0%;
@@ -397,4 +415,11 @@ body {
     font-size: 1.4vw;
     padding-top: 2%;
     margin-right: 4.2%;
+}
+
+.circle-menu{
+  font-size: 1.5vw;
+  margin-left: -10%;
+  margin-right: -3%;
+  display: none;
 }
