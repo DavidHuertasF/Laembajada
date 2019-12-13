@@ -396,7 +396,7 @@ body {
 
 .footer-a {
   position: absolute;
-  left: 25%;
+  left: 22%;
   border-top: solid;
   border-color: #e7291e;
   width: 72%;
@@ -410,11 +410,11 @@ body {
 .footer-a p {
   position: absolute;
     top: 0;
-    width: 98%;
+    width: 100%;
     font-family: "belwe", Arial, sans-serif;
     font-size: 1.4vw;
     padding-top: 2%;
-    margin-right: 4.2%;
+    margin-left: 1%;
 }
 
 .circle-menu{
