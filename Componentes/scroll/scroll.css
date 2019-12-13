@@ -59,21 +59,5 @@
     width: 0%;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
   
-   
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-      background: #e7291e;
-      background-repeat: no-repeat;
-      background-size: cover;
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-    }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-  
-  }
+ 

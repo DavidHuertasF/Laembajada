@@ -174,27 +174,27 @@ body {
   padding-top: 7%;
   position: absolute;
   bottom: 1%;
-  left: 80%;
+  left: 10%;
 }
 
 .a-fac img {
   position: fixed;
-  top: 90%;
-  width: 5vh;
+  top: 92%;
+  width: 2.7vw;
   z-index: 4;
 }
 
 .a-ins {
   padding-top: 7%;
-  position: absolute;
-  bottom: 1%;
-  left: 84%;
+    position: absolute;
+    bottom: 1%;
+    left: 14%;
 }
 
 .a-ins img {
   position: fixed;
-  top: 90%;
-  width: 5vh;
+  top: 92%;
+  width: 2.7vw;
   z-index: 4;
 }
 
@@ -225,7 +225,7 @@ body {
 
 .left-text-div {
   margin: 10%;
-  margin-left: 25%;
+  margin-left: -20%;
   padding: 1vh;
   margin-top: 5%;
   border-top: solid #e7291e;
@@ -239,6 +239,7 @@ body {
   color: #e7291e;
   font-weight: bold;
   text-decoration: none;
+  font-size: 1.2vw;
 }
 .reserve {
   font-size: 3.2vh;
@@ -374,7 +375,6 @@ body {
   border: solid;
   border-color: white;
   position: absolute;
-  z-index: 1;
 }
 
 #container-c-a {
@@ -402,7 +402,7 @@ body {
   width: 72%;
   display: flex;
   flex-direction: row-reverse;
-  z-index: 4;
+  z-index: 6;
   margin-bottom: 8%;
   padding-bottom: 0%;
 }
