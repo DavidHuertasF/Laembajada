@@ -1,0 +1,36 @@
+@media only screen and (min-width: 900px) {
+    .logo {
+        background: rgb(8, 12, 228);
+     }
+     .banner {
+        padding-top: 15vh;
+    }
+    .div-white {
+        margin-top: 11%;
+    } 
+    .photo-on{
+        top: 0vw;
+        height: 50%;
+        width: 50%;
+    }
+    
+    #myBtn{
+        width: 50%;
+        position: absolute;
+        margin-left: 25%;
+    }
+    #circle svg {
+        top: 0vw;
+        height: 65vw;
+        margin-top: -13vw;
+    }
+
+
+    .div-red, .div-blue{
+        width: 45%;
+        height: 50%;
+    }
+    .photo-on-b {
+        height: 105%;
+    }
+}

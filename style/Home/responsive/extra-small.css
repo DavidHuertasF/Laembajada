@@ -1,0 +1,5 @@
+@media only screen and (max-width: 650px) {
+    .logo {
+       background: rgb(255, 30, 0);
+    }
+}

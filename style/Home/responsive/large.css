@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1200px) {
+    .logo {
+        background: rgb(228, 8, 136);
+     }
+     .banner {
+        padding-top: 5vh;
+    }
+    .div-white {
+        margin-top: 5%;
+    } 
+} 
