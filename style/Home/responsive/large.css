@@ -8,4 +8,21 @@
     .div-white {
         margin-top: 5%;
     } 
+
+    
+.slide-a {
+    top: 90%;
+  }
+  .slide-b {
+    top: 190%;
+  }
+  .slide-c {
+    top: 290%;
+  }
+  .slide-d {
+    top: 390%;
+  }
+  .slide-e {
+    top: 490%;
+  }
 } 

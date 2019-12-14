@@ -33,4 +33,23 @@
     .photo-on-b {
         height: 105%;
     }
+
+
+
+    
+.slide-a {
+    top: 90%;
+  }
+  .slide-b {
+    top: 195%;
+  }
+  .slide-c {
+    top: 295%;
+  }
+  .slide-d {
+    top: 395%;
+  }
+  .slide-e {
+    top: 495%;
+  }
 }
