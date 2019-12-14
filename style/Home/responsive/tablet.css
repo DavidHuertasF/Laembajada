@@ -40,5 +40,22 @@
         #como-jugar{
             padding-top: 0%;
         }
+
+
+        .slide-a {
+            top: 90%;
+          }
+          .slide-b {
+            top: 200%;
+          }
+          .slide-c {
+            top: 300%;
+          }
+          .slide-d {
+            top: 400%;
+          }
+          .slide-e {
+            top: 500%;
+          }
       
 }
