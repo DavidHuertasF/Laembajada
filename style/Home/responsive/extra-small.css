@@ -2,4 +2,51 @@
     .logo {
        background: rgb(255, 30, 0);
     }
+
+    #normal-version{
+        display: none;
+    }
+    #movil-version{
+        display: block;
+    }
+
+    .content-first {
+        margin-left: -2%;
+        border: none;
+    }
+    .banner {
+        width: 105%;
+        height: auto;
+        margin-left: 0%;
+        content: url("../../../img/movil/banner.png");
+    }
+
+    #move-movil{
+        border-top: solid #ec5850;;
+        border-bottom: solid #ec5850;;
+    }
+
+    .move{
+        font-size: 5vw;
+    }
+
+    #logo{
+        width: 25%;
+        margin: 2%;
+    }
+
+    #header{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    #menu{
+        width: 10%;
+        margin-right: 5%;
+    }
+
+    .button-idiom {
+        font-size: 3.5vw;
+    }
 }
