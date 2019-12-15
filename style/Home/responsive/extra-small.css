@@ -53,4 +53,24 @@
     .reserve{
         margin-left: 35%;
     }
+
+
+    .slide-a span, .slide-b span, .slide-c span, .slide-d span, .slide-e span {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    .slide-a, .slide-b, .slide-c, .slide-d, .slide-e {
+        position: absolute;
+        bottom: 1%;
+        z-index: 3;
+        left: 10%;
+    }
+    .slide-a{
+        top: 90%;
+    }
+
+    .a-whats{
+        left: 85%;
+    }
 }
