@@ -42,4 +42,19 @@
     #como-jugar{
         padding-top: 15%;
     }
+
+    
+    #content-modal {
+        margin-left: 50vh;
+        margin-right: 3vh;
+        margin-top: 12%;
+    }
+
+    #galery-modal {
+        width: 35vh;
+        margin-top: 10%;
+    }
+
+
+   
 }

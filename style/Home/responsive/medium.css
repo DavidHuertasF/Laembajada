@@ -31,6 +31,20 @@
         height: 50%;
     }
     
+    #como-jugar{
+        padding-top: 5%;
+    }
+
+    #content-modal {
+      margin-left: 60vh;
+      margin-right: 20vh;
+  }
+  
+  #galery-modal {
+    width: 38vh;
+    margin-top: 10%;
+}
+
 
 
     
@@ -47,7 +61,7 @@
     top: 392%;
   }
   .slide-e {
-    top: 492%;
+    top: 510%;
   }
 
   

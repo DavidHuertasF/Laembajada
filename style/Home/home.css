@@ -147,6 +147,10 @@ body {
   top: 490%;
 }
 
+#myBtn:hover,
+#myBtn:focus {
+    cursor: pointer;
+  }
 
 .div-white {
   margin-top: 5%;

@@ -9,7 +9,17 @@
         margin-top: 5%;
     } 
 
-    
+    #content-modal{
+      margin-left: 75vh;
+      margin-right: 20vh;
+      margin-top: 4%;
+    }
+
+    #galery-modal{
+      width: 45vh;
+      margin-top: 7%;
+    }
+
 .slide-a {
     top: 90%;
   }

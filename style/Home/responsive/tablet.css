@@ -57,5 +57,18 @@
           .slide-e {
             top: 580%;
           }
+
+
+          #content-modal {
+            margin-left: 55vh;
+            margin-right: 3vh;
+            margin-top: -1%;
+        }
+    
+        #galery-modal {
+            width: 40vh;
+            margin-top: 5%;
+            margin-left: -52%;
+        }
       
 }
