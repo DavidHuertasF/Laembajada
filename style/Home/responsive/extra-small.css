@@ -1,4 +1,4 @@
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 600px) {
     .logo {
        background: rgb(255, 30, 0);
     }
@@ -73,4 +73,35 @@
     .a-whats{
         left: 85%;
     }
+
+
+
+    #circle text{
+        font-size: 2.1vh;
+    }
+
+    #circle svg {
+        margin-left: 6%;
+        width: 85%;
+        height: 85%;
+        margin-top: 8%;
+    }
+
+    #myBtn {
+        width: 95%;
+        z-index: 7;
+        position: absolute;
+         margin-left: 0%;
+    }
+
+    #circle {
+        position: relative;
+        width: 110%;
+        margin-left: -17%;
+        margin-top: 20%;
+        padding-bottom: 100%;
+        overflow: inherit;
+    }
+
+    
 }
