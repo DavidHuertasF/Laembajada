@@ -71,7 +71,14 @@
         top: 90%;
     }
     .slide-c {
-        top: 300%;
+        top: 330%;
+    }
+
+    .slide-d {
+        top: 400%;
+    }
+    .slide-e {
+        top: 500%;
     }
 
     .a-whats{
