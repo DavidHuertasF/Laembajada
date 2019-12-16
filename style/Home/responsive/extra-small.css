@@ -91,7 +91,7 @@
         margin-top: 6%;
     }
 
-    #myBtn {
+    #myBtn-m {
         width: 95%;
         z-index: 7;
         position: absolute;
@@ -141,6 +141,30 @@
         margin-top: 13vh;
         margin-left: -5%;
     }
+    .photo-on-c{
+
+        position: absolute;
+        z-index: -4;
+        margin-top: -10%;
+        width: 57vw;
+        margin-left: -55%;
+        }
+
+
+        #content-modal {
+            margin-left: 4vh;
+            margin-right: 3vh;
+            margin-top: 35vh;
+            color: white;
+        }
+        #title-modal {
+            font-size: 5vw;
+            font-family: "belwe", sans-serif;
+        }
+        #p-modal {
+            font-size: 2.5vw;
+            font-family: "belwel", sans-serif;
+        }
 
     
 }

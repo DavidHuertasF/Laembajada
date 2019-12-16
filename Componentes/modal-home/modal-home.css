@@ -30,19 +30,42 @@
     background-repeat: no-repeat;
   }
 
-  #pop-section {
-    width: 35%;
-    margin-left: 33%;
-    margin-top: 1%;
-    background-repeat: no-repeat;
-  }
-  
   .close:hover,
   .close:focus {
     background-image: url("../../img/svg/close-icon-hover.svg");
     cursor: pointer;
   }
 
+
+  .close-m {
+    background-image: url("../../img/svg/close-icon.svg");
+    float: right;
+    width: 8%;
+    height: 11%;
+    background-repeat: no-repeat;
+  }
+
+  .close-m:hover,
+  .close-m:focus {
+    background-image: url("../../img/svg/close-icon-hover.svg");
+    cursor: pointer;
+  }
+
+  #pop-section {
+    width: 35%;
+    margin-left: 33%;
+    margin-top: 1%;
+    background-repeat: no-repeat;
+  }
+
+  #pop-section-m {
+    width: 35%;
+    margin-left: 33%;
+    margin-top: 1%;
+    background-repeat: no-repeat;
+  }
+  
+  
   .section-button{
     position: absolute;
     top: 7vw;
@@ -66,6 +89,16 @@
   #section-c{
     left: 62%;
   }
+  #section-a-m{
+    left: 36%;
+  }
+  #section-b-m{
+    left: 49.5%;
+  }
+  #section-c-m{
+    left: 62%;
+  }
+
 
 
   #galery-modal{
@@ -74,6 +107,15 @@
     position: absolute;
     margin-left: -50%;
     margin-top: 7%;
+  }
+
+  
+  #galery-modal-m{
+    width: 20vh;
+    border: solid red;
+    position: absolute;
+    margin-left: -31%;
+    margin-top: 14%;
   }
 
   #content-modal{

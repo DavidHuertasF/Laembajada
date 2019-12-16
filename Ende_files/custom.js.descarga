@@ -4,7 +4,7 @@
 $(document).ready(function() {
   'use strict';
   
-  $("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();});
+ 
   
   if ($('.navbar-toggle:visible').length) {
 				$('.navbar a').click(function () { $(".nav-collapse").collapse("hide") });
