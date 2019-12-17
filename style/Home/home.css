@@ -48,16 +48,16 @@ body {
 }
 
 .color-portafolio, .color-mensajes,
-.color-portafolio-m, .color-mensajes-m {
+.color-portafolio-m, .color-mensajes-m, .color-la-embajada-m, .color-pola-comida-m {
   background-color: #fab813;
 }
 
 .color-como-jugar,
-.color-como-jugar-m {
+.color-como-jugar-m, .color-reserve-cancha-m {
   background-color: #071b44;
 }
 .color-gente,
-.color-gente-m {
+.color-gente-m, .color-reserve-cancha-m{
   background-color: #720d09;
 }
 

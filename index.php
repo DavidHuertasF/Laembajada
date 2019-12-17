@@ -24,6 +24,7 @@
 
 
 </head>
+<script type="text/javascript" src="./Componentes/modal-home/modal-home.js"></script>
 
 <body>
 
@@ -79,8 +80,10 @@
         if (x.matches) { // If media query matches
           movilVersion();
           es();
+          modalMobile();
         } else {
           desktopVersion();
+          modalDesktop();
           es();
         }
       }
@@ -106,7 +109,6 @@
   <script src="./Ende_files/skrollr.js.descarga"></script>
   <script src="./Ende_files/custom.js.descarga"></script>
   <script src="./Ende_files/jquery.pixelentity.flare.min.js.descarga"></script>
-  <script type="text/javascript" src="./Componentes/modal-home/modal-home.js"></script>
 
 
 
