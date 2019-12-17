@@ -3,12 +3,7 @@
        background: rgb(255, 30, 0);
     }
 
-    #normal-version{
-        display: none;
-    }
-    #movil-version{
-        display: initial;
-    }
+   
 
     .content-first {
         margin-left: -2%;

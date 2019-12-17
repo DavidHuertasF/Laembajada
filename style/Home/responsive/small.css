@@ -1,11 +1,6 @@
 @media only screen and (min-width: 600px) {
 
-    #normal-version{
-        display: initial;
-    }
-    #movil-version{
-        display: none;
-    }
+
 
 .logo {
        background: yellow;
