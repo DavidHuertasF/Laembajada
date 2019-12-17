@@ -47,7 +47,7 @@
     }
 
     .reserve{
-          margin-left: 26%;
+          margin-left: 27%;
     }
 
 
@@ -63,8 +63,13 @@
         left: 10%;
     }
     .slide-a{
-        top: 80vh;
+        top: 81vh;
     }
+
+     .slide-b{
+        top: 194vh;
+    }
+
     .slide-c {
         top: 280vh;
     }
