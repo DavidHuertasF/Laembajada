@@ -42,20 +42,25 @@ body {
   transition: background-color 2s ease-in-out;
 }
 
-.color-ende, .color-conocenos {
+.color-ende, .color-conocenos,
+.color-ende-m, .color-conocenos-m {
   background-color: #ffffff;
 }
 
-.color-portafolio, .color-mensajes {
+.color-portafolio, .color-mensajes,
+.color-portafolio-m, .color-mensajes-m {
   background-color: #fab813;
 }
 
-.color-como-jugar {
+.color-como-jugar,
+.color-como-jugar-m {
   background-color: #071b44;
 }
-.color-gente {
+.color-gente,
+.color-gente-m {
   background-color: #720d09;
 }
+
 
 .move {
   box-sizing: border-box;

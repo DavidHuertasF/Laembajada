@@ -7,7 +7,7 @@
         display: none;
     }
     #movil-version{
-        display: block;
+        display: initial;
     }
 
     .content-first {

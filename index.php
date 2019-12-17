@@ -27,8 +27,6 @@
 
 <body>
 
-
-
   <div id="normal-version">
     <!-- Banderines laterales -->
     <div id="scroll-component-right-a" alt="">
@@ -81,7 +79,6 @@
               <b class="circle-menu l-e">•</b> _LA EMBAJADA
             </p>
           </a>
-
           <a class="left-text font" href="#reserve-cancha">
             <p class="es">
               <b class="circle-menu r-c">•</b> _RESERVE CANCHA
@@ -148,9 +145,7 @@
               <div id="circle">
                 <img id="myBtn" src="img/svg/draw.svg" alt="" />
 
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                  y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300"
-                  xml:space="preserve">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
                   <defs>
                     <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "></path>
                   </defs>
@@ -434,9 +429,7 @@
 
     <!-- icons -->
     <a class="a-whats" href=""><img src="img/w-icon.png" alt="" /></a>
-    <a class="a-fac social-icon"
-      href="https://www.facebook.com/TejoLaEmbajada/?__tn__=%2Cd%2CP-R&eid=ARDE_OAzoxx7THD51t2BtuxX-5UjXIKwwkr9qZH80Elk6yYauUKhkLRcHbS4XGxe-NFzMGAfYEtFWmNA"><img
-        src="img/f-icon.png" alt="" /></a>
+    <a class="a-fac social-icon" href="https://www.facebook.com/TejoLaEmbajada/?__tn__=%2Cd%2CP-R&eid=ARDE_OAzoxx7THD51t2BtuxX-5UjXIKwwkr9qZH80Elk6yYauUKhkLRcHbS4XGxe-NFzMGAfYEtFWmNA"><img src="img/f-icon.png" alt="" /></a>
     <a class="a-ins social-icon" href="https://www.instagram.com/tejolaembajada"><img src="img/i-cion.png" alt="" /></a>
     <!-- Final icons  -->
 
@@ -489,7 +482,7 @@
     <!-- Secciones  -->
     <div>
       <div class="section">
-        <div class="section" id="ende">
+        <div class="section" id="ende-m">
 
           <div id="header">
 
@@ -518,16 +511,15 @@
         </div>
       </div>
 
-      <div class="section" id="la-embajada-m">
-        <div class="section" id="portafolio">
+      <div class="section">
+        <div class="section" id="portafolio-m">
           <div class="div-white">
             <div id="container">
               <img class="photo-on" src="img/embajada.gif" alt="" />
               <div id="circle">
                 <img id="myBtn-m" src="img/svg/draw.svg" alt="" />
 
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                  y="0px" width="300px" height="300px" viewBox="80 80 138 138" enable-background="new 0 0 500 500">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="80 80 138 138" enable-background="new 0 0 500 500">
                   <defs>
                     <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "></path>
                   </defs>
@@ -550,8 +542,8 @@
 
       </div>
 
-      <div class="section" id="reserve-cancha-m">
-        <div class="section" id="gente" style="
+      <div class="section">
+        <div class="section" id="gente-m" style="
             padding-top: 5%;">
 
           <div id="container-c">
@@ -580,8 +572,8 @@
         </div>
       </div>
 
-      <div class="section" id="como-jugar-m">
-        <div class="section" style="padding-top: 20%;" id="como-jugar">
+      <div class="section">
+        <div class="section" style="padding-top: 20%;" id="como-jugar-m">
           <img src="img/svg/Recurso 1.svg" alt="" style="
            width: 45vh;
     margin-left: 2vh;
@@ -624,8 +616,8 @@
 
       </div>
 
-      <div class="section " id="pola-comida-m">
-        <div class="section" id="mensajes" style="
+      <div class="section ">
+        <div class="section" id="mensajes-m" style="
            padding-top: 30vh;
     ">
           <p class="es" style='
@@ -668,8 +660,8 @@
         </div>
       </div>
 
-      <div class="section" id="non-grata-m">
-        <div class="section" style="padding-top: 5%;" id="conocenos">
+      <div class="section">
+        <div class="section" style="padding-top: 5%;" id="conocenos-m">
           <div style="
           width: 100%;
           height: 20%;
@@ -703,7 +695,7 @@
           height: 20%;
         ">
             <p class="es" style='
-            left: 8vh;
+            left: 10vh;
     width: 70%;
     margin-top: 0vw;
     position: absolute;
@@ -723,7 +715,7 @@
           width: 100%;
           height: 20%;
           ">
-          
+
             <p class="es" style='
               left: 8vh;
     width: 70%;
@@ -733,10 +725,13 @@
     font-family: belwe;
     display: block;
             '>
-              1. Cervezas con ingredientes especiales // <strong style="color: red;"> <br />Nos apasiona experimentar.</strong>
+              1. Cervezas con ingredientes especiales // <strong style="color: red;"> <br />Nos apasiona
+                experimentar.</strong>
               <br />
-              2. Tienen mayor nivel de alcohol // <strong style="color: red;"> <br />Nos gusta que se sientan</strong>.<br />
-              3. Siempre tienen una historia que contar //<strong style="color: red;"> <br />Nos mueve conectar</strong>.
+              2. Tienen mayor nivel de alcohol // <strong style="color: red;"> <br />Nos gusta que se
+                sientan</strong>.<br />
+              3. Siempre tienen una historia que contar //<strong style="color: red;"> <br />Nos mueve
+                conectar</strong>.
             </p>
           </div>
           <a style="color: black;" href="https://www.nongrata.com.co/#/">
@@ -759,7 +754,7 @@
         </div>
       </div>
 
-<!-- Fin secciones  -->
+      <!-- Fin secciones  -->
 
       <!-- Slides -->
       <a class="slide-a" href="#la-embajada-m">
@@ -773,66 +768,72 @@
       <a class="slide-c" href="#como-jugar-m">
         <div><span></span></div>
       </a>
-     
-        <a class="slide-d" href="#pola-comida-m">
-          <div><span></span></div>
-        </a>
 
-         
-        <a class="slide-e" href="#non-grata-m">
-          <div><span></span></div>
-        </a> 
+      <a class="slide-d" href="#pola-comida-m">
+        <div><span></span></div>
+      </a>
+
+
+      <a class="slide-e" href="#non-grata-m">
+        <div><span></span></div>
+      </a>
       <!-- Fin slides -->
 
       <!-- icons -->
       <a class="a-whats" href=""><img src="img/w-icon.png" alt="" /></a>
     </div>
-    
 
-      <!-- The Modal -->
-      <div id="myModal-m" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="close-m"></div>
-          <img id="pop-section-m" src="img/svg/pop-sections/s1.svg" alt="">
-          <button class="section-button" id="section-a-m"></button>
-          <button class="section-button" id="section-b-m"></button>
-          <button class="section-button" id="section-c-m"></button>
-          <img id="galery-modal-m" src="img/pop-sections/s1.png" alt="">
-          <div id="content-modal">
-            <p id="title-modal">La Embajada</p>
-            <p id="p-modal">Es el primer tejo artesanal de Colombia. Nunca
-              antes la cerveza artesanal había coexistido con el
-              deporte nacional, y ahora, juntos en un mismo
-              espacio, están listos para hacer moñona.<br /><br />
-              El tejo es la esencia de La Embajada.
-              Se trata de una actividad que practicaban los
-              indígenas nativos hace siglos, y que ahora es
-              deporte nacional. Desde Cervecería Non Grata,
-              retomamos el tejo y le damos un nuevo
-              significado a través de la cerveza artesanal.
-              El término 'embajada' se refiere a un territorio que
-              conecta a las personas con su lugar de origen, sin
-              importar el lugar del mundo en que se
-              encuentren. Quienes hacen parte de este
-              territorio o país, comparten valores comunes que
-              moldean su identidad. De esta manera, en La
-              Embajada, aquellos que comparten con nosotros
-              el deseo de construir una nueva colombianidad,
-              en general, y un amor por la cerveza y el tejo, en
-              particular, son los embajadores de esta iniciativa.</p>
-          </div>
+    <!-- The Modal -->
+    <div id="myModal-m" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="close-m"></div>
+        <img id="pop-section-m" src="img/svg/pop-sections/s1.svg" alt="">
+        <button class="section-button" id="section-a-m"></button>
+        <button class="section-button" id="section-b-m"></button>
+        <button class="section-button" id="section-c-m"></button>
+        <img id="galery-modal-m" src="img/pop-sections/s1.png" alt="">
+        <div id="content-modal">
+          <p id="title-modal">La Embajada</p>
+          <p id="p-modal">Es el primer tejo artesanal de Colombia. Nunca
+            antes la cerveza artesanal había coexistido con el
+            deporte nacional, y ahora, juntos en un mismo
+            espacio, están listos para hacer moñona.<br /><br />
+            El tejo es la esencia de La Embajada.
+            Se trata de una actividad que practicaban los
+            indígenas nativos hace siglos, y que ahora es
+            deporte nacional. Desde Cervecería Non Grata,
+            retomamos el tejo y le damos un nuevo
+            significado a través de la cerveza artesanal.
+            El término 'embajada' se refiere a un territorio que
+            conecta a las personas con su lugar de origen, sin
+            importar el lugar del mundo en que se
+            encuentren. Quienes hacen parte de este
+            territorio o país, comparten valores comunes que
+            moldean su identidad. De esta manera, en La
+            Embajada, aquellos que comparten con nosotros
+            el deseo de construir una nueva colombianidad,
+            en general, y un amor por la cerveza y el tejo, en
+            particular, son los embajadores de esta iniciativa.</p>
         </div>
-  
       </div>
+
+    </div>
   </div>
 
-
+  <script type="text/javascript">
+    $(document).ready(function(e) {
+      $('#header').load('example.html', function() {
+        alert('loaded')
+      });
+    });
+  </script>
 
 
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       es();
     });
     setInterval(color, 10);
