@@ -47,7 +47,7 @@
     }
 
     .reserve{
-        margin-left: 35%;
+          margin-left: 26%;
     }
 
 
@@ -89,24 +89,24 @@
     #circle svg {
         margin-left: 6%;
         width: 85%;
-        height: 85%;
+           height: 95%;
         margin-top: 6%;
     }
 
     #myBtn-m {
-        width: 95%;
-        z-index: 7;
-        position: absolute;
-         margin-left: 0%;
+           width: 95%;
+    z-index: 7;
+    position: absolute;
+    margin-left: 0%;
     }
 
     #circle {
-        position: relative;
-        width: 110%;
-        margin-left: -17%;
-        margin-top: 20%;
-        padding-bottom: 100%;
-        overflow: inherit;
+           position: relative;
+    width: 118%;
+    margin-left: -21%;
+    margin-top: 20%;
+    padding-bottom: 100%;
+    overflow: inherit;
     }
 
     .div-white {
@@ -114,10 +114,10 @@
     }
 
     .photo-on {
-        margin-left: 25%;
-        margin-top: 9%;
-        height: 75%;
-        width: 75%;
+       margin-left: 13%;
+    margin-top: 0%;
+    height: 87%;
+    width: 87%;
     }
 
 
