@@ -27,7 +27,9 @@
 <script type="text/javascript" src="./Componentes/modal-home/modal-home.js"></script>
 
 <body>
-
+    <img style="width: 0px" src="img/pop-sections/s1.png" alt="">
+    <img style="width: 0px"  src="img/pop-sections/s2.png" alt="">
+    <img style="width: 0px"  src="img/pop-sections/s3.png" alt="">
   <div id="html"></div>
 
 
