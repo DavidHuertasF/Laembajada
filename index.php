@@ -28,23 +28,6 @@
 <body>
 
   <div id="html"></div>
-        <script>
-
-
-          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $('#html').html('<?php
-                            include "mobile-home.html";
-                            ?>');
-          }else{
-            $('#html').html('<?php
-                            include "desktop-home.html";
-                            ?>');
-          }
-
-         
-        </script>
-  
-
 
 
   <script>
@@ -89,6 +72,34 @@
       }
     }
   </script>
+
+  <script>
+
+      function size(x) {
+        if (x.matches) { // If media query matches
+          movilVersion();
+          es();
+        } else {
+          desktopVersion();
+          es();
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 600px)")
+      size(x) // Call listener function at run time
+      x.addListener(size) // Attach listener function on state changes
+
+      function movilVersion(){
+          $('#html').html('<?php
+                                    include "mobile-home.html";
+                                    ?>');
+      }function  desktopVersion(){
+        $('#html').html('<?php
+                                    include "desktop-home.html";
+                                    ?>');
+      }
+  </script>
+  
 
   <script src="Componentes/scroll/scroll.js"></script>
   <script src="./Ende_files/color.js.descarga"></script>
