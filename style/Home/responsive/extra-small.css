@@ -101,12 +101,12 @@
     }
 
     #circle {
-           position: relative;
-    width: 118%;
-    margin-left: -21%;
-    margin-top: 20%;
-    padding-bottom: 100%;
-    overflow: inherit;
+        position: relative;
+        width: 125%;
+        margin-left: -23%;
+        margin-top: 20%;
+        padding-bottom: 100%;
+        overflow: inherit;
     }
 
     .div-white {
@@ -114,10 +114,10 @@
     }
 
     .photo-on {
-       margin-left: 13%;
-    margin-top: 0%;
-    height: 87%;
-    width: 87%;
+        margin-left: 12%;
+        margin-top: -10%;
+        height: 90%;
+        width: 90%;
     }
 
 

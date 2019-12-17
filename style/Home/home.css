@@ -68,12 +68,16 @@ body {
   font-size: 3vw;
   font-weight: bold;
   text-decoration: none !important;
-  color: #071b44 !important;
+
   animation: text-slide-left 55s linear infinite;
   padding-bottom: 4%;
   overflow: hidden;
   height: 5%;
   margin-top: 3%;
+}
+
+.bluef{
+    color: #071b44 !important;
 }
 
 @keyframes text-slide-left {
