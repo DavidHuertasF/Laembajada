@@ -149,13 +149,12 @@
     margin-left: -5%;
     }
     .photo-on-c{
-
-        position: absolute;
-        z-index: -4;
-        margin-top: -10%;
-        width: 57vw;
-        margin-left: -55%;
-        }
+          position: absolute;
+    z-index: -4;
+    margin-top: -18vh;
+    width: 39vh;
+    margin-left: -35vh;
+    }
 
 
         #content-modal {
