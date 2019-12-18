@@ -2,9 +2,9 @@
 
 
 
-.logo {
+/* .logo {
        background: yellow;
-    }
+    } */
     .banner {
         padding-top: 18vh;
     }
@@ -58,6 +58,8 @@
         margin-top: 10%;
     }
 
-
+    .panel-left-div{
+        bottom: 15%;
+      }
    
 }

@@ -1,7 +1,7 @@
 @media only screen and (min-width: 1200px) {
-    .logo {
+    /* .logo {
         background: rgb(228, 8, 136);
-     }
+     } */
      .banner {
         padding-top: 5vh;
     }
@@ -41,5 +41,9 @@
 }
 #como-jugar{
     padding-top: 0%;
+}
+
+.panel-left-div{
+  bottom: 12%;
 }
 } 

@@ -1,7 +1,7 @@
 @media only screen and (min-width: 650px) and (max-height: 500px) {
-    .logo {
+    /* .logo {
            background: rgb(0, 255, 179);
-        }
+        } */
         .banner {
             padding-top: 8vh;
         }
@@ -72,8 +72,6 @@
         }
 
         .panel-left-div{
-          margin-left: 35%; 
-          position: absolute;
            bottom: 15%;
         }
       

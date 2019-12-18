@@ -1,9 +1,4 @@
 @media only screen and (max-width: 600px) {
-    .logo {
-       background: rgb(255, 30, 0);
-    }
-
-   
 
     .content-first {
         margin-left: -2%;
@@ -173,4 +168,21 @@
         }
 
     
+
+        .move {
+         
+            animation: text-slide-left 45s linear infinite;
+          
+          }
+          
+        
+          
+          @keyframes text-slide-left {
+            from {
+              margin-left: 100%;
+            }
+            to {
+              margin-left: -700%;
+            }
+          }
 }
