@@ -70,5 +70,11 @@
             margin-top: 5%;
             margin-left: -52%;
         }
+
+        .panel-left-div{
+          margin-left: 35%; 
+          position: absolute;
+           bottom: 15%;
+        }
       
 }

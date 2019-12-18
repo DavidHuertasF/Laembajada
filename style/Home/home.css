@@ -443,3 +443,9 @@ body {
   position: absolute;
   margin-left: 25%;
 }
+
+.panel-left-div{
+  margin-left: 35%; 
+  position: absolute;
+   bottom: 5%;
+}
