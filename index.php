@@ -116,10 +116,10 @@
 
         if (x.matches) { // If media query matches
           setTimeout("movilVersion()",1);
-          setTimeout("modalMobile()",1);
+          setTimeout("modalMobile()",100);
         } else {
           setTimeout("desktopVersion()",1);
-          setTimeout("modalDesktop()",1);
+          setTimeout("modalDesktop()",100);
         }
       }
 
