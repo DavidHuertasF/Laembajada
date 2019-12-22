@@ -20,43 +20,7 @@
 
   <link rel="stylesheet" href="style/Home/responsive/tablet.css" />
 
-  <script type="text/javascript" src="./Ende_files/jquery.js.descarga">
-
-  
-  </script>
-  <script>
-
-  captura();
-
-  function captura() {
-       
-       jQuery.ajax({
-             url:"mobile-home.html",
-             type: 'POST',
-             success:function(result){
-              mobile(result);
-             }
-
-           }); 
-
-           jQuery.ajax({
-             url:"desktop-home.html",
-             type: 'POST',
-             success:function(result){
-               desktop(result);
-             }
-
-           }); 
-  
-           function mobile( result){
-              window.xe = result;
-            }
-            function desktop( result){
-              window.x = result;
-            }
-   }
-  
-  </script>
+  <script type="text/javascript" src="./Ende_files/jquery.js.descarga"></script>
 
 
 </head>
@@ -70,6 +34,17 @@
 
 
   <script>
+    $(document).ready(function() {
+      es();
+    });
+
+
+ 
+
+     
+                          
+    
+  
 
     setInterval(color, 10);
 
@@ -115,9 +90,13 @@
       function size(x) {
 
         if (x.matches) { // If media query matches
-          setTimeout("movilVersion()",1);
+          movilVersion();
+          es();
+          modalMobile();
         } else {
-          setTimeout("desktopVersion()",1);
+          desktopVersion();
+          modalDesktop();
+          es();
         }
       }
 
@@ -126,12 +105,13 @@
       x.addListener(size) // Attach listener function on state changes
 
       function movilVersion(){
-        
-          $('#html').html(window.xe);
-          setTimeout("modalMobile()",1000);
+          $('#html').html('<?php
+                                    include "mobile-home.html";
+                                    ?>');
       }function  desktopVersion(){
-        $('#html').html(window.x);
-        setTimeout("modalDesktop()",1000);
+        $('#html').html('<?php
+                                    include "desktop-home.html";
+                                    ?>');
       }
   </script>
   
