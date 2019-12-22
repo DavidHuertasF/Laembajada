@@ -116,17 +116,8 @@
 
         if (x.matches) { // If media query matches
           setTimeout("movilVersion()",1);
-          $( document ).ready(function() {
-            setTimeout("modalMobile()",100);
-});
-        
         } else {
           setTimeout("desktopVersion()",1);
-
-          $( document ).ready(function() {
-            setTimeout("modalDesktop()",100);
-
-});
         }
       }
 
@@ -137,8 +128,10 @@
       function movilVersion(){
         
           $('#html').html(window.xe);
+          setTimeout("modalMobile()",100);
       }function  desktopVersion(){
         $('#html').html(window.x);
+        setTimeout("modalDesktop()",100);
       }
   </script>
   
