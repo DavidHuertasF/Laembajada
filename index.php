@@ -116,10 +116,17 @@
 
         if (x.matches) { // If media query matches
           setTimeout("movilVersion()",1);
-          setTimeout("modalMobile()",100);
+          $( document ).ready(function() {
+            setTimeout("modalMobile()",100);
+});
+        
         } else {
           setTimeout("desktopVersion()",1);
-          setTimeout("modalDesktop()",100);
+
+          $( document ).ready(function() {
+            setTimeout("modalDesktop()",100);
+
+});
         }
       }
 
