@@ -128,10 +128,10 @@
       function movilVersion(){
         
           $('#html').html(window.xe);
-         modalMobile();
+          setTimeout("modalMobile()",100);
       }function  desktopVersion(){
         $('#html').html(window.x);
-        modalDesktop();
+        setTimeout("modalDesktop()",100);
       }
   </script>
   
