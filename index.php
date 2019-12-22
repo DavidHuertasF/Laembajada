@@ -105,13 +105,13 @@
       x.addListener(size) // Attach listener function on state changes
 
       function movilVersion(){
-          $('#html').html('<?php
+          $('#html').html(`<?php
                                     include "mobile-home.html";
-                                    ?>');
+                                    ?>`);
       }function  desktopVersion(){
-        $('#html').html('<?php
+        $('#html').html(`<?php
                                     include "desktop-home.html";
-                                    ?>');
+                                    ?>`);
       }
   </script>
   
