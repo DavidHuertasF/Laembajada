@@ -20,7 +20,43 @@
 
   <link rel="stylesheet" href="style/Home/responsive/tablet.css" />
 
-  <script type="text/javascript" src="./Ende_files/jquery.js.descarga"></script>
+  <script type="text/javascript" src="./Ende_files/jquery.js.descarga">
+
+  
+  </script>
+  <script>
+
+  captura();
+
+  function captura() {
+       
+       jQuery.ajax({
+             url:"mobile-home.html",
+             type: 'POST',
+             success:function(result){
+              mobile(result);
+             }
+
+           }); 
+
+           jQuery.ajax({
+             url:"desktop-home.html",
+             type: 'POST',
+             success:function(result){
+               desktop(result);
+             }
+
+           }); 
+  
+           function mobile( result){
+              window.xe = result;
+            }
+            function desktop( result){
+              window.x = result;
+            }
+   }
+  
+  </script>
 
 
 </head>
@@ -34,9 +70,7 @@
 
 
   <script>
-    $(document).ready(function() {
-      es();
-    });
+
     setInterval(color, 10);
 
     function es() {
@@ -77,16 +111,15 @@
   </script>
 
   <script>
-
+ 
       function size(x) {
+
         if (x.matches) { // If media query matches
-          movilVersion();
-          es();
-          modalMobile();
+          setTimeout("movilVersion()",1);
+          setTimeout("modalMobile()",1);
         } else {
-          desktopVersion();
-          modalDesktop();
-          es();
+          setTimeout("desktopVersion()",1);
+          setTimeout("modalDesktop()",1);
         }
       }
 
@@ -95,13 +128,10 @@
       x.addListener(size) // Attach listener function on state changes
 
       function movilVersion(){
-          $('#html').html('<?php
-                                    include "mobile-home.html";
-                                    ?>');
+        
+          $('#html').html(window.xe);
       }function  desktopVersion(){
-        $('#html').html('<?php
-                                    include "desktop-home.html";
-                                    ?>');
+        $('#html').html(window.x);
       }
   </script>
   
