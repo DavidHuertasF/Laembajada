@@ -2,11 +2,7 @@
 
 <?php
 include_once("conexion.php");
-$host = "localhost";
-$user = "root";
-$pass = "";
-$base_datos = "laembajada";
-$conexion = new conexion($host, $user, $pass, $base_datos);
+$conexion = new conexion();
 
 
 date_default_timezone_set('America/Caracas');
