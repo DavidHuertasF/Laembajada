@@ -38,14 +38,6 @@
       es();
     });
 
-
- 
-
-     
-                          
-    
-  
-
     setInterval(color, 10);
 
     function es() {
@@ -86,9 +78,7 @@
   </script>
 
   <script>
- 
       function size(x) {
-
         if (x.matches) { // If media query matches
           movilVersion();
           es();
