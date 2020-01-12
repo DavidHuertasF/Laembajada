@@ -333,8 +333,7 @@ fieldset {
   }
   
   .dropdown-menu {
-	position: absolute; 
-	display: none;
+
 	font-size: 14px;
 	background-color: #ffffff;
 	border: 1px solid #cccccc;

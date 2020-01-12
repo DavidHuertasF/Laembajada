@@ -1,29 +1,4 @@
-﻿/* =========================================================
- * bootstrap-datetimepicker.js
- * =========================================================
- * Copyright 2012 Stefan Petre
- *
- * Improvements by Andrew Rowls
- * Improvements by Sébastien Malot
- * Improvements by Yun Lai
- * Improvements by Kenneth Henderick
- * Improvements by CuGBabyBeaR
- * Improvements by Christian Vaas <auspex@auspex.eu>
- *
- * Project URL : http://www.malot.fr/bootstrap-datetimepicker
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================= */
+﻿
 
 (function(factory){
   if (typeof define === 'function' && define.amd)
@@ -327,10 +302,8 @@ var Datetimepicker = function (element, options) {
   this.fillMonths();
   this.update();
   this.showMode();
-
-  if (this.isInline) {
-    this.show();
-  }
+  this.show();
+ 
 };
 
 Datetimepicker.prototype = {
@@ -339,6 +312,7 @@ Datetimepicker.prototype = {
   _events:       [],
   _attachEvents: function () {
     this._detachEvents();
+
     if (this.isInput) { // single input
       this._events = [
         [this.element, {
@@ -391,9 +365,11 @@ Datetimepicker.prototype = {
       el.off(ev);
     }
     this._events = [];
+    
   },
 
   show: function (e) {
+
     this.picker.show();
     this.height = this.component ? this.component.outerHeight() : this.element.outerHeight();
     if (this.forceParse) {
@@ -413,29 +389,7 @@ Datetimepicker.prototype = {
   },
 
   hide: function () {
-    if (!this.isVisible) return;
-    if (this.isInline) return;
-    this.picker.hide();
-    $(window).off('resize', this.place);
-    this.viewMode = this.startViewMode;
-    this.showMode();
-    if (!this.isInput) {
-      $(document).off('mousedown', this.hide);
-    }
-
-    if (
-      this.forceParse &&
-        (
-          this.isInput && this.element.val() ||
-            this.hasInput && this.element.find('input').val()
-          )
-      )
-      this.setValue();
-    this.isVisible = false;
-    this.element.trigger({
-      type: 'hide',
-      date: this.date
-    });
+   
   },
 
   remove: function () {
