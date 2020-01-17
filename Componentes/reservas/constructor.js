@@ -43,11 +43,18 @@ $('.button_change_canhcas').click(function(){
 
 $(".form_date").on("changeDate", function(e) {
   $(".hourbutton").css("display", "block");
-  $("#loading_div").css("display", "flex");
+  showloading();
   resetFormularyToFirstStep();
-  $("#loading_div").css("display", "none");
+  hideLoading();
 });
 
+function showloading(){
+  $("#loading_div").css("display", "flex");
+}
+
+function hideLoading(){
+  $("#loading_div").css("display", "none");
+}
 // Modal ________________________________________________
 
 // Get the modal
