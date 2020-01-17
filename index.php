@@ -50,8 +50,8 @@ echo '<script type="text/javascript">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>La embajada</title>
-  <link rel="stylesheet" href="style/Home/home.css" />
-  <link rel="stylesheet" href="Componentes/modal-home/modal-home.css" />
+  <link rel="stylesheet" href="style/Home/Home.css" />
+  <link rel="stylesheet" href="Componentes/modal-Home/modal-Home.css" />
   <link rel="stylesheet" href="Componentes/scroll/scroll.css" />
 
 
@@ -68,7 +68,7 @@ echo '<script type="text/javascript">
 
 
 </head>
-<script type="text/javascript" src="./Componentes/modal-home/modal-home.js"></script>
+<script type="text/javascript" src="./Componentes/modal-Home/modal-Home.js"></script>
 
 <body>
 
@@ -143,13 +143,13 @@ echo '<script type="text/javascript">
 
     function movilVersion() {
       $('#html').html(`<?php
-                        include "mobile-home.html";
+                        include "mobile-Home.html";
                         ?>`);
     }
 
     function desktopVersion() {
       $('#html').html(`<?php
-                        include "desktop-home.html";
+                        include "desktop-Home.html";
                         ?>`);
     }
   </script>
@@ -305,8 +305,8 @@ echo '<script type="text/javascript">
   <script src="./Ende_files/jquery.pixelentity.flare.min.js.descarga"></script>
 
 
-  <link href="style/home/bootstrap-datetimepicker.css" rel="stylesheet" media="screen" />
-  <link href="style/home/reserva.css" rel="stylesheet" media="screen" />
+  <link href="style/Home/bootstrap-datetimepicker.css" rel="stylesheet" media="screen" />
+  <link href="style/Home/reserva.css" rel="stylesheet" media="screen" />
 
 </body>
 
