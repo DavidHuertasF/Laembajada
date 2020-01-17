@@ -43,9 +43,8 @@ $('.button_change_canhcas').click(function(){
 
 $(".form_date").on("changeDate", function(e) {
   $(".hourbutton").css("display", "block");
-  showloading();
+  
   resetFormularyToFirstStep();
-  hideLoading();
 });
 
 function showloading(){

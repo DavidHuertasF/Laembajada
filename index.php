@@ -306,8 +306,10 @@ echo '<script type="text/javascript">
 
     <p type="text" style=" 
     height: 32px;" name="" id="inputprueba"> </p>
-    <input type="text" style="display: none" id="myInput" value="ok">
+  <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
+
   </div>
+
 
      <!-- FIN Sistema de reservas -->
  
