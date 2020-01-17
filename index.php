@@ -75,13 +75,14 @@ echo '<script type="text/javascript">
   <div id="loading_div" style="
     position: fixed;
     z-index: 15;
-    left: 15%;
+    left: 10%;
     top: 30%;
-    width: 70%;
+    font-size: 20px;
+    width: 80%;
     height: 50%;
     display: none;
     align-items: center;
-    background: #ffffff9c;
+    background: rgba(255, 255, 255, 0.82);
     flex-direction: column;
 ">
     <img src="img/10.gif" alt="">
@@ -331,7 +332,5 @@ echo '<script type="text/javascript">
 <script type="text/javascript" src="Componentes/reservas/functions.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/constructor.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/hoursManager.js" charset="UTF-8"></script>
-
-
 
 </html>
