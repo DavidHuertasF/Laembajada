@@ -180,18 +180,18 @@ echo '<script type="text/javascript">
         <div id="container" style="    width: 90%;">
           <!-- # Canchas -->
           <div id="div-canchas-section">
-            <p class="title_div">No. Canchas</p>
+            <p class=" font title_div">No. Canchas</p>
             <div id="div_counter_canchas">
               <button id="btn_substract" class="button_change_canhcas" type="button" onclick="substractHour(<?php echo $canchasTotal ?>);">–</button>
               <p id="p_canchas">01</p>
               <button type="button" class="button_change_canhcas" onclick="addHour(<?php echo $canchasTotal ?>)" id="btn_add">+</button>
             </div>
-            <p class="p_note">*Máximo 8 personas por cancha</p>
+            <p class=" font p_note">*Máximo 8 personas por cancha</p>
           </div>
 
           <!-- Fecha -->
           <div id="div-fecha-section" class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-            <p class="title_div">Fecha</p>
+            <p class=" font title_div">Fecha</p>
 
             <span class="input-group-addon" style="
                   padding: 0px;
@@ -210,11 +210,11 @@ echo '<script type="text/javascript">
 
           <!-- Hora  -->
           <div id="div-hora-section">
-            <p class="title_div">Hora</p>
+            <p class=" font title_div">Hora</p>
 
             <div id="div_dates_in_hour">
               <!-- <button id="btn_substract_date" class="button_change_date" type="button" onclick="substractDate(<?php echo $canchasTotal ?>);">–</button> -->
-              <p style="" id="p_date_in_hour">Seleccione una fecha</p>
+              <p class="" id="p_date_in_hour">Seleccione una fecha</p>
               <!-- <button id="btn_add_date" type="button" class="button_change_date" onclick="addDate(<?php echo $canchasTotal ?>)" >+</button> -->
             </div>
 
@@ -229,7 +229,7 @@ echo '<script type="text/javascript">
           </div>
         </div>
 
-        <button class="button_continuar" type="button" onclick="confirmateHours();">Continuar</button>
+        <button class=" font button_continuar" type="button" onclick="confirmateHours();">Continuar</button>
       </div>
     </div>
   </div>
@@ -243,7 +243,7 @@ echo '<script type="text/javascript">
         <!-- Cancha -->
         <div id="div_cancha">
         </div>
-        <button class="button_continuar" type="button" onclick="confirmateCanchas();">Continuar</button>
+        <button class=" font button_continuar" type="button" onclick="confirmateCanchas();">Continuar</button>
       </div>
     </div>
     <!-- Enviar -->
@@ -271,16 +271,16 @@ echo '<script type="text/javascript">
 
             </div>
             <p>
-              <span style="color:red; font-size:12px">*Te estaremos contactando para confirmar la reserva</span><br>
-              <span style="color:red; font-size:12px">*La reserva se mantiene 15 minutos después de la hora fijada</span><br>
-              <span style="color:red; font-size:12px">*La reserva no tiene ningún costo</span>
+              <span style="font color:red; font-size:12px">*Te estaremos contactando para confirmar la reserva</span><br>
+              <span style=" font color:red; font-size:12px">*La reserva se mantiene 15 minutos después de la hora fijada</span><br>
+              <span style="font color:red; font-size:12px">*La reserva no tiene ningún costo</span>
             </p>
           </div>
         </div>
-        <button class="button_continuar" type="button" onclick="confirmateReserva();">Finalizar</button>
+        <button class="font button_continuar" type="button" onclick="confirmateReserva();">Finalizar</button>
         <p style="color:white; font-size:12px">
           <span>Aceptas</span>
-          <span style="text-decoration: underline">Términos y condicoones</span>
+          <span style=" font text-decoration: underline">Términos y condicoones</span>
         </p>
       </div>
     </div>
