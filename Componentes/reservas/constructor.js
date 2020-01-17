@@ -4,31 +4,6 @@ finishDate.setMonth(finishDate.getMonth() + 4);
 
 $("#dtp_input2").attr("name", "horainicio");
 
-var w;
-
-function startWorker() {
-  if(typeof(Worker) !== "undefined") {
-    if(typeof(w) == "undefined") {
-      w = new Worker("Componentes/reservas/demo_workers.js");
-    }
-    w.onmessage = function(event) {
-      document.getElementById("result").innerHTML = event.data;
-      // $("#loading_div").css("display", "flex");
-    };
-  } 
-}
-
-function stopWorker() { 
-  w.terminate();
-  w = undefined;
-  // $("#loading_div").css("display", "none");
-}
-
-
-
-
-
-
 $(".form_date").datetimepicker({
   language: "es",
   weekStart: 2,
@@ -67,15 +42,13 @@ $('.button_change_canhcas').click(function(){
 
 
 $(".form_date").on("changeDate", function(e) {
-  startWorker();
-
   $(".hourbutton").css("display", "block");
-  resetFormularyToFirstStep();
-  stopWorker();
   
+  resetFormularyToFirstStep();
 });
 
 function showloading(){
+  $("#loading_div").css("display", "flex");
 }
 
 function hideLoading(){
@@ -97,7 +70,6 @@ var span3 = document.getElementsByClassName("closeModalFirst")[2];
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modalFirst.style.display = "block";
-
 }
 
 // When the user clicks on <span> (x), close the modal

@@ -72,7 +72,7 @@ echo '<script type="text/javascript">
 
 <body>
 
-<div id="loading_div" style="
+  <div id="loading_div" style="
     position: fixed;
     z-index: 15;
     left: 15%;
@@ -84,9 +84,9 @@ echo '<script type="text/javascript">
     background: #ffffff9c;
     flex-direction: column;
 ">
-            <img src="img/10.gif" alt="">  
-            <p>Cargando horario disponible</p>
-          </div>
+    <img src="img/10.gif" alt="">
+    <p>Cargando horario disponible</p>
+  </div>
 
   <img style="width: 0px" src="img/pop-sections/s1.png" alt="">
   <img style="width: 0px" src="img/pop-sections/s2.png" alt="">
@@ -170,8 +170,8 @@ echo '<script type="text/javascript">
 
 
 
-   <!-- Sistema de reservas -->
-   <div id="modalFirst" class="modalt">
+  <!-- Sistema de reservas -->
+  <div id="modalFirst" class="modalt">
     <div class="modal-content">
       <span class="closeModalFirst">&times;</span>
       <div id="first-section">
@@ -306,15 +306,13 @@ echo '<script type="text/javascript">
 
     <p type="text" style=" 
     height: 32px;" name="" id="inputprueba"> </p>
-  <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
-  
-
+    <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
   </div>
-  <p style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" >Count numbers: <output id="result"></output></p>
 
 
-     <!-- FIN Sistema de reservas -->
- 
+
+  <!-- FIN Sistema de reservas -->
+
 
   <script src="Componentes/scroll/scroll.js"></script>
   <script src="./Ende_files/color.js.descarga"></script>

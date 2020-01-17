@@ -129,6 +129,7 @@ function showReservasByDay(day) {
       $("#myInput").val(this.responseText);
     }
   };
+  
   xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
   xmlhttp.send();
 }
