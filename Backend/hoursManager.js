@@ -9,13 +9,60 @@ function addHoursAvailables(hoursList) {
 
   xs.reverse();
 
+  
+
   xs.forEach(function(valor, indice, array) {
      $("#div-hora").prepend("<button class='hour-button' name='off' onclick='buttonHourFunction(this.id)' "+"id="+valor+" type='button'>"+intToHourAM(valor) + "</button>");
   });
 }
 
-function buttonHourFunction(h){ 
-    var hour = parseInt(h);
+
+function buttonCanchaFucntion(cancha){
+    var status =  $("#"+cancha).attr('name') // estado del boton seleccionado (on, off)
+    var actives = document.getElementsByName("onC").length;
+    var canchasPeticion = parseInt($("#p_canchas").text());
+
+    if(status == 'onC'){   // si está on ponerlo off
+       
+        if (actives == canchasPeticion){ // si hay x activos deshabilitar el resto
+            document.getElementsByName("offC").forEach(function(valor, indice, array) {
+                document.getElementsByName("offC").forEach(function(valor, indice, array) {
+                    $("#"+valor.id).css("border","black 2px solid");
+                    $("#"+valor.id).css("color","black");
+                    $("#"+valor.id).attr("onclick","buttonCanchaFucntion(this.id);");
+                 });
+             });
+        }
+        $("#"+cancha).css("border","black 2px solid");
+        $("#"+cancha).css("color","black");
+        $("#"+cancha).attr("name", "offC");
+    } else{ // si está off ponerlo en on
+        if (actives == (canchasPeticion -1)){ //si se va a activar el último pedido 
+           
+            $("#"+cancha).css("border"," solid 2px red");
+            $("#"+cancha).css("color","red");
+            $("#"+cancha).attr("name", "onC");
+
+            document.getElementsByName("offC").forEach(function(valor, indice, array) {
+                $("#"+valor.id).css("border","grey 2px solid");
+                $("#"+valor.id).css("color","grey");
+                $("#"+valor.id).attr("onclick","");
+             });
+
+
+            
+        }else{ // si no hay activos
+            $("#"+cancha).css("border"," solid 2px red");
+            $("#"+cancha).css("color","red");
+            $("#"+cancha).attr("name", "onC");
+           
+        }
+}
+}
+
+
+function buttonHourFunction(hour){ 
+ 
     var status =  $("#"+hour).attr('name') // estado del boton seleccionado (on, off)
     var actives = document.getElementsByName("on").length; // cuantos ya están activos
 
@@ -32,12 +79,11 @@ function buttonHourFunction(h){
         $("#"+hour).css("background-color","white");
         $("#"+hour).css("color","black");
         $("#"+hour).attr("name", "off");
-
-       
     }
     else{ // si está off
             if (actives == 1){ //si uno ya está activo
                 var activeHour = document.getElementsByName("on")[0].id; // obtener la hora que ya esta activada
+                hour = parseInt(hour, 10);
                 var mayor = hour +1; 
                 var menor = hour -1; //obtener rango de la hora seleccionada
 
@@ -77,5 +123,4 @@ function intToHourAM(hour){
     }else {
         return (hour-12)+":00 pm";
     }
-
 }

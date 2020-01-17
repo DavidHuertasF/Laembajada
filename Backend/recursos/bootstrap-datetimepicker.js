@@ -55,7 +55,7 @@ var Datetimepicker = function (element, options) {
 
   // add container for single page application
   // when page switch the datetimepicker div will be removed also.
-  this.container = options.container || 'body';
+  this.container = options.container || '.date';
 
   this.language = options.language || this.element.data('date-language') || 'en';
   this.language = this.language in dates ? this.language : this.language.split('-')[0]; // fr-CA fallback to fr
@@ -595,11 +595,11 @@ Datetimepicker.prototype = {
     top = top - containerOffset.top;
     left = left - containerOffset.left;
 
-    this.picker.css({
-      top:    top,
-      left:   left,
-      zIndex: this.zIndex
-    });
+    // this.picker.css({
+    //   top:    '34px',
+    //   left:   '20%',
+    //   zIndex: this.zIndex
+    // });
   },
 
   hour_minute: "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]",
