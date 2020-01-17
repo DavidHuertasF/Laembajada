@@ -52,7 +52,7 @@ $(".form_date").on("changeDate", function(e) {
 var modalFirst = document.getElementById("modalFirst");
 var modalSecond = document.getElementById("modalSecond");
 // Get the button that opens the modal
-var btn = document.getElementById("reservaBtn");
+var btn = document.getElementById("container-c");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("closeModalFirst")[0];
@@ -102,10 +102,10 @@ $(document).ready(function() {
     $("#div-hora").animate({ scrollTop: "-=45px" }, 1);
   });
   $(".prev").empty();
-  $(".prev").prepend("<img style='width:21px' src='../img/left.png'></img>");
+  $(".prev").prepend("<img style='width:21px' src='img/left.png'></img>");
 
   $(".next").empty();
-  $(".next").prepend("<img style='width:21px' src='../img/right.png'></img>");
+  $(".next").prepend("<img style='width:21px' src='img/right.png'></img>");
 });
 
 $("#input_cliente_celular-menu").on("click", function(e) {

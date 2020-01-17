@@ -127,7 +127,7 @@ function showReservasByDay(day) {
       $("#myInput").val(this.responseText);
     }
   };
-  xmlhttp.open("GET", "getuser.php?q=" + day, false);
+  xmlhttp.open("GET", "componentes/reservas/getuser.php?q=" + day, false);
   xmlhttp.send();
 }
 
@@ -269,7 +269,7 @@ function showCanchasByDate(datei, datef) {
       $("#inputprueba").text(this.responseText);
     }
   };
-  xmlhttp.open("GET", "getCanchas.php?q=" + datei + "&p=" + datef, false);
+  xmlhttp.open("GET", "componentes/reservas/getCanchas.php?q=" + datei + "&p=" + datef, false);
   // xmlhttp.open("GET", "getCanchas.php?q=2" + datei+", q=2", false);
   xmlhttp.send();
 }
@@ -351,7 +351,7 @@ function readCanchasId() {
       "<div  id='" +
         id +
         "c" +
-        "'style='background-size: contain; background-repeat: no-repeat; background-image: url(\"../img/cancha.png\") 'class='cancha-button' name='offC' onclick='buttonCanchaFucntion(this.id)' " +
+        "'style='background-size: contain; background-repeat: no-repeat; background-image: url(\"img/cancha.png\") 'class='cancha-button' name='offC' onclick='buttonCanchaFucntion(this.id)' " +
         "id=" +
         nombre +
         ">" +
@@ -423,7 +423,7 @@ function creatUser(){
   };
   xmlhttp.open(
     "GET",
-    "confirmarCliente.php?p=" + nombre + "&q=" + celular + "&c=" + correo,
+    "componentes/reservas/confirmarCliente.php?p=" + nombre + "&q=" + celular + "&c=" + correo,
     false
   );
   xmlhttp.send();
@@ -442,7 +442,7 @@ function confirmate(start, end, cancha) {
   };
   xmlhttp.open(
     "GET",
-    "confirmar.php?p=" + start + "&q=" + end + "&c=" + cancha,
+    "componentes/reservas/confirmar.php?p=" + start + "&q=" + end + "&c=" + cancha,
     false
   );
   xmlhttp.send();

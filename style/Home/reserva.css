@@ -45,6 +45,7 @@
 
 table {
   border-collapse: collapse;
+  margin-top: -38px;
 }
 
 .dow {
@@ -163,17 +164,17 @@ th {
 }
 
 /* The Modal (background)  _______________________________________________________________________*/
-.modal {
+.modalt {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+ 
+  background-color: rgba(59, 28, 28, 0.7); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -181,7 +182,6 @@ th {
   background-color: #fefefe91;
   margin: 6% auto;
   padding: 20px;
-  border: 1px solid #888;
 }
 
 .modal-content-second, .modal-content,  .modal-content-third {
@@ -242,7 +242,6 @@ th {
     padding: 5%;
     align-items: center;
     flex-direction: column;
-    background: #1a2c56;
   }
 
   #third-section input{
