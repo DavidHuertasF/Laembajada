@@ -127,7 +127,7 @@ function showReservasByDay(day) {
       $("#myInput").val(this.responseText);
     }
   };
-  xmlhttp.open("GET", "componentes/reservas/getuser.php?q=" + day, false);
+  xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
   xmlhttp.send();
 }
 
@@ -269,7 +269,7 @@ function showCanchasByDate(datei, datef) {
       $("#inputprueba").text(this.responseText);
     }
   };
-  xmlhttp.open("GET", "componentes/reservas/getCanchas.php?q=" + datei + "&p=" + datef, false);
+  xmlhttp.open("GET", "Componentes/reservas/getCanchas.php?q=" + datei + "&p=" + datef, false);
   // xmlhttp.open("GET", "getCanchas.php?q=2" + datei+", q=2", false);
   xmlhttp.send();
 }
@@ -423,7 +423,7 @@ function creatUser(){
   };
   xmlhttp.open(
     "GET",
-    "componentes/reservas/confirmarCliente.php?p=" + nombre + "&q=" + celular + "&c=" + correo,
+    "Componentes/reservas/confirmarCliente.php?p=" + nombre + "&q=" + celular + "&c=" + correo,
     false
   );
   xmlhttp.send();
@@ -442,7 +442,7 @@ function confirmate(start, end, cancha) {
   };
   xmlhttp.open(
     "GET",
-    "componentes/reservas/confirmar.php?p=" + start + "&q=" + end + "&c=" + cancha,
+    "Componentes/reservas/confirmar.php?p=" + start + "&q=" + end + "&c=" + cancha,
     false
   );
   xmlhttp.send();
