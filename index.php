@@ -68,7 +68,7 @@ echo '<script type="text/javascript">
 
 
 </head>
-<script type="text/javascript" src="./Componentes/modal-home/modal-Home.js"></script>
+<script type="text/javascript" src="./Componentes/modal-home/modal-home.js"></script>
 
 <body>
 
