@@ -72,22 +72,7 @@ echo '<script type="text/javascript">
 
 <body>
 
-  <div id="loading_div" style="
-    position: fixed;
-    z-index: 15;
-    left: 10%;
-    top: 30%;
-    font-size: 20px;
-    width: 80%;
-    height: 50%;
-    display: none;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.82);
-    flex-direction: column;
-">
-    <img src="img/10.gif" alt="">
-    <p>Cargando horario disponible</p>
-  </div>
+  
 
   <img style="width: 0px" src="img/pop-sections/s1.png" alt="">
   <img style="width: 0px" src="img/pop-sections/s2.png" alt="">

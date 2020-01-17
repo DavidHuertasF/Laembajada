@@ -1,7 +1,3 @@
-
-
-
-
 var stringDate ="";
 var finishDate = new Date();
 finishDate.setMonth(finishDate.getMonth() + 4);
@@ -41,53 +37,16 @@ $(".dropdown-menu").on("click", function(e) {
 
 
 $('.button_change_canhcas').click(function(){
-  sayHello(); 
+  resetFormularyToFirstStep();
 });
 
 
 $(".form_date").on("changeDate", function(e) { 
-  sayHello(); 
+  $(".hourbutton").css("display", "block");
+  resetFormularyToFirstStep();
 });
 
 
-
-function myPromise() {
-  return new Promise((resolve, reject) => {
-      
-    $(".hourbutton").css("display", "block");
-    resetFormularyToFirstStep();
-    setTimeout(() => {
-        resolve('Stack Overflow');
-
-      }, 2500);
-
-  });
-}
-
-
-async function sayHello() {
-  try {
-    showloading();
-    const externalFetchedText = await myPromise();
-  } catch (err) {
-    console.error(err);
-  } finally {
-    hideLoading();
-  }
-}
-
-
-
-
-
-
-function showloading(){
-  $("#loading_div").css("display", "flex");
-}
-
-function hideLoading(){
-  $("#loading_div").css("display", "none");
-}
 // Modal ________________________________________________
 
 // Get the modal

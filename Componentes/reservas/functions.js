@@ -122,13 +122,12 @@ function showReservasByDay(day) {
     // code for IE6, IE5
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
- 
+  
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       $("#myInput").val(this.responseText);
     }
   };
-  
   xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
   xmlhttp.send();
 }
