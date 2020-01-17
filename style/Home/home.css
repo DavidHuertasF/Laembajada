@@ -380,6 +380,7 @@ body {
 
 #container-c {
   width: 70%;
+    cursor: pointer;
   margin-left: 22%;
   padding: 2%;
   padding-bottom: 17%;
