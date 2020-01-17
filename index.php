@@ -307,8 +307,10 @@ echo '<script type="text/javascript">
     <p type="text" style=" 
     height: 32px;" name="" id="inputprueba"> </p>
   <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
+  
 
   </div>
+  <p style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" >Count numbers: <output id="result"></output></p>
 
 
      <!-- FIN Sistema de reservas -->

@@ -23,6 +23,7 @@ function resetFormularyToFirstStep() {
       getHoursAvailables(hours);
     }
   }
+
 }
 
 function diaSemana() {
@@ -122,13 +123,14 @@ function showReservasByDay(day) {
     // code for IE6, IE5
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  showloading();
+ 
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       $("#myInput").val(this.responseText);
-      hideLoading();
+      stopWorker();
     }
   };
+  startWorker();
   xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
   xmlhttp.send();
 }
