@@ -256,9 +256,9 @@ echo '<script type="text/javascript">
 
             </div>
             <p>
-              <span style="font color:red; font-size:12px">*Te estaremos contactando para confirmar la reserva</span><br>
-              <span style=" font color:red; font-size:12px">*La reserva se mantiene 15 minutos después de la hora fijada</span><br>
-              <span style="font color:red; font-size:12px">*La reserva no tiene ningún costo</span>
+              <span style=" color:red; font-size:12px">*Te estaremos contactando para confirmar la reserva</span><br>
+              <span style="  color:red; font-size:12px">*La reserva se mantiene 15 minutos después de la hora fijada</span><br>
+              <span style="color:red; font-size:12px">*La reserva no tiene ningún costo</span>
             </p>
           </div>
         </div>
