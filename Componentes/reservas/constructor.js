@@ -98,22 +98,8 @@ var span = document.getElementsByClassName("close-pdf")[0];
   modal.style.display = "block";
 });
 
-var myVideo=document.getElementById("video1");
-$("#como-jugar").click(function(event) {
-  if (myVideo.paused) 
-  myVideo.play(); 
-else 
-myVideo.pause(); 
 
-});
 
-$("#como-jugar-m").click(function(event) {
-  if (myVideo.paused) 
-  myVideo.play(); 
-else 
-myVideo.pause(); 
-
-});
 
 
 span.onclick = function() {
