@@ -47,7 +47,7 @@ $(".form_date").on("changeDate", function(e) {
 });
 
 
-// Modal ________________________________________________
+// Modal ____________________________  Sistema de reservas
 
 // Get the modal
 var modalFirst = document.getElementById("modalFirst");
@@ -87,6 +87,44 @@ span3.onclick = function() {
   }
 }
 
+
+
+// Modal ____________________________  PDF
+
+var modal = document.getElementById("myModal-pdf");
+var span = document.getElementsByClassName("close-pdf")[0];
+
+  $("#action-pdf").click(function(event) {
+  modal.style.display = "block";
+});
+
+var myVideo=document.getElementById("video1");
+$("#como-jugar").click(function(event) {
+  if (myVideo.paused) 
+  myVideo.play(); 
+else 
+myVideo.pause(); 
+
+});
+
+$("#como-jugar-m").click(function(event) {
+  if (myVideo.paused) 
+  myVideo.play(); 
+else 
+myVideo.pause(); 
+
+});
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 
 // When the user clicks anywhere outside of the modal, close it

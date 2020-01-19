@@ -300,6 +300,21 @@ echo '<script type="text/javascript">
   <!-- FIN Sistema de reservas -->
 
 
+  <!-- ______________________ MODAL PDF  ______________________ -->
+<div id="myModal-pdf" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content-pdf">
+  <span class="close-pdf">&times;</span>
+  <div>
+  <iframe src="https://drive.google.com/file/d/1rolIoLIgGpS5MeiWvZFN2-fZ9o66Qz-Y/preview" style="width:100%;height:700px; border: none;"></iframe>
+</div>
+</div>
+
+</div>
+ <!-- ______________________ FIN MODAL PDF  ______________________ -->
+
+
   <script src="Componentes/scroll/scroll.js"></script>
   <script src="./Ende_files/color.js.descarga"></script>
   <script src="./Ende_files/skrollr.js.descarga"></script>

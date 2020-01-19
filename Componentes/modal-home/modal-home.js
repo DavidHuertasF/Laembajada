@@ -44,6 +44,7 @@ function modalDesktop() {
     var modal = document.getElementById("myModal");
     var btn = document.getElementById("myBtn");
     var span = document.getElementsByClassName("close")[0];
+    
 
     btn.onclick = function() {
       modal.style.display = "block";
@@ -63,6 +64,9 @@ function modalDesktop() {
     var sectionB = document.getElementById("section-b");
     var sectionC = document.getElementById("section-c");
 
+
+   
+
     sectionA.onclick = function() {
       document.getElementById("pop-section").src = "img/svg/pop-sections/s1.svg";
       document.getElementById("galery-modal").src = "img/pop-sections/s1.png";
@@ -77,6 +81,6 @@ function modalDesktop() {
     };
 }
 
-// When the user clicks on <span> (x), close the modal
 
-// When the user clicks anywhere outside of the modal, close it
+
+
