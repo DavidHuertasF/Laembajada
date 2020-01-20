@@ -158,7 +158,7 @@ echo '<script type="text/javascript">
 
   <!-- Sistema de reservas -->
   <div id="modalFirst" class="modalt">
-    <div class="modal-content">
+    <div class="modal-content font">
       <span class="closeModalFirst">&times;</span>
       <div id="first-section">
         <img style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
@@ -220,7 +220,7 @@ echo '<script type="text/javascript">
   </div>
 
   <div id="modalSecond" class="modalt">
-    <div class="modal-content-second">
+    <div class="modal-content-second font">
       <span class="closeModalFirst">&times;</span>
       <div id="second-section">
         <img style="
@@ -236,13 +236,13 @@ echo '<script type="text/javascript">
   </div>
 
   <div id="modalThird" class="modalt">
-    <div class="modal-content-third">
+    <div class="modal-content-third font">
       <span class="closeModalFirst">&times;</span>
       <div id="third-section">
 
         <img src="img/datosStep.png" alt="">
         <div style="display:flex; margin-top:25px;">
-          <div style="display:flex; flex-direction:column; margin-top:30px;">
+          <div  class="font"  style="display:flex; flex-direction:column; margin-top:30px;">
             <input id="input_cliente_nombre" type="text" placeholder="Nombre Apellido*">
             <input id="input_cliente_celular" type="text" placeholder="Celular*">
             <input id="input_cliente_correo" type="text" placeholder="Correo*">
