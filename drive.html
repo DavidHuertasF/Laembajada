@@ -175,57 +175,57 @@
         pre.appendChild(textContent);
       }
 
-      function listFiles() {
-        gapi.client.drive.files.list({
-          'pageSize': 10,
-          'fields': "nextPageToken, files(id, name, mimeType, createdTime, size)"
-        }).then(function(response) {
+      // function listFiles() {
+      //   gapi.client.drive.files.list({
+      //     'pageSize': 10,
+      //     'fields': "nextPageToken, files(id, name, mimeType, createdTime, size)"
+      //   }).then(function(response) {
           
-          var files = response.result.files;     
+      //     var files = response.result.files;     
           
-          var table = document.getElementById('root');
-          listarenTabla(table, ['ID', 'Nombre', 'mimeType', 'Fecha de Creación', 'Tamaño'], 'th');     
+      //     var table = document.getElementById('root');
+      //     listarenTabla(table, ['ID', 'Nombre', 'mimeType', 'Fecha de Creación', 'Tamaño'], 'th');     
 
-          if (files && files.length > 0) {
-            for (var i = 0; i < files.length; i++) {              
+      //     if (files && files.length > 0) {
+      //       for (var i = 0; i < files.length; i++) {              
 
-              var file = files[i];              
+      //         var file = files[i];              
 
-              listarenTabla(table, [
-                file.id,
-                file.name,
-                file.mimeType,
-                file.createdTime,
-                file.size + ' Kbs'
-              ]);
+      //         listarenTabla(table, [
+      //           file.id,
+      //           file.name,
+      //           file.mimeType,
+      //           file.createdTime,
+      //           file.size + ' Kbs'
+      //         ]);
 
-              //appendPre(file.name + ' / ' + file.id + ' / ' + file.mimeType + ' / ' + file.createdTime + ' / ' + file.size + ' Kbs') + "<br>";
+      //         //appendPre(file.name + ' / ' + file.id + ' / ' + file.mimeType + ' / ' + file.createdTime + ' / ' + file.size + ' Kbs') + "<br>";
 
-            }
-          } else {
-            appendPre('No hay archivos.');
-          }
-        });
-      }
+      //       }
+      //     } else {
+      //       appendPre('No hay archivos.');
+      //     }
+      //   });
+      // }
 
-      function listarenTabla (table, elements, tag) {
+      // function listarenTabla (table, elements, tag) {
         
-        var row = document.createElement('tr')
-        elements.forEach(function (e) {
+      //   var row = document.createElement('tr')
+      //   elements.forEach(function (e) {
 
-          var cell = document.createElement(tag || 'td')
+      //     var cell = document.createElement(tag || 'td')
 
-          if (typeof e === 'string') {
-            cell.textContent = e
-          } else {
-            cell.appendChild(e)
-          }
+      //     if (typeof e === 'string') {
+      //       cell.textContent = e
+      //     } else {
+      //       cell.appendChild(e)
+      //     }
                   
-          row.appendChild(cell)
-        })
+      //     row.appendChild(cell)
+      //   })
 
-        table.appendChild(row)
-      }
+      //   table.appendChild(row)
+      // }
 
     </script>
 
