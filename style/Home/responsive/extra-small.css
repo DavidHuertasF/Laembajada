@@ -238,6 +238,7 @@
         .reservaStep{
             width: 80%;
             margin-top: 20%;
+            margin-left: -20px;
         }
 
         #div-fecha-section, #div-hora-section, #div-hora, #div-canchas-section {
@@ -269,6 +270,10 @@
 
         #embajadaImg{
             width: 80%;
+        }
+
+        #first-section {
+            margin-left: -13px;
         }
 
 }
