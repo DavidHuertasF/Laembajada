@@ -185,4 +185,45 @@
               margin-left: -700%;
             }
           }
+
+          #menu-movil-div{
+            position: absolute;
+            top: 0rem;
+            width: 100%;
+            left: 0%;
+            height: 100%;
+            z-index: 5;
+            background: #de1010;
+            display: none;
+            padding: 50px;
+          }
+
+          #div-menu-options{
+            border-bottom: solid 3px white;
+            border-top: solid 3px white;
+            width: 60%;
+            margin-left: 5%;
+            margin-top: 20%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+          }
+
+          .menu-movil-option{
+            width: auto;
+            margin-left: 10%;
+            margin-bottom: 15%;
+            color: white;
+          }
+
+          
+
+          #close-menu{
+            cursor: pointer;
+            font-family: "Arial", sans-serif;
+            color: white;
+            margin-left: 65vw;
+            font-size: 50px;
+        
+          }
+
 }

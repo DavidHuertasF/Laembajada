@@ -140,3 +140,33 @@ $("#input_cliente_celular-menu").on("click", function(e) {
 
 
 
+
+$("#menu").click(function(event) {
+
+      $('html, body').css({
+        overflow: 'hidden',
+        height: '100%'
+      });
+
+    $("#menu-movil-div").css("display", "block");
+});
+
+$("#close-menu").click(function(event) {
+
+  $('html, body').css({
+    overflow: 'initial',
+    height: 'auto'
+  });
+$("#menu-movil-div").css("display", "none");
+});
+
+
+$(".menu-movil-option").click(function(event) {
+
+  $('html, body').css({
+    overflow: 'initial',
+    height: 'auto'
+  });
+$("#menu-movil-div").css("display", "none");
+});
+

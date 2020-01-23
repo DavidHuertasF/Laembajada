@@ -199,7 +199,4 @@ echo '<script type="text/javascript">
   <script type="text/javascript" src="admin.js" charset="UTF-8"></script>
   <script type="text/javascript" src="constructor.js" charset="UTF-8"></script>
   <script type="text/javascript" src="table.js" charset="UTF-8"></script>
-
-
-
 </html>
