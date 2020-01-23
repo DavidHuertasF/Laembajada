@@ -355,9 +355,9 @@ function readCanchasId() {
         "'style='background-size: contain; background-repeat: no-repeat; background-image: url(\"img/cancha.png\") 'class='cancha-button' name='offC' onclick='buttonCanchaFucntion(this.id)' " +
         "id=" +
         nombre +
-        ">" +
+        "><p style='margin-left: 27px;'>" +
         nombre +
-        "</div>"
+        "</p></div>"
     );
   }
 }

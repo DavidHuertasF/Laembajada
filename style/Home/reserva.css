@@ -64,7 +64,7 @@ th {
   padding: 15px;
 }
 #first-section {
-  padding: 20px;
+  padding: 20px 0px 0px;
 }
 
 .button_continuar {
@@ -107,14 +107,14 @@ th {
 #div-hora-section,
 #div-hora,
 #div-canchas-section {
-  width: 15rem;
-  height: 16rem;
-  display: flex;
-  margin: 1%;
-  flex-direction: column;
-  align-items: center;
-  border: solid red 3.5px;
-  background: white;
+  width: 17rem;
+    height: 18rem;
+    display: flex;
+    margin: 1%;
+    flex-direction: column;
+    align-items: center;
+    border: solid red 3.5px;
+    background: white;
 }
 
 #div-hora-section p {
@@ -126,7 +126,7 @@ th {
 
 #div-hora {
   width: 200px;
-  height: 120px;
+  height: 124px;
   overflow-y: scroll;
   overflow: hidden;
   align-items: center;
@@ -200,7 +200,7 @@ th {
 /* The Close Button */
 .closeModalFirst {
   background-image: url(../../img/svg/close-icon.svg);
-  width: 5%;
+  width: 4%;
   height: 11%;
   position: absolute;
   right: 5%;
@@ -266,9 +266,11 @@ th {
 #third-section input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: red;
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 14px;
 }
+
+
+
 #third-section input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: red;

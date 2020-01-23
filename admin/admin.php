@@ -140,7 +140,7 @@ echo '<script type="text/javascript">
     <img style="width: 50%;
     margin-left: 20%;
     margin-bottom: 20%;"
-     src="../img/logo.png" alt="">
+     src="https://drive.google.com/uc?id=1-fjb7iyB9gtxNTZRqP0e2hTasAszRcE4" alt="">
     <a href="#">Reservas</a>
     <a href="#">Clientes</a>
     <a href="#">Canchas</a>

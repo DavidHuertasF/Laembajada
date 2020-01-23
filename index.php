@@ -244,7 +244,7 @@ echo '<script type="text/javascript">
             <input id="input_cliente_nombre" type="text" placeholder="Nombre Apellido*">
             <input id="input_cliente_celular" type="text" placeholder="Celular*">
             <input id="input_cliente_correo" type="text" placeholder="Correo*">
-            <input type="text" placeholder="Comentarios">
+            <input type="text" placeholder="   Comentarios">
           </div>
 
           <div style="margin-left: 41px;     margin-top: 30px;">
@@ -303,7 +303,7 @@ echo '<script type="text/javascript">
 
 <!-- Modal content -->
 <div class="modal-content-pdf">
-<div class="closeModalFirst"></div>
+<div class="closeModalFirst close-pdf"></div>
   <div>
   <iframe src="https://drive.google.com/file/d/1rolIoLIgGpS5MeiWvZFN2-fZ9o66Qz-Y/preview" style="width:100%;height:700px; border: none;"></iframe>
 </div>

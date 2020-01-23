@@ -12,7 +12,7 @@ function addHoursAvailables(hoursList) {
   
 
   xs.forEach(function(valor, indice, array) {
-     $("#div-hora").prepend("<button class='hour-button' name='off' onclick='buttonHourFunction(this.id)' "+"id="+valor+" type='button'>"+intToHourAM(valor) + "</button>");
+     $("#div-hora").prepend("<button class='font hour-button' name='off' onclick='buttonHourFunction(this.id)' "+"id="+valor+" type='button'>"+intToHourAM(valor) + "</button>");
   });
 }
 

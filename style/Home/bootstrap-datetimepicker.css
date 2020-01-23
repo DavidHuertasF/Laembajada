@@ -307,11 +307,16 @@ fieldset {
 	font-family: 'Glyphicons Halflings';
   }
   
-  .glyphicon-arrow-left:before {
-	content: "\e079";
-  }
-  
-  .glyphicon-arrow-right:before {
-	content: "\e080";
+ .prev{
+	background-image: url(../../img/left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ 
+  .next {
+	background-image: url(../../img/right.png);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
