@@ -87,7 +87,7 @@ th {
   justify-content: space-around;
 }
 #second-section {
-  padding: 30px;
+  padding: 35px;
 }
 
 #first-section, #second-section{
@@ -188,21 +188,28 @@ th {
   margin: 6% auto;
   width: 90%;
   background: #000024d1;
-
 }
+
+
+.modal-content-second .closeModalFirst, .modal-content-third .closeModalFirst  {
+  right: 7.6%;
+  margin-top: 12px;
+}
+
 
 /* The Close Button */
 .closeModalFirst {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  background-image: url(../../img/svg/close-icon.svg);
+  width: 5%;
+  height: 11%;
+  position: absolute;
+  right: 5%;
+  background-repeat: no-repeat;
 }
 
 .closeModalFirst:hover,
 .closeModalFirst:focus {
-  color: black;
-  text-decoration: none;
+  background-image: url("../../img/svg/close-icon-hover.svg");
   cursor: pointer;
 }
 
@@ -235,7 +242,7 @@ th {
 
   #third-section{
     display: flex;
-    padding: 5%;
+    padding: 5% 0% 0% 0%;
     align-items: center;
     flex-direction: column;
   }

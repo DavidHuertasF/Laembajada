@@ -26,17 +26,17 @@ function modalMobile() {
       sectionAm.onclick = function() {
         document.getElementById("pop-section-m").src =
           "img/svg/pop-sections/s1.svg";
-        document.getElementById("galery-modal-m").src = "img/pop-sections/s1.png";
+        document.getElementById("galery-modal-m").src = "https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms";
       };
       sectionBm.onclick = function() {
         document.getElementById("pop-section-m").src =
           "img/svg/pop-sections/s2.svg";
-        document.getElementById("galery-modal-m").src = "img/pop-sections/s2.png";
+        document.getElementById("galery-modal-m").src = "https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56";
       };
       sectionCm.onclick = function() {
         document.getElementById("pop-section-m").src =
           "img/svg/pop-sections/s3.svg";
-        document.getElementById("galery-modal-m").src = "img/pop-sections/s3.png";
+        document.getElementById("galery-modal-m").src = "https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm";
       };
 }
 
@@ -69,15 +69,15 @@ function modalDesktop() {
 
     sectionA.onclick = function() {
       document.getElementById("pop-section").src = "img/svg/pop-sections/s1.svg";
-      document.getElementById("galery-modal").src = "img/pop-sections/s1.png";
+      document.getElementById("galery-modal").src = "https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms";
     };
     sectionB.onclick = function() {
       document.getElementById("pop-section").src = "img/svg/pop-sections/s2.svg";
-      document.getElementById("galery-modal").src = "img/pop-sections/s2.png";
+      document.getElementById("galery-modal").src = "https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56";
     };
     sectionC.onclick = function() {
       document.getElementById("pop-section").src = "img/svg/pop-sections/s3.svg";
-      document.getElementById("galery-modal").src = "img/pop-sections/s3.png";
+      document.getElementById("galery-modal").src = "https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm";
     };
 }
 

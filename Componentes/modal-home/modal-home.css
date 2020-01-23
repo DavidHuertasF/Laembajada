@@ -23,7 +23,7 @@
   
   /* The Close Button */
   .close {
-    background-image: url("..//svg/close-icon.svg");
+    background-image: url("../../img/svg/close-icon.svg");
     float: right;
     width: 8%;
     height: 11%;
@@ -32,13 +32,13 @@
 
   .close:hover,
   .close:focus {
-    background-image: url("..//svg/close-icon-hover.svg");
+    background-image: url("../../img/svg/close-icon-hover.svg");
     cursor: pointer;
   }
 
 
   .close-m {
-    background-image: url("..//svg/close-icon.svg");
+    background-image: url("../../img/svg/close-icon.svg");
     float: right;
     width: 8%;
     height: 11%;
@@ -47,7 +47,7 @@
 
   .close-m:hover,
   .close-m:focus {
-    background-image: url("..//svg/close-icon-hover.svg");
+    background-image: url("../../img/svg/close-icon-hover.svg");
     cursor: pointer;
   }
 
@@ -68,7 +68,7 @@
   
   .section-button{
     position: absolute;
-    top: 7vw;
+    top: 13vw;
     width: 3%;
     height: 4%;
     background: none;
@@ -87,10 +87,10 @@
     left: 49.5%;
   }
   #section-c{
-    left: 62%;
+    left: 64%;
   }
   #section-a-m{
-    left: 36%;
+    left: 34%;
   }
   #section-b-m{
     left: 49.5%;

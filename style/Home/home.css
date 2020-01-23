@@ -263,6 +263,7 @@ body {
   text-underline-position: under;
   text-decoration: underline;
   text-decoration-color: #e7291e;
+  cursor: pointer;
 }
 
 .social-icon {

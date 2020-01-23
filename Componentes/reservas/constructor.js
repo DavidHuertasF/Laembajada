@@ -54,7 +54,7 @@ var modalFirst = document.getElementById("modalFirst");
 var modalSecond = document.getElementById("modalSecond");
 // Get the button that opens the modal
 var btn = document.getElementById("container-c");
-
+var btnreserva = document.getElementsByClassName("reserve")[0];
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("closeModalFirst")[0];
 var span2 = document.getElementsByClassName("closeModalFirst")[1];
@@ -62,6 +62,10 @@ var span3 = document.getElementsByClassName("closeModalFirst")[2];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
+  modalFirst.style.display = "block";
+}
+
+btnreserva.onclick = function() {
   modalFirst.style.display = "block";
 }
 
@@ -97,9 +101,6 @@ var span = document.getElementsByClassName("close-pdf")[0];
   $("#action-pdf").click(function(event) {
   modal.style.display = "block";
 });
-
-
-
 
 
 span.onclick = function() {

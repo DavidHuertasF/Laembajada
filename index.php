@@ -72,12 +72,9 @@ echo '<script type="text/javascript">
 
 <body>
 
-<a href="drive.html" target="_blank">drive</a>
-
-
-  <img style="width: 0px" src="img/pop-sections/s1.png" alt="">
-  <img style="width: 0px" src="img/pop-sections/s2.png" alt="">
-  <img style="width: 0px" src="img/pop-sections/s3.png" alt="">
+  <img style="width: 0px" src="https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms" alt="">
+  <img style="width: 0px" src="https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56" alt="">
+  <img style="width: 0px" src="https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm" alt="">
   <div id="html"></div>
 
 
@@ -160,7 +157,7 @@ echo '<script type="text/javascript">
   <!-- Sistema de reservas -->
   <div id="modalFirst" class="modalt">
     <div class="modal-content font">
-      <span class="closeModalFirst">&times;</span>
+    <div class="closeModalFirst"></div>
       <div id="first-section">
         <img style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
         <div id="container" style="    width: 90%;">
@@ -222,7 +219,7 @@ echo '<script type="text/javascript">
 
   <div id="modalSecond" class="modalt">
     <div class="modal-content-second font">
-      <span class="closeModalFirst">&times;</span>
+    <div class="closeModalFirst"></div>
       <div id="second-section">
         <img style="
         margin-bottom: 30px;" src="img/canchaStep.png" alt="">
@@ -238,7 +235,7 @@ echo '<script type="text/javascript">
 
   <div id="modalThird" class="modalt">
     <div class="modal-content-third font">
-      <span class="closeModalFirst">&times;</span>
+    <div class="closeModalFirst"></div>
       <div id="third-section">
 
         <img src="img/datosStep.png" alt="">
@@ -306,7 +303,7 @@ echo '<script type="text/javascript">
 
 <!-- Modal content -->
 <div class="modal-content-pdf">
-  <span class="close-pdf">&times;</span>
+<div class="closeModalFirst"></div>
   <div>
   <iframe src="https://drive.google.com/file/d/1rolIoLIgGpS5MeiWvZFN2-fZ9o66Qz-Y/preview" style="width:100%;height:700px; border: none;"></iframe>
 </div>
