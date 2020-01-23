@@ -159,7 +159,7 @@ echo '<script type="text/javascript">
     <div class="modal-content font">
     <div class="closeModalFirst"></div>
       <div id="first-section">
-        <img style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
+        <img class="reservaStep" style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
         <div id="container" style="    width: 90%;">
           <!-- # Canchas -->
           <div id="div-canchas-section">
@@ -221,7 +221,7 @@ echo '<script type="text/javascript">
     <div class="modal-content-second font">
     <div class="closeModalFirst"></div>
       <div id="second-section">
-        <img style="
+        <img class="reservaStep" style="
         margin-bottom: 30px;" src="img/canchaStep.png" alt="">
         <!-- Cancha -->
         <div id="div_cancha">
@@ -238,8 +238,8 @@ echo '<script type="text/javascript">
     <div class="closeModalFirst"></div>
       <div id="third-section">
 
-        <img src="img/datosStep.png" alt="">
-        <div style="display:flex; margin-top:25px;">
+        <img class="reservaStep" src="img/datosStep.png" alt="">
+        <div id="reservaStepflex" style="display:flex; margin-top:25px;">
           <div  class="font"  style="display:flex; flex-direction:column; margin-top:30px;">
             <input id="input_cliente_nombre" type="text" placeholder="Nombre Apellido*">
             <input id="input_cliente_celular" type="text" placeholder="Celular*">
@@ -248,7 +248,7 @@ echo '<script type="text/javascript">
           </div>
 
           <div style="margin-left: 41px;     margin-top: 30px;">
-            <img src="img/embajada.png" alt="">
+            <img  id="embajadaImg" src="img/embajada.png" alt="">
             <div>
               <p id="resume_p" style="color: white;  font-size:15px;">
 

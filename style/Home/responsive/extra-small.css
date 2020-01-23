@@ -226,4 +226,49 @@
         
           }
 
+          #first-section #container {
+            flex-direction: column !important;
+          }
+
+          .closeModalFirst {
+            width: 10% !important;
+            height: 10% !important;
+        }
+
+        .reservaStep{
+            width: 80%;
+            margin-top: 20%;
+        }
+
+        #div-fecha-section, #div-hora-section, #div-hora, #div-canchas-section {
+          width: 85% !important;
+           
+        }
+        #div_cancha {
+            flex-direction: column !important;
+        }
+
+        .modal-content-second, .modal-content, .modal-content-third {
+            height: fit-content;
+            width: 100% !important;
+        }
+        #div-hora button {
+            width: 90% !important;
+            padding: 3% !important;
+            margin-bottom: 10% !important;
+        }
+
+        #reservaStepflex{
+            flex-direction: column;
+        }
+
+        #third-section input {
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        #embajadaImg{
+            width: 80%;
+        }
+
 }
