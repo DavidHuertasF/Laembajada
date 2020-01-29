@@ -260,7 +260,7 @@ echo '<script type="text/javascript">
             </p>
           </div>
         </div>
-        <button class="font button_continuar" type="button" onclick="confirmateReserva();">Finalizar</button>
+        <button class="font button_continuar" type="button" onclick="confirmateReserva();">Reservar</button>
         <p style="color:white; font-size:12px">
           <span>Aceptas</span>
           <span style=" font text-decoration: underline">Términos y condicoones</span>

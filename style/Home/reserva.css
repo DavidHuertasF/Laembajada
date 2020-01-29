@@ -200,7 +200,7 @@ th {
 /* The Close Button */
 .closeModalFirst {
   background-image: url(../../img/svg/close-icon.svg);
-  width: 4%;
+  width: 4vw;
   height: 11%;
   position: absolute;
   right: 5%;

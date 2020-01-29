@@ -25,7 +25,7 @@
   .close {
     background-image: url("../../img/svg/close-icon.svg");
     float: right;
-    width: 8%;
+    width: 4vw;
     height: 11%;
     background-repeat: no-repeat;
   }
@@ -38,10 +38,11 @@
 
 
   .close-m {
-    background-image: url("../../img/svg/close-icon.svg");
+    background-image: url(../../img/svg/close-icon.svg);
     float: right;
-    width: 8%;
-    height: 11%;
+    width: 8vw;
+    margin-right: 8vw;
+    height: 8vw;
     background-repeat: no-repeat;
   }
 
@@ -90,13 +91,13 @@
     left: 64%;
   }
   #section-a-m{
-    left: 34%;
+    left: 33%;
   }
   #section-b-m{
-    left: 49.5%;
+    left: 50.5%;
   }
   #section-c-m{
-    left: 62%;
+    left: 65%;
   }
 
 

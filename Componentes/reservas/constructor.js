@@ -55,6 +55,8 @@ var modalSecond = document.getElementById("modalSecond");
 // Get the button that opens the modal
 var btn = document.getElementById("container-c");
 var btnreserva = document.getElementsByClassName("reserve")[0];
+var btnreservae = document.getElementsByClassName("reserve")[1];
+ var btnreservam = document.getElementsByClassName("reservem")[0];
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("closeModalFirst")[0];
 var span2 = document.getElementsByClassName("closeModalFirst")[1];
@@ -68,6 +70,17 @@ btn.onclick = function() {
 btnreserva.onclick = function() {
   // modalFirst.style.display = "block";
 }
+
+
+btnreservae.onclick = function() {
+  // modalFirst.style.display = "block";
+}
+
+ btnreservam.onclick = function() {
+  //  modalFirst.style.display = "block";
+ }
+
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
