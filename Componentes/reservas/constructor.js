@@ -64,20 +64,20 @@ var span3 = document.getElementsByClassName("closeModalFirst")[2];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  // modalFirst.style.display = "block";
+   modalFirst.style.display = "block";
 }
 
 btnreserva.onclick = function() {
-  // modalFirst.style.display = "block";
+   modalFirst.style.display = "block";
 }
 
 
 btnreservae.onclick = function() {
-  // modalFirst.style.display = "block";
+   modalFirst.style.display = "block";
 }
 
  btnreservam.onclick = function() {
-  //  modalFirst.style.display = "block";
+    modalFirst.style.display = "block";
  }
 
 

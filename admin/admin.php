@@ -144,6 +144,7 @@ echo '<script type="text/javascript">
     <a href="#">Reservas</a>
     <a href="#">Clientes</a>
     <a href="#">Canchas</a>
+    <a href="contenido.php">Contenido</a>
   </div>
 
   <table id="customers">

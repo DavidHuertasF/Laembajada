@@ -5,6 +5,20 @@ $conexion = new conexion();
 date_default_timezone_set('America/Caracas');
 $fecha_actual = date("Y-m-d H:i:s");
 
+// Trae los textos para mostrarlos en el registro de reservas
+$mostrar_textos = "select * from textos";
+$resultado_mostrar = $conexion->consulta($mostrar_textos);
+$dato = array();
+$textos = array();
+while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
+  $dato["id"] = $fila[0];
+  $dato["nombre"] = $fila[1];
+  $dato["contenido_es"] = $fila[2];
+  $dato["contenido_en"] = $fila[3];
+  array_push($textos, $dato);
+}
+
+
 // Trae los clientes para mostrarlos en el registro de reservas
 $mostrar_clientes = "select * from cliente";
 $resultado_mostrar = $conexion->consulta($mostrar_clientes);

@@ -1,4 +1,5 @@
 <div id="normal-version">
+    <p class="reservem"></p>
     <div id="scroll-component-right-a" alt="">
         <div style="background-color: #ff1205;" class="div-blue"></div>
         <div style="background-color: #ffb900;" class="div-red"></div>
@@ -56,7 +57,10 @@
     <div>
         <div class="section">
             <div class="section" id="ende">
-                <div class="move font bluef "> Av Carrera 24 # 76 - 20 San Felipe, Bogotá - Colombia //  +57 3105554359  -  645 1192 // reservas@tejolaembajada // Ma · Mi 4 - 11pm | Ju  4 - 1am | Vi  4 - 1am | Sá | 2 - 1am | Do | 2 - 7pm  </div>
+                <div class="es move font bluef ">     <?php echo $textos[0]["contenido_es"]; ?>
+                  </div>
+                <div class="en move font bluef ">     <?php echo $textos[0]["contenido_en"]; ?>
+                  </div>
                 <div class="content-first"> <img class="banner" src="https://drive.google.com/uc?id=1MEIBVT6dJrX2pahd0vB2k02N-65J9ua_" alt="" />
                     <p class="reserve font es">Reserve Cancha</p>
                     <p class="reserve font en">Book a lane</p>
@@ -124,18 +128,14 @@
             <div class="section" style="padding-top: 5%;" id="conocenos">
                 <div style=" width: 100%; height: 20%; "> <img src="https://drive.google.com/uc?id=1mHauGweqPQfLgvNHTRoviBKq0ZuDktf-" alt="" style=" width: 15%; margin-left: 78%; "> </div>
                 <div style=" width: 100%; height: 20%; ">
-                    <p class="es" style=" left: 54%; text-align: end; margin-top: 2vw; position: absolute; font-size: 2.6vw; font-family: belwe, Arial, sans-serif; display: block; "> LA EMBAJADA ES EL PRIMER
-                        <br/> ESPACIO DE CERVECERÍA
-                        <br/> NON GRATA </p>
+                    <p class="es" style=" left: 54%; text-align: end; margin-top: 2vw; position: absolute; font-size: 2.6vw; font-family: belwe, Arial, sans-serif; display: block; "> <?php echo str_replace("\n", "<br>", $textos[2]["contenido_es"]); ?> </p>
 
-                    <p class="en" style=" left: 54%; text-align: end; margin-top: 2vw; position: absolute; font-size: 2.6vw; font-family: belwe, Arial, sans-serif; display: block; ">LA EMBAJADA IS THE FIRST
-                        <br/>  SPACE OF CERVECERÍA
-                        <br/> NON GRATA </p>
+                    <p class="en" style=" left: 54%; text-align: end; margin-top: 2vw; position: absolute; font-size: 2.6vw; font-family: belwe, Arial, sans-serif; display: block; "><?php echo str_replace("\n", "<br>", $textos[2]["contenido_en"]); ?></p>
                 </div>
                 <div style=" width: 100%; height: 20%; ">
-                    <p class="es" style=" left: 22%; width: 50%; margin-top: 3vw; position: absolute; font-size: 1.1vw; font-family: belwel; display: block; "> Somos una cervecería artesanal en el medio de diseño y cerveza, con un mensaje disruptivo: desafiar las convenciones para crear nuevas formas de experimentar el mundo. Declaramos ser una cervecería de zorros y zorras, pues este animal es nuestro símbolo de emprendimiento: astucia, recursividad y pasarla bien. Declaramos también que hacemos polas de amores y odios, porque buscamos que las personas tomen una posición definida frente a ellas. Este emprendimiento nació hace cuatro años con lo que llamamos la propuesta Non Grata: </p>
+                    <p class="es" style=" left: 22%; width: 50%; margin-top: 3vw; position: absolute; font-size: 1.1vw; font-family: belwel; display: block; "> <?php echo str_replace("\n", "<br>", $textos[3]["contenido_es"]); ?> </p>
 
-                    <p class="en" style=" left: 22%; width: 50%; margin-top: 3vw; position: absolute; font-size: 1.1vw; font-family: belwel; display: block; "> We are a craft brewery in the middle of design and beer, with a disruptive message: challenge conventions to create new ways to experience the world. We declare ourselves to be a brewery of foxes, because this animal is our symbol of entrepreneurship: cunning, recursiveness and having a good time. We also declare that we make polas of love and hatred, because we want people to take a definite position in front of them. This entrepreneurship was born four years ago with what we call the Non Grata proposal: </p>
+                    <p class="en" style=" left: 22%; width: 50%; margin-top: 3vw; position: absolute; font-size: 1.1vw; font-family: belwel; display: block; "> <?php echo str_replace("\n", "<br>", $textos[3]["contenido_en"]); ?> </p>
                 </div>
                 <div style=" width: 100%; height: 20%; "> s
                     <p class="es" style=" left: 22%; width: 70%; margin-top: 3vw; position: absolute; font-size: 1.5vw; font-family: belwe; display: block; "> 1. Cervezas con ingredientes especiales // <strong style="color: red;">Nos apasiona experimentar.</strong>
@@ -156,7 +156,8 @@
         </div>
     </div>
     <div style="background-color: aquamarine;" class="footer-a " href="#equipo">
-        <p class=""> reservas@tejolaembajada // +57 3105554359 - 645 1192 // San Felipe Av Carrea 24 # 76 - 20 Bogotá - Colombia </p>
+        <p class="es"> <?php echo str_replace("\n", "<br>", $textos[4]["contenido_es"]); ?> </p>
+        <p class="en"> <?php echo str_replace("\n", "<br>", $textos[4]["contenido_en"]); ?> </p>
     </div>
     <div class="dinamic-background" style=" position: absolute; left: 25%; border-top: solid; border-color: #e7291e; width: 72%; height: 7vw; display: flex; z-index: 5;"></div>
     <a class="slide-a" href="#la-embajada">
@@ -185,9 +186,8 @@
             <button class="section-button" id="section-c"></button> <img id="galery-modal" src="https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms" alt="">
             <div id="content-modal">
                 <p id="title-modal">La Embajada</p>
-                <p id="p-modal">Es el primer tejo artesanal de Colombia. Nunca antes la cerveza artesanal había coexistido con el deporte nacional, y ahora, juntos en un mismo espacio, están listos para hacer moñona.
-                    <br/>
-                    <br/> El tejo es la esencia de La Embajada. Se trata de una actividad que practicaban los indígenas nativos hace siglos, y que ahora es deporte nacional. Desde Cervecería Non Grata, retomamos el tejo y le damos un nuevo significado a través de la cerveza artesanal. El término "embajada" se refiere a un territorio que conecta a las personas con su lugar de origen, sin importar el lugar del mundo en que se encuentren. Quienes hacen parte de este territorio o país, comparten valores comunes que moldean su identidad. De esta manera, en La Embajada, aquellos que comparten con nosotros el deseo de construir una nueva colombianidad, en general, y un amor por la cerveza y el tejo, en particular, son los embajadores de esta iniciativa.</p>
+                <p class="es" id="p-modal"><?php echo str_replace("\n", "<br>", $textos[1]["contenido_es"]); ?></p>
+                <p class="en" id="p-modal"><?php echo str_replace("\n", "<br>", $textos[1]["contenido_en"]); ?></p>
             </div>
         </div>
     </div>
