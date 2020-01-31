@@ -5,6 +5,20 @@ function eliminarReserva(id){
   }
 }
 
+function eliminarCancha(id){
+  if (confirm("¿Eliminar la cancha "+id+"?, todas las reservas relacioandas serán eliminadas" )) {
+    window.location.href='canchas.php?eliminar='+ id ,"_self";
+  } else {
+  }
+}
+
+function eliminarCliente(id){
+  if (confirm("¿Eliminar el cliente "+id+"?, todas las reservas relacioandas serán eliminadas" )) {
+    window.location.href='clientes.php?eliminar='+ id ,"_self";
+  } else {
+  }
+}
+
 function confirmarReserva(id){
   if (confirm("¿Confirmar la reserva #"+id+"?")) {
     window.location.href='admin.php?confirmar='+ id ,"_self";

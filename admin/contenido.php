@@ -47,10 +47,10 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
     margin-left: 20%;
     margin-bottom: 20%;"
      src="https://drive.google.com/uc?id=1-fjb7iyB9gtxNTZRqP0e2hTasAszRcE4" alt="">
-    <a href="admin.php">Reservas</a>
-    <a href="#">Clientes</a>
-    <a href="#">Canchas</a>
-    <a href="#">Contenido</a>
+     <a href="admin.php">Reservas</a>
+    <a href="clientes.php">Clientes</a>
+    <a href="canchas.php">Canchas</a>
+    <a href="contenido.php">Contenido</a>
   </div>
 <a href="https://drive.google.com/drive/folders/10axxJYRBTsGaTyJHJ124nUp-k0-KyhUO?usp=sharing">
   <p style="

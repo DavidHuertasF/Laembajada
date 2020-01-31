@@ -11,6 +11,6 @@ $r = ($_GET['r']);
 
 $canchasTotalConsulta = "UPDATE `textos` SET `contenido_es` = '".$q."' , `contenido_en` = '".$r."' WHERE `textos`.`id` = '".$p."';";
 
-
+echo($canchasTotalConsulta);
 $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
 ?>
