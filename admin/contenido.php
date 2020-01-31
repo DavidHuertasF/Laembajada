@@ -52,8 +52,24 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
     <a href="#">Canchas</a>
     <a href="#">Contenido</a>
   </div>
+<a href="https://drive.google.com/drive/folders/10axxJYRBTsGaTyJHJ124nUp-k0-KyhUO?usp=sharing">
+  <p style="
+    width: fit-content;
+    background: #333333;
+    color: white;
+    margin-left: 5%;
+    padding: 14px;
+    cursor:pointer;
+    text-decoration: none !important;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px 6px rgba(0, 0, 0, 0.16);
+">Contenido multimedia  <img src="../img/drive.png" alt="" style="
+    margin-top: -2px;
+    vertical-align: middle;
+"></p>
+</a>
 
-  <table id="customers">
+  <table id="customerss">
     <thead align="center">
       <tr>
         <th>Campo</th>
@@ -79,7 +95,11 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
             </textarea>  </td>
           </td>
           <td class="fecha_creacion">
-            <button onclick="cambio(<?php echo $textos[$i]["id"];?>);">Guardar</button>
+         
+            <img style="
+              cursor:pointer;
+            " 
+            src="../img/save.png" onclick="cambio(<?php echo $textos[$i]["id"];?>);"></img>
           </td>
         </tr>
       <?php } ?>

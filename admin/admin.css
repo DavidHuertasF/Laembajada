@@ -11,6 +11,15 @@
     width: 100%;
     margin-top: 10%;
   }
+
+  #customerss  {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 5%;
+  }
   
 table tr:last-child td:last-child {
   border-radius: 0px 0px 10px 0px
@@ -34,11 +43,11 @@ input{
   margin-bottom: 20px;
 }
   
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:nth-child(even) , #customerss tr:nth-child(even) {background-color: #f2f2f2;}
   
-  #customers tr:hover {background-color: #ddd;}
+  #customers tr:hover , #customerss tr:hover {background-color: #ddd;}
   
-  #customers th {
+  #customers th,   #customerss th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
