@@ -25,9 +25,11 @@
   cursor: pointer;
   color: red;
   margin: 10px;
+  outline: none;
+
 }
 
-#p_canchas {
+#p_canchas, #p_personas {
   font-size: 80px;
   color: red;
   font-weight: bold;
@@ -191,14 +193,14 @@ th {
 }
 
 
-.modal-content-second .closeModalFirst, .modal-content-third .closeModalFirst  {
+.modal-content-second .cancelar-reserva, .modal-content-third .cancelar-reserva  {
   right: 7.6%;
   margin-top: 12px;
 }
 
 
 /* The Close Button */
-.closeModalFirst {
+.cancelar-reserva {
   background-image: url(../../img/svg/close-icon.svg);
   width: 4vw;
   height: 11%;
@@ -207,8 +209,8 @@ th {
   background-repeat: no-repeat;
 }
 
-.closeModalFirst:hover,
-.closeModalFirst:focus {
+.cancelar-reserva:hover,
+.cancelar-reserva:focus {
   background-image: url("../../img/svg/close-icon-hover.svg");
   cursor: pointer;
 }
@@ -223,11 +225,10 @@ th {
 #div_cancha{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 }
-
-
 
 .button_scroll{
   color: red;
@@ -235,10 +236,6 @@ th {
   cursor: pointer;
   font-weight: bolder;
 }
-
-
-
-
 
   #third-section{
     display: flex;
@@ -255,21 +252,17 @@ th {
     font-family: "belwe", sans-serif;
 }
 
-
 #third-section input:last-child{
   height: 70px;
   margin-bottom: 10%;
   padding: 2px;
 }
 
-
 #third-section input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: red;
   font-size: 14px;
 }
-
-
 
 #third-section input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
@@ -278,6 +271,7 @@ th {
   font-size: 17px;
   font-weight: bold;
 }
+
 #third-section input::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: red;
@@ -285,10 +279,34 @@ th {
   font-size: 17px;
   font-weight: bold;
 }
+
 #third-section input:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: red;
   font-size: 17px;
   font-weight: bold;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: transparent;
+  color: red;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-left: -14vh;
+  margin-top: -1vh;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+    visibility: visible;
+}
+
 

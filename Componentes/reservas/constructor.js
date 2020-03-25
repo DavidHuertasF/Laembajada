@@ -49,70 +49,41 @@ $(".form_date").on("changeDate", function(e) {
 
 // Modal ____________________________  Sistema de reservas
 
-// Get the modal
-var modalFirst = document.getElementById("modalFirst");
+var modalFirst = document.getElementById("modalExplicacion");
 var modalSecond = document.getElementById("modalSecond");
-// Get the button that opens the modal
-var btn = document.getElementById("container-c");
-var btnreserva = document.getElementsByClassName("reserve")[0];
-var btnreservae = document.getElementsByClassName("reserve")[1];
- var btnreservam = document.getElementsByClassName("reservem")[0];
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("closeModalFirst")[0];
-var span2 = document.getElementsByClassName("closeModalFirst")[1];
-var span3 = document.getElementsByClassName("closeModalFirst")[2];
+var span = document.getElementsByClassName("closeModalFirst");
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  //  modalFirst.style.display = "block";
-}
+$("#container-c").click(function(event) {
+  modalFirst.style.display = "block";
+});
 
-btnreserva.onclick = function() {
-  //  modalFirst.style.display = "block";
-}
+$(".reserve").click(function(event) {
+  modalFirst.style.display = "block";
+});
 
-
-btnreservae.onclick = function() {
-  //  modalFirst.style.display = "block";
-}
-
- btnreservam.onclick = function() {
-    // modalFirst.style.display = "block";
- }
+$(".reservem").click(function(event) {
+  modalFirst.style.display = "block";
+});
 
 
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+$(".reserve-start").click(function(event) {
+  $("#modalFirst").css("display", "block");
+  $("#modalCotizar").css("display", "none");
+});
+
+$(".cancelar-reserva").click(function(event) {
   if (confirm("¿Desea cancelar la reservación?")) {
     location.reload();
-  } else {
-    
   }
-}
-span2.onclick = function() {
-  if (confirm("¿Desea cancelar la reservación?")) {
-    location.reload();
-  } else {
-  }
-}
-
-span3.onclick = function() {
-  if (confirm("¿Desea cancelar la reservación?")) {
-    location.reload();
-  } else {
-  }
-}
-
-
+});
 
 // Modal ____________________________  PDF
-
 var modal = document.getElementById("myModal-pdf");
 var span = document.getElementsByClassName("close-pdf")[0];
 
   $("#action-pdf").click(function(event) {
-  modal.style.display = "block";
+    $("#menu-movil-div").css("display", "block");
 });
 
 
@@ -150,9 +121,6 @@ $(document).ready(function() {
 $("#input_cliente_celular-menu").on("click", function(e) {
   $("#input_cliente_celular").attr("disabdata-phonemaskled", "+57 (___)___-____");
 });
-
-
-
 
 $("#menu").click(function(event) {
 

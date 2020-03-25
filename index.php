@@ -169,9 +169,63 @@ echo '<script type="text/javascript">
 
 
   <!-- Sistema de reservas -->
+
+
+  <div id="modalExplicacion" class="modalt">
+    <div class="modal-content font">
+    <div class="cancelar-reserva"></div>
+      <div id="first-section">
+      <img  id="embajadaImg" src="img/embajada.png" alt="">
+
+        <div id="container" style="    width: 90%;">
+        </div>
+        <p>Explicacion</p>
+        <button class=" font button_continuar" type="button" onclick="startReserva()">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalCotizar" class="modalt">
+    <div class="modal-content font">
+    <div class="cancelar-reserva"></div>
+      <div id="first-section">
+        <div id="container" style="    width: 90%;">
+        </div>
+       
+
+        <a class="a-whats" target="_blank"  href="https://api.whatsapp.com/send?phone=+573105554359&amp;text=Hola,%20me%20quiero%20contactar%20con%20Tejo%20La%20Embajada%20para%20cotizar%20un%20evento"> <button class=" font button_continuar" type="button" ">Cotizar</button></a>
+        <button class=" reserve-start font button_continuar" type="button" ">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalNumberPerson" class="modalt">
+    <div class="modal-content font">
+    <div class="cancelar-reserva"></div>
+      <div id="first-section">
+        <img class="reservaStep" style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
+        <div id="container" style="    width: 90%;">
+          <!-- # Canchas -->
+          <div id="div-canchas-section">
+            <p class=" font title_div">No. Personas</p>
+            <div id="div_counter_canchas">
+              <button id="btn_substract_person" class="button_change_persons" type="button" onclick="substractPerson();">–</button>
+              <p id="p_personas">01</p>
+              <button type="button" class="button_change_persons" onclick="addPerson(<?php echo $canchasTotal ?>)" id="btn_add_person">+</button>
+            </div>
+            <p class=" font p_note">*Cuantas personas?</p>
+          </div>
+        </div>
+
+        <button class=" font button_continuar" type="button" onclick="confirmatePersons(<?php echo $canchasTotal ?>);">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+
   <div id="modalFirst" class="modalt">
     <div class="modal-content font">
-    <div class="closeModalFirst"></div>
+    <div class="cancelar-reserva"></div>
       <div id="first-section">
         <img class="reservaStep" style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
         <div id="container" style="    width: 90%;">
@@ -226,14 +280,14 @@ echo '<script type="text/javascript">
           </div>
         </div>
 
-        <button class=" font button_continuar" type="button" onclick="confirmateHours();">Continuar</button>
+        <button class=" font button_continuar" type="button" onclick="confirmateHoursStep();">Continuar</button>
       </div>
     </div>
   </div>
 
   <div id="modalSecond" class="modalt">
     <div class="modal-content-second font">
-    <div class="closeModalFirst"></div>
+    <div class="cancelar-reserva"></div>
       <div id="second-section">
         <img class="reservaStep" style="
         margin-bottom: 30px;" src="img/canchaStep.png" alt="">
@@ -249,7 +303,7 @@ echo '<script type="text/javascript">
 
   <div id="modalThird" class="modalt">
     <div class="modal-content-third font">
-    <div class="closeModalFirst"></div>
+    <div class="cancelar-reserva"></div>
       <div id="third-section">
 
         <img class="reservaStep" src="img/datosStep.png" alt="">
@@ -317,7 +371,7 @@ echo '<script type="text/javascript">
 
 <!-- Modal content -->
 <div class="modal-content-pdf">
-<div class="closeModalFirst close-pdf"></div>
+<div class="cancelar-reserva close-pdf"></div>
   <div>
   <iframe src="https://drive.google.com/file/d/1rolIoLIgGpS5MeiWvZFN2-fZ9o66Qz-Y/preview" style="width:100%;height:700px; border: none;"></iframe>
 </div>

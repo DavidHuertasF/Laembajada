@@ -20,5 +20,4 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   array_push($canchas, $dato);
   echo $dato.", ";
 }
-
 ?>
