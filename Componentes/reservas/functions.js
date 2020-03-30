@@ -610,6 +610,8 @@ function confirmateReserva() {
   if (nombre == "" || celular == "" || correo == "") {
     alert("falta algún dato obligatorio");
   } else {
+
+    var colorID = Math.floor(Math.random() * 11); 
     creatUser();
     document.getElementsByName("onC").forEach(function(valor, indice, array) {
       var id = valor.id;
@@ -654,7 +656,7 @@ function confirmateReserva() {
         " " +
         e.getHours() +
         ":"+minutesEndString+":00";
-      confirmate(start, end, id);
+      confirmate(start, end, id, colorID);
     });
     location.reload();
   }
@@ -687,7 +689,8 @@ function creatUser() {
   xmlhttp.send();
 }
 
-function confirmate(start, end, cancha) {
+function confirmate(start, end, cancha, colorID) {
+
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
   } else {
@@ -697,11 +700,14 @@ function confirmate(start, end, cancha) {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
     }
+    console.log(this.responseText);
   };
   xmlhttp.open(
     "GET",
     "Componentes/reservas/confirmar.php?p=" +
       start +
+      "&cc=" +
+      colorID +
       "&q=" +
       end +
       "&c=" +
