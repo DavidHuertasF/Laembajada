@@ -41,9 +41,7 @@
         font-size: 3.5vw;
     }
 
-    .reserve{
-          margin-left: 27%;
-    }
+  
 
 
     .slide-a span, .slide-b span, .slide-c span, .slide-d span, .slide-e span {
@@ -203,7 +201,7 @@
             border-top: solid 3px white;
             width: 65%;
             margin-left: 5%;
-            margin-top: 15%;
+            margin-top: 10%;
             padding-top: 2%;
             padding-bottom: 2%;
             display: flex;

@@ -53,12 +53,10 @@ var modalFirst = document.getElementById("modalExplicacion");
 var modalSecond = document.getElementById("modalSecond");
 var span = document.getElementsByClassName("closeModalFirst");
 
-$("#container-c").click(function(event) {
-  modalFirst.style.display = "block";
-});
+
 
 $(".reserve").click(function(event) {
-  modalFirst.style.display = "block";
+  // modalFirst.style.display = "block";
 });
 
 $(".reservem").click(function(event) {
