@@ -196,6 +196,10 @@
             padding: 50px;
           }
 
+          .reserve{
+              font-size: 2.6vh;
+          }
+
           #div-menu-options{
             border-bottom: solid 3px white;
             border-top: solid 3px white;
