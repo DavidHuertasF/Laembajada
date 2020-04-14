@@ -64,8 +64,8 @@ $(".reservem").click(function(event) {
 
 
 $(".reserve-start").click(function(event) {
-  $("#modalFirst").css("display", "block");
-  $("#modalCotizar").css("display", "none");
+  // $("#modalFirst").css("display", "block");
+  // $("#modalCotizar").css("display", "none");
 });
 
 $(".cancelar-reserva").click(function(event) {
@@ -139,7 +139,7 @@ $("#close-menu").click(function(event) {
     overflow: 'initial',
     height: 'auto'
   });
-$("#menu-movil-div").css("display", "none");
+// $("#menu-movil-div").css("display", "none");
 });
 
 
@@ -149,6 +149,6 @@ $(".menu-movil-option").click(function(event) {
     overflow: 'initial',
     height: 'auto'
   });
-$("#menu-movil-div").css("display", "none");
+// $("#menu-movil-div").css("display", "none");
 });
 

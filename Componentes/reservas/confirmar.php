@@ -6,11 +6,9 @@ $p = ($_GET['p']);
 $q = ($_GET['q']);
 $c = ($_GET['c']);
 $cc = ($_GET['cc']);
+$qk = ($_GET['qk']);
 
-    $canchasTotalConsulta = "INSERT INTO `reserva` (`id`, `fecha_inicio`, `fecha_fin`, `id_cliente`, `id_cancha`, `fecha_creacion`) VALUES (NULL, '".$p."', '".$q."', (SELECT MAX(id) FROM cliente),'".$c."',NOW());";
-
-    $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
-
+   
     $m=''; //for error messages
     $id_event=''; //id event created 
     $link_event = ""; 
@@ -36,16 +34,48 @@ $cc = ($_GET['cc']);
         
         $time_start = $time_start."-05:00";
         $time_end  =  $time_end ."-05:00";
+
+
+
+        $canchasTotalConsulta = " select nombre from cancha WHERE id = '".$c."'";
+        $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
+        $fila = mysqli_fetch_row($canchasTotalResultadoConsulta["resultado"]);
+        $canchasTotal =  $fila[0];
+
+
+        $clienteConsulta = " select nombre from cliente WHERE id = (SELECT MAX(id) FROM cliente)";
+        $clienteConsultaResultado = $conexion->consulta($clienteConsulta);
+        $fila = mysqli_fetch_row($clienteConsultaResultado["resultado"]);
+        $clienteTotal =  $fila[0];
+
+        $clienteConsultacelular = " select celular from cliente WHERE id = (SELECT MAX(id) FROM cliente)";
+        $clienteConsultaResultadocelular = $conexion->consulta($clienteConsultacelular);
+        $fila = mysqli_fetch_row($clienteConsultaResultadocelular["resultado"]);
+        $clienteTotalcelular =  $fila[0];
+
+        $clienteConsultaid = " select (id+1) from reserva WHERE id = (SELECT MAX(id) FROM reserva)";
+        $clienteConsultaResultadoid = $conexion->consulta($clienteConsultaid);
+        $fila = mysqli_fetch_row($clienteConsultaResultadoid["resultado"]);
+        $clienteTotalid =  $fila[0];
+
         
-       
+
+        
+     
        
         try{        
             //instanciamos el servicio
              $calendarService = new Google_Service_Calendar($client);
           
                 $event = new Google_Service_Calendar_Event();
-                $event->setSummary("texto ok ok");
-                $event->setDescription('Revisión nuevo , Tratamiento');
+                $event->setSummary("👤 ".$clienteTotal);
+                $event->setDescription("🥏 ".$canchasTotal.
+            "
+ 📱 ". $clienteTotalcelular."
+📌 Reserva #". $clienteTotalid."
+
+".$qk."
+");
     
                 //fecha inicio
                 $start = new Google_Service_Calendar_EventDateTime();
@@ -59,7 +89,7 @@ $cc = ($_GET['cc']);
                 $event->setEnd($end);
     
                 $createdEvent = $calendarService->events->insert($id_calendar, $event);
-                $calendarService->events->delete($id_calendar, 'rvi0ek7jhuu5d70fo4noo4njm0');
+                // $calendarService->events->delete($id_calendar, 'rvi0ek7jhuu5d70fo4noo4njm0');
                 $id_event= $createdEvent->getId();
                 $link_event= $createdEvent->gethtmlLink();
                 
@@ -71,7 +101,13 @@ $cc = ($_GET['cc']);
             $m = $e->getMessage();
         }
 
-        echo $m;
+        $canchasTotalConsulta = "INSERT INTO `reserva` (`comentarios`, `id`, `fecha_inicio`, `fecha_fin`, `id_cliente`, `id_cancha`, `fecha_creacion`, `link`, `id_calendar`  ) VALUES ('".$qk."',NULL, '".$p."', '".$q."', (SELECT MAX(id) FROM cliente),'".$c."',NOW(), '".$link_event."', '".$id_event."');";
+
+        $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
+    
+
+        //  echo $canchasTotalConsulta." errores: ".$m;
+echo $clienteConsulta;
     
 
 ?>

@@ -1,7 +1,8 @@
 function resetFormularyToFirstStep() {
+  $("#modalSecond").css("display", "none");
+  $("#modalThird").css("display", "none");
 
-
-
+  $("#div_cancha").empty();;
   reservationDate = new Date($("#dtp_input2").val());
   reservationDate.addDays(1);
   diaSemana();
@@ -198,12 +199,9 @@ function confirmateHoursStep(){
   });
 
   if(disabled){
-    if (confirm("Canchas insuficientes para esta hora, ¿desea estar en lista de espera?")) {
-      alert("Agregado a lista de espera");
-      $("#modalFirst").css("display", "none");
-    }else{
+  
         alert("Seleccione horas disponibles para continuar");
-    }
+    
   }else{
     confirmateHours() ;
   }
@@ -365,7 +363,6 @@ function confirmateHours() {
       }
 
       showCanchasByDate($("#dtp_input2").val(), $("#input-hora-fin").val());
-        $("#modalFirst").css("display", "none");
         $("#modalSecond").css("display", "block");
         readCanchasId();
     } else {
@@ -423,8 +420,6 @@ function confirmateCanchas() {
       "</p>"
   );
 
-    $("#modalFirst").css("display", "none");
-    $("#modalSecond").css("display", "none");
     $("#modalThird").css("display", "block");
    
 }else{
@@ -439,6 +434,7 @@ Date.prototype.addDays = function(days) {
 };
 
 function showCanchasByDate(datei, datef) {
+  $("#modalSecond").css("display", "block");
   if (window.XMLHttpRequest) {
     // code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp = new XMLHttpRequest();
@@ -589,10 +585,10 @@ function readCanchasId() {
       "<div  id='" +
         id +
         "c" +
-        "'style='background-size: contain; background-repeat: no-repeat; background-image: url(\"img/cancha.png\") 'class='cancha-button' name='offC' onclick='buttonCanchaFucntion(this.id)' " +
+        "'style=' cursor: pointer; background-size: contain; background-repeat: no-repeat; 'class='cancha-button' name='offC' onclick='buttonCanchaFucntion(this.id)' " +
         "id=" +
         nombre +
-        "><p style='margin-left: 27px;'>" +
+        "><p style='font-size: 13px; text-align: center;'>" +
         nombre +
         "</p></div>"
     );

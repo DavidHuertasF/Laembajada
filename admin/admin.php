@@ -11,9 +11,49 @@ $resultado_mostrar = $conexion->consulta($mostrar_clientes);
 $dato = array();
 $clientes = array();
 
+
 if (isset($_GET["eliminar"])) {
+
+  $canchasTotalConsulta = " select id_calendar from reserva WHERE id = '".$_GET["eliminar"]."' ";
+  $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
+  $fila = mysqli_fetch_row($canchasTotalResultadoConsulta["resultado"]);
+  $reservacalendar =  $fila[0];
+
+      $m='no hay errores'; //for error messages
+      $id_event=''; //id event created 
+      $link_event = ""; 
+      
+      date_default_timezone_set('America/Guayaquil');
+      include_once '../Componentes/google-calendar/google-api-php-client-2.2.4/vendor/autoload.php';
+  
+      //configurar variable de entorno / set enviroment variable
+      putenv('GOOGLE_APPLICATION_CREDENTIALS=credenciales.json');
+  
+      $client = new Google_Client();
+      $client->useApplicationDefaultCredentials();
+      $client->setScopes(['https://www.googleapis.com/auth/calendar']);
+  
+      //define id calendario
+      $id_calendar='tofm1jc0o9r87ii1vo55lsikf0@group.calendar.google.com';//
+
+      try{        
+        //instanciamos el servicio
+         $calendarService = new Google_Service_Calendar($client);
+            $calendarService->events->delete($id_calendar, $reservacalendar);
+           
+            
+    }catch(Google_Service_Exception $gs){
+      $m = json_decode($gs->getMessage());
+      $m= $m->error->message;
+
+    }catch(Exception $e){
+        $m = $e->getMessage();
+    }
+
+
   $consulta_eliminar = "DELETE FROM reserva WHERE id = '".$_GET["eliminar"]."' ";
   $resultado_eliminar = $conexion->consulta($consulta_eliminar);
+  //  echo($m);
   echo("<script type='text/javascript'>window.location.href='admin.php';</script>");
 }
 
@@ -51,7 +91,8 @@ r.`comentarios`,
 r.`confirmado`,
 cl.id,
 cl.celular,
-cl.correo
+cl.correo,
+r.`link`
 FROM `reserva` r, cliente cl, cancha c
  where r.`id_cliente` = cl.id and r.`id_cancha` = c.id;";
 $resultado_mostrar = $conexion->consulta($mostrar);
@@ -68,6 +109,7 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   $dato["id_cancha"] = $fila[4];
   $dato["fecha_creacion"] = $fila[5];
   $dato["comentarios"] = $fila[6];
+  $dato["link"] = "<a href='".$fila[11]."'><img  style='cursor: pointer;'  src='../img/google-calendar.png'></img></a>";
   if($fila[7] == 1){
     $dato["confirmado"] = "<img src='../img/ok.png'>";
   }else{
@@ -79,7 +121,7 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
     padding: 8px;' 
     onclick='confirmarReserva(".$dato['id'].")'>Confirmar</button>";
   }
-
+ 
   $dato["eliminar"] = "<img  style='cursor: pointer;'   onclick='eliminarReserva(".$dato['id'].")' id='eliminar_btn' src='../img/delete.png'></img>";
   
   array_push($reservas, $dato);
@@ -103,6 +145,9 @@ $js_array = json_encode($canchas);
 
 // Sistema de reservas 
 //Total de canchas existentes
+
+
+
 $canchasTotalConsulta = " select count(*) from cancha";
 $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
 $fila = mysqli_fetch_row($canchasTotalResultadoConsulta["resultado"]);
@@ -122,6 +167,7 @@ echo '<script type="text/javascript">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="admin.css" />
   <link rel="stylesheet" href="table.css" />
+  
 
   <title>Document</title>
 </head>
@@ -130,7 +176,9 @@ echo '<script type="text/javascript">
 
 <div class="topnav">
   <a onclick="openNav()" href="#home">&#9776;</a>
-  <a class="active" href="#contact">Historial</a>
+  <a  href="reserva-calendario.html">Calendario</a>
+  <a class="active" href="#contact">Lista</a>
+  <a style="float: right"  href="../reserva-agregar.php">Agregar reserva <img src="../img/plus.png"  alt=""></a>
 </div>
 
 
@@ -146,6 +194,8 @@ echo '<script type="text/javascript">
     <a href="contenido.php">Contenido</a>
   </div>
 
+  
+
   <table id="customers">
     <thead align="center">
       <tr>
@@ -156,6 +206,7 @@ echo '<script type="text/javascript">
         <th>Cliente</th>
         <th>Cancha</th>
         <th >Confirmar</th>
+        <th>Calendario</th>
         <th class="last_right">Eliminar</th>
       </tr>
 
@@ -172,6 +223,7 @@ echo '<script type="text/javascript">
           <td class="id_cliente"><?php echo $reservas[$i]["id_cliente"]; ?></td>
           <td class="id_cancha"><?php echo $reservas[$i]["id_cancha"]; ?></td>
           <td class="fecha_creacion"><?php echo $reservas[$i]["confirmado"]; ?></td>
+          <td class="fecha_creacion"><?php echo $reservas[$i]["link"]; ?></td>
           <td class="fecha_creacion"><?php echo $reservas[$i]["eliminar"]; ?></td>
         </tr>
       <?php } ?>

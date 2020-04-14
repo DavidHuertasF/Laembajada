@@ -344,9 +344,9 @@ function addHoursAvailables(hoursList, hoursavailables) {
   xs.reverse();
   xm.reverse();
 
-  console.log(xm);
+  // console.log(xm);
 
-  // console.log("horas disponibles para el dia y canchas seleccionadas: " + hoursList );
+   console.log("horas disponibles para el dia y canchas seleccionadas: " + hoursList );
 
   xm.forEach(function(valor, indice, array) {
     var x = valor + "";
@@ -403,6 +403,7 @@ function addHoursAvailables(hoursList, hoursavailables) {
 }
 
 function buttonCanchaFucntion(cancha) {
+  $("#modalThird").css("display", "none");
   var status = $("#" + cancha).attr("name"); // estado del boton seleccionado (on, off)
   var actives = document.getElementsByName("onC").length;
   var canchasPeticion = parseInt($("#p_canchas").text());
