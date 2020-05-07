@@ -1,9 +1,33 @@
+@font-face {
+  font-family: "belwe";
+  src: url(../fonts/BelweBoldBT.ttf);
+}
+
+.font {
+  font-family: "belwe", sans-serif;
+}
+
+@font-face {
+  font-family: "belwel";
+  src: url(../../fonts/BelweLightBT.ttf);
+}
+
+
+
 #eliminar_btn:hover{
   content:url("../img/delete2.png");
 }
 #eliminar_btn:active{
   content:url("../img/delete2.png");
 }
+
+#switch_btn:hover{
+  content:url("../img/switch2.png");
+}
+#switch_btn:active{
+  content:url("../img/switch2.png");
+}
+
 
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -118,13 +142,14 @@ input{
       }
       
       .sidenav a {
-        padding: 8px 8px 8px 32px;
         text-decoration: none;
+        font-family: "belwe", sans-serif;
         margin-top: 15%;
-        font-size: 25px;
-        color: #818181;
+        font-size: 22px;
+        color: #c3a8a8;
         display: block;
         transition: 0.3s;
+        padding-left: 40px;
       }
       
       .sidenav a:hover {

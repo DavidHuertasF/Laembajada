@@ -5,6 +5,22 @@ $conexion = new conexion();
 date_default_timezone_set('America/Caracas');
 $fecha_actual = date("Y-m-d H:i:s");
 
+
+echo '<script type="text/javascript">
+    var cancelados = [];
+   </script>';
+$dias_cierre = "select * from cierre";
+$resultado_mostrar = $conexion->consulta($dias_cierre);
+while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
+  $dia = $fila[1];
+  echo '<script type="text/javascript">
+  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/")));
+   </script>';
+}
+
+
+
+
 // Trae los textos para mostrarlos en el registro de reservas
 $mostrar_textos = "select * from textos";
 $resultado_mostrar = $conexion->consulta($mostrar_textos);
@@ -170,6 +186,49 @@ echo '<script type="text/javascript">
 
   <!-- Sistema de reservas -->
 
+  <div id="modalEspera" class="modalt">
+    <div class="modal-content-third font" style="background: #ff000073;">
+    <div class="cancelar-reserva"></div>
+      <div id="third-section">
+      <img class="reservaStep" style="margin-bottom: 30px;" src="img/Thirdstep-espera.png" alt="">
+
+        <div id="reservaStepflex" style="display:flex; margin-top:25px;     flex-wrap: wrap;     justify-content: center;">
+
+        <div style="margin-left: 41px;  width:400px;  ">
+            <p style="    color: white;    margin-right: 40px;
+    font-size: 27px;"> Canchas no disponibles para esta hora <br> <br> ¿Quieres dejar tus datos en caso de que se libere una cancha?</p>
+          </div>
+
+          <div  class="font"  style="display:flex; flex-direction:column; width: 300px; margin-top:30px;">
+            <input id="input_cliente_nombre_espera" type="text" placeholder="Nombre Apellido*">
+            <input id="input_cliente_celular_espera" type="text" placeholder="Celular*">
+            <input id="input_cliente_correo_espera" type="text" placeholder="Correo*">
+            <input id="input_cliente_comentario_espera" type="text" placeholder="   Comentarios">
+          </div>
+
+         
+        </div>
+        <div style="    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+">
+          <button style="    margin-left: 0;
+    margin-right: 0; width:auto;" class="font button_continuar" type="button" onclick="cambiarReserva();">Cambiar reserva</button>
+          <p style="color:white; font-size:12px">
+          <button   style="    margin-left: 0;
+    margin-right: 0;"class="font button_continuar" type="button" onclick="entrarEspera();">Finalizar</button>
+        </div>  
+        <p style="color:white; font-size:12px">
+          <span>Aceptas</span>
+          <span style="text-decoration: underline">Términos y condiciones</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
 
   <div id="modalExplicacion" class="modalt">
     <div class="modal-content font">
@@ -179,8 +238,24 @@ echo '<script type="text/javascript">
 
         <div id="container" style="    width: 90%;">
         </div>
-        <p>Explicacion</p>
+        <p class="first-section_subtitle">Hay dos maneras de jugar</p>
+        <div class="first-section_content">
+          <div class="column">
+            <div class="column_header"><p>1. Hora de Juego</p></div>
+            <p>La hora de tejo vale 60,000 en total para el grupo (hasta 8 personas por cancha) y el consumo es adicional.
+            </p>
+          </div>
+          <div class="column">
+            <div class="column_header"><p>2. Consumo de Pola</p></div>
+            <p>Si compran la cerveza artesanal de la casa: Isamel, en petaco de 16 botellas (cada una de 6.2% de alcohol, $9,000cada una), cancelan $144,000 incluyen una hora de juego. *
+            </p>
+          </div>
+        </div>
+        
         <button class=" font button_continuar" type="button" onclick="startReserva()">Continuar</button>
+        <p class="first-section_description">* La reserva no tiene costo ** La forma de juego se puede decidir en el momento de su reserva. <br>*** Pregunte por otras formas de juego con consumo de las otras cervezas de la casa o botellas de trago fuerte.</p>
+
+        <div></div>
       </div>
     </div>
   </div>
@@ -189,12 +264,22 @@ echo '<script type="text/javascript">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
       <div id="first-section">
-        <div id="container" style="    width: 90%;">
+      <img class="reservaStep" style="margin-bottom: 30px;" src="img/secondstep.png" alt="">
+        <div class="first-section_content">
+          <div class="column">
+            <div class="column_header"><p>Cotizar evento</p></div>
+            <div class="column_content">
+              <p>La hora de tejo vale 60,000 en total para el grupo (hasta 8 personas por cancha) y el consumo es adicional.
+            </div>
+            <div style=" display:flex;  align-items:center; margin:0px 20px; border-top: white 2px solid"><a  href="https://api.whatsapp.com/send?phone=+573105554359&amp;text=Hola,%20me%20quiero%20contactar%20con%20Tejo%20La%20Embajada%20para%20cotizar%20un%20evento"> <img style=" cursor:pointer;    width: 32px;  margin: 10px;" src="img/cruz.png" alt=""></a> Aquí</div>
+            </p>
+          </div>
+          <div class="column">
+            <div class="column_header"><p>Continuar Reserva</p></div>
+            <div class="column_content"></div>
+            <div  style=" display:flex;  align-items:center; margin:0px 20px; border-top: white 2px solid"> <img class="reserve-start" style="  cursor:pointer;   width: 32px;  margin: 10px;" src="img/cruz.png" alt=""> Aquí</div>
+          </div>
         </div>
-       
-
-        <a class="a-whats" target="_blank"  href="https://api.whatsapp.com/send?phone=+573105554359&amp;text=Hola,%20me%20quiero%20contactar%20con%20Tejo%20La%20Embajada%20para%20cotizar%20un%20evento"> <button class=" font button_continuar" type="button" ">Cotizar</button></a>
-        <button class=" reserve-start font button_continuar" type="button" ">Continuar</button>
       </div>
     </div>
   </div>
@@ -203,7 +288,7 @@ echo '<script type="text/javascript">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
       <div id="first-section">
-        <img class="reservaStep" style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
+        <img class="reservaStep" style="margin-bottom: 30px;" src="img/firststep.png" alt="">
         <div id="container" style="    width: 90%;">
           <!-- # Canchas -->
           <div id="div-canchas-section">
@@ -227,7 +312,7 @@ echo '<script type="text/javascript">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
       <div id="first-section">
-        <img class="reservaStep" style="margin-bottom: 30px;" src="img/reservaStep.png" alt="">
+        <img class="reservaStep" style="margin-bottom: 30px;" src="img/secondstep.png" alt="">
         <div id="container" style="    width: 90%;">
           <!-- # Canchas -->
           <div id="div-canchas-section">
@@ -290,7 +375,7 @@ echo '<script type="text/javascript">
     <div class="cancelar-reserva"></div>
       <div id="second-section">
         <img class="reservaStep" style="
-        margin-bottom: 30px;" src="img/canchaStep.png" alt="">
+        margin-bottom: 30px;" src="img/secondstep.png" alt="">
         <!-- Cancha -->
         <div id="div_cancha">
         </div>
@@ -305,6 +390,7 @@ echo '<script type="text/javascript">
     <div class="modal-content-third font">
     <div class="cancelar-reserva"></div>
       <div id="third-section">
+      <img class="reservaStep" style="margin-bottom: 30px;" src="img/Thirdstep.png" alt="">
 
         <img class="reservaStep" src="img/datosStep.png" alt="">
         <div id="reservaStepflex" style="display:flex; margin-top:25px;">
@@ -398,5 +484,17 @@ echo '<script type="text/javascript">
 <script type="text/javascript" src="Componentes/reservas/functions.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/constructor.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/hoursManager.js" charset="UTF-8"></script>
+
+<script>
+  var slides = document.querySelectorAll('#slides .slide');
+  var currentSlide = 0;
+  var slideInterval = setInterval(nextSlide,5000);
+
+  function nextSlide() {
+      slides[currentSlide].className = 'slide';
+      currentSlide = (currentSlide+1)%slides.length;
+      slides[currentSlide].className = 'slide showing';
+  }
+</script>
 
 </html>

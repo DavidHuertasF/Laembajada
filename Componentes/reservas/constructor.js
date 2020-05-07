@@ -12,7 +12,8 @@ $(".form_date").datetimepicker({
   endDate: finishDate,
   startView: 2,
   startDate: new Date(),
-  minView: 2
+  minView: 2,
+  datesDisabled: cancelados
 });
 
 $(".form_time").datetimepicker({

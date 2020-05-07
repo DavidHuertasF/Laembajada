@@ -176,9 +176,8 @@ th {
 
 .modal-content-second, .modal-content,  .modal-content-third {
   margin: 10px;
- border: solid black 2px;
-
- 
+  border: solid black 2px;
+  box-shadow: 0px 1px 15px 6px rgba(0, 0, 0, 0.16);
 }
 
 

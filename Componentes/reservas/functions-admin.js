@@ -189,6 +189,35 @@ function desactivarSelecciones() {
   }
 }
 
+function deshabilitarFecha(){
+  if ($("#dtp_input2").val() != "") {
+    
+      var fecha = $("#dtp_input2").val();
+      if(confirm("Deshabilitar el "+fecha+" ?")){
+        if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp = new XMLHttpRequest();
+        } else {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+          }
+        };
+        xmlhttp.open(
+          "GET",
+          "Componentes/reservas/cancelardia.php?q=" +fecha,
+          false
+        );
+        xmlhttp.send();
+        location.reload();
+    }    
+    }else{
+      alert("seleccione una fecha válida");
+    }
+}
+
+
 function confirmateHoursStep(){
   var disabled = false;
 

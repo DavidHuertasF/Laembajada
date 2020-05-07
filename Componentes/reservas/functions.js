@@ -198,12 +198,10 @@ function confirmateHoursStep(){
   });
 
   if(disabled){
-    if (confirm("Canchas insuficientes para esta hora, ¿desea estar en lista de espera?")) {
-      alert("Agregado a lista de espera");
+    
       $("#modalFirst").css("display", "none");
-    }else{
-        alert("Seleccione horas disponibles para continuar");
-    }
+      $("#modalEspera").css("display", "block");
+      resetFormularyToFirstStep();
   }else{
     confirmateHours() ;
   }
@@ -690,6 +688,32 @@ function creatUser() {
   );
   xmlhttp.send();
 }
+function creatUserEspera() {
+  var nombre = $("#input_cliente_nombre_espera").val();
+  var celular = $("#input_cliente_celular_espera").val();
+  var correo = $("#input_cliente_correo_espera").val();
+
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    }
+  };
+  xmlhttp.open(
+    "GET",
+    "Componentes/reservas/confirmarCliente.php?p=" +
+      nombre +
+      "&q=" +
+      celular +
+      "&c=" +
+      correo,
+    false
+  );
+  xmlhttp.send();
+}
 
 function confirmate(start, end, cancha, colorID, comentario) {
 
@@ -722,13 +746,37 @@ function confirmate(start, end, cancha, colorID, comentario) {
   xmlhttp.send();
 }
 
+function confirmateEspera(start, end, comentario) {
+  var canchas = parseInt($("#p_canchas").text());
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      $("#inputprueba").text(this.responseText);
+    }
+    console.log(this.responseText);
+    alert(this.responseText);
+  };
+  xmlhttp.open(
+    "GET",
+    "Componentes/reservas/confirmarEspera.php?p=" +
+      start +
+      "&cc=" +
+      end +
+      "&qk=" +
+      comentario +
+      "&can=" +
+      canchas 
+  );
+  xmlhttp.send();
+}
+
 var actualPersons;
 var minCanchas;
 function confirmatePersons(maxCanchas){
-
-
-
-  
   actualPersons  = parseInt($("#p_personas").text());
   minCanchas =parseInt(actualPersons/8.1) + 1;
 
@@ -759,3 +807,74 @@ function startReserva(){
   $("#modalNumberPerson").css("display", "block");
   $("#modalExplicacion").css("display", "none");
 }
+
+
+function cambiarReserva(){
+  $("#modalFirst").css("display", "block");
+  $("#modalEspera").css("display", "none");
+}
+
+function entrarEspera(){
+  
+  reservationDate = new Date($("#dtp_input2").val());
+  finishHour = new Date($("#input-hora-fin").val());
+
+  var nombre = $("#input_cliente_nombre_espera").val();
+  var celular = $("#input_cliente_celular_espera").val();
+  var correo = $("#input_cliente_correo_espera").val();
+
+  var comentario = $("#input_cliente_comentario_espera").val();
+
+  if (nombre == "" || celular == "" || correo == "") {
+    alert("falta algún dato obligatorio");
+  } else {
+
+    creatUserEspera();
+     
+      d = reservationDate;
+      e = finishHour;
+
+      var minutesStart =d.getMinutes();
+      var minutesStartString = "";
+
+      if(minutesStart < 10){
+        minutesStartString = "0" + minutesStart
+      }else{
+        minutesStartString = minutesStart;
+      }
+
+      var minutesEnd =e.getMinutes();
+      var minutesEndString = "";
+
+      if(minutesEnd < 10){
+        minutesEndString = "0" + minutesEnd
+      }else{
+        minutesEndString = minutesEnd;
+      }
+
+      var start =
+        d.getFullYear() +
+        "-" +
+        zeroPadded(d.getMonth() + 1) +
+        "-" +
+        zeroPadded(d.getDate()) +
+        " " +
+        d.getHours() +
+        ":"+minutesStartString+":00";
+      var end =
+        e.getFullYear() +
+        "-" +
+        zeroPadded(e.getMonth() + 1) +
+        "-" +
+        zeroPadded(e.getDate()) +
+        " " +
+        e.getHours() +
+        ":"+minutesEndString+":00";
+       confirmateEspera(start, end, comentario);
+       location.reload();
+  }
+
+}
+
+
+

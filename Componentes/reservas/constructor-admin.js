@@ -2,7 +2,12 @@ var stringDate ="";
 var finishDate = new Date();
 finishDate.setMonth(finishDate.getMonth() + 4);
 
+
 $("#dtp_input2").attr("name", "horainicio");
+
+
+
+
 
 $(".form_date").datetimepicker({
   language: "es",
@@ -12,7 +17,8 @@ $(".form_date").datetimepicker({
   endDate: finishDate,
   startView: 2,
   startDate: new Date(),
-  minView: 2
+  minView: 2,
+  datesDisabled: cancelados
 });
 
 $(".form_time").datetimepicker({
@@ -43,7 +49,9 @@ $('.button_change_canhcas').click(function(){
 
 $(".form_date").on("changeDate", function(e) { 
   $(".hourbutton").css("display", "block");
-  resetFormularyToFirstStep();
+  if(document.getElementsByClassName("modal-content-third").length != 0){
+    resetFormularyToFirstStep();
+  }
 });
 
 

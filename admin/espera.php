@@ -6,69 +6,19 @@ date_default_timezone_set('America/Caracas');
 $fecha_actual = date("Y-m-d H:i:s");
 
 // Trae los clientes para mostrarlos en el registro de reservas
-$mostrar_clientes = "select * from cliente";
+$mostrar_clientes = "select * from espera";
 $resultado_mostrar = $conexion->consulta($mostrar_clientes);
 $dato = array();
 $clientes = array();
 
 
 if (isset($_GET["eliminar"])) {
-
-  $canchasTotalConsulta = " select id_calendar from reserva WHERE id = '".$_GET["eliminar"]."' ";
-  $canchasTotalResultadoConsulta = $conexion->consulta($canchasTotalConsulta);
-  $fila = mysqli_fetch_row($canchasTotalResultadoConsulta["resultado"]);
-  $reservacalendar =  $fila[0];
-
-      $m='no hay errores'; //for error messages
-      $id_event=''; //id event created 
-      $link_event = ""; 
-      
-      date_default_timezone_set('America/Guayaquil');
-      include_once '../Componentes/google-calendar/google-api-php-client-2.2.4/vendor/autoload.php';
-  
-      //configurar variable de entorno / set enviroment variable
-      putenv('GOOGLE_APPLICATION_CREDENTIALS=credenciales.json');
-  
-      $client = new Google_Client();
-      $client->useApplicationDefaultCredentials();
-      $client->setScopes(['https://www.googleapis.com/auth/calendar']);
-  
-      //define id calendario
-      $id_calendar='tofm1jc0o9r87ii1vo55lsikf0@group.calendar.google.com';//
-
-      try{        
-        //instanciamos el servicio
-         $calendarService = new Google_Service_Calendar($client);
-            $calendarService->events->delete($id_calendar, $reservacalendar);
-           
-            
-    }catch(Google_Service_Exception $gs){
-      $m = json_decode($gs->getMessage());
-      $m= $m->error->message;
-
-    }catch(Exception $e){
-        $m = $e->getMessage();
-    }
-
-
   $consulta_eliminar = "DELETE FROM reserva WHERE id = '".$_GET["eliminar"]."' ";
   $resultado_eliminar = $conexion->consulta($consulta_eliminar);
   //  echo($m);
   echo("<script type='text/javascript'>window.location.href='admin.php';</script>");
 }
 
-
-if (isset($_GET["confirmar"])) {
-  $consulta_eliminar = "UPDATE `reserva` SET `confirmado` = '1' WHERE `reserva`.`id` =  '".$_GET["confirmar"]."' ";
-
-  
- echo'<script type="text/javascript">
- </script>';
-
-
-  $resultado_eliminar = $conexion->consulta($consulta_eliminar);
-  echo("<script type='text/javascript'>window.location.href='admin.php';</script>");
-}
 
 
 while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
@@ -85,16 +35,13 @@ r.`id`,
 r.`fecha_inicio`,
 r.`fecha_fin`,
 cl.nombre,
-c.nombre,
-r.`fecha_creacion`,
 r.`comentarios`,
-r.`confirmado`,
 cl.id,
 cl.celular,
 cl.correo,
-r.`link`
-FROM `reserva` r, cliente cl, cancha c
- where r.`id_cliente` = cl.id and r.`id_cancha` = c.id;";
+r.`numero_canchas`
+FROM `espera` r, cliente cl
+ where r.`cliente_id` = cl.id ";
 $resultado_mostrar = $conexion->consulta($mostrar);
 $dato = array();
 $reservas = array();
@@ -103,26 +50,12 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   $dato["id"] = $fila[0];
   $dato["fecha_inicio"] = $fila[1];
   $dato["fecha_fin"] = $fila[2];
+
   $dato["id_cliente"] = "<p
   class='p_client'
-><span>".$fila[3]." "."</span><img onclick='modalCliente(`".$fila[8]."`,`".$fila[3]."`,`".$fila[9]."`,`".$fila[10]."`);' style='cursor: pointer;' src='../img/eye.png'></p>";
-  $dato["id_cancha"] = $fila[4];
-  $dato["fecha_creacion"] = $fila[5];
-  $dato["comentarios"] = $fila[6];
-  $dato["link"] = "<a href='".$fila[11]."'><img  style='cursor: pointer;'  src='../img/google-calendar.png'></img></a>";
-  if($fila[7] == 1){
-    $dato["confirmado"] = "<img src='../img/ok.png'>";
-  }else{
-    $dato["confirmado"] = "<button 
-    style=' background: #524e4e;
-    color: white;
-    cursor: pointer;
-    border: solid 1.4px black;
-    border-radius: 5px;
-    padding: 8px;' 
-    onclick='confirmarReserva(".$dato['id'].")'>Confirmar</button>";
-  }
- 
+><span>".$fila[3]." "."</span><img onclick='modalCliente(`".$fila[5]."`,`".$fila[3]."`,`".$fila[6]."`,`".$fila[7]."`);' style='cursor: pointer;' src='../img/eye.png'></p>";
+  $dato["comentarios"] = $fila[4];
+  $dato["canchas"] = $fila[8];
   $dato["eliminar"] = "<img  style='cursor: pointer;'   onclick='eliminarReserva(".$dato['id'].")' id='eliminar_btn' src='../img/delete.png'></img>";
   
   array_push($reservas, $dato);
@@ -175,9 +108,9 @@ echo '<script type="text/javascript">
 <div class="topnav">
   <a onclick="openNav()" href="#home">&#9776;</a>
   <a  href="reserva-calendario.html">Agenda</a>
-  <a class="active" href="#">Lista</a>
+  <a  href="espera.php">Lista</a>
   <a  href="../reserva-fechas.php">Administrar fechas</a>
-  <a  href="espera.php">En espera</a>
+  <a  class="active">En espera</a>
   <a style="float: right"  href="../reserva-agregar.php">Agregar reserva <img src="../img/plus.png"  alt=""></a>
 </div>
 
@@ -200,13 +133,12 @@ echo '<script type="text/javascript">
     <thead align="center">
       <tr>
         <th  class="last_left"><img style="width: 30px" src="../img/barcode.png" alt=""></th>
+        <th>Canchas</th>
         <th>Fecha</th>
         <th>Hora inicial</th>
         <th>Hora final</th>
         <th>Cliente</th>
-        <th>Cancha</th>
-        <th >Confirmar</th>
-        <th>Calendario</th>
+
         <th class="last_right">Eliminar</th>
       </tr>
 
@@ -217,13 +149,13 @@ echo '<script type="text/javascript">
       <?php for ($i = 0; $i < count($reservas); $i++) { ?>
         <tr>
           <td id="id"><?php echo $reservas[$i]["id"]; ?></td>
+          <td ><?php echo $reservas[$i]["canchas"]; ?></td>
           <td class="fecha"><?php echo $reservas[$i]["fecha_inicio"]; ?></td>
           <td class="hour_c" id="fecha_inicio"><?php echo $reservas[$i]["fecha_inicio"]; ?></td>
-          <td class="hour_d" id="fecha_fin"><?php echo $reservas[$i]["fecha_fin"]; ?></td>
+          <td class="hour_dd" id="fecha_fin"><?php echo $reservas[$i]["fecha_fin"]; ?></td>
           <td class="id_cliente"><?php echo $reservas[$i]["id_cliente"]; ?></td>
-          <td class="id_cancha"><?php echo $reservas[$i]["id_cancha"]; ?></td>
-          <td class="fecha_creacion"><?php echo $reservas[$i]["confirmado"]; ?></td>
-          <td class="fecha_creacion"><?php echo $reservas[$i]["link"]; ?></td>
+
+
           <td class="fecha_creacion"><?php echo $reservas[$i]["eliminar"]; ?></td>
         </tr>
       <?php } ?>

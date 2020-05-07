@@ -3,6 +3,20 @@
 include_once("conexion.php");
 $conexion = new conexion();
 
+
+echo '<script type="text/javascript">
+    var cancelados = [];
+   </script>';
+$dias_cierre = "select * from cierre";
+$resultado_mostrar = $conexion->consulta($dias_cierre);
+while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
+  $dia = $fila[1];
+  echo '<script type="text/javascript">
+  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/")));
+   </script>';
+}
+
+
 date_default_timezone_set('America/Caracas');
 $fecha_actual = date("Y-m-d H:i:s");
 
@@ -94,8 +108,10 @@ echo '<script type="text/javascript">
 <input style="display:none; border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
 <div class="topnav">
   <a onclick="openNav()" href="#home">&#9776;</a>
-  <a  href="admin/reserva-calendario.html">Calendario</a>
+  <a  href="admin/reserva-calendario.html">Agenda</a>
   <a  href="admin/admin.php">Lista</a>
+  <a  href="reserva-fechas.php">Administrar fechas</a>
+  <a  href="admin/espera.php">En espera</a>
   <a class="active" style="float: right"  href="nueva-reserva.html">Agregar reserva <img src="img/plus.png"  alt=""></a>
 
 </div>
@@ -107,10 +123,10 @@ echo '<script type="text/javascript">
     margin-left: 20%;
     margin-bottom: 20%;"
      src="https://drive.google.com/uc?id=1-fjb7iyB9gtxNTZRqP0e2hTasAszRcE4" alt="">
-    <a href="admin/admin.php">Reservas</a>
-    <a href="admin/clientes.php">Clientes</a>
-    <a href="admin/canchas.php">Canchas</a>
-    <a href="admin/contenido.php">Contenido</a>
+    <a href="admin/admin.php">• _Reservas</a>
+    <a href="admin/clientes.php">_Clientes</a>
+    <a href="admin/canchas.php">_Canchas</a>
+    <a href="admin/contenido.php">_Contenido</a>
   </div>
   <input  style="display:none; " id="input-hora-fin" type="datetime" class="form-control" name="horafin" value="<?= $fecha_actual ?>"> <br />
 

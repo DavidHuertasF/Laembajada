@@ -5,6 +5,11 @@ function eliminarReserva(id){
   }
 }
 
+function habilitarDia(id, dia){
+    window.location.href='reserva-fechas.php?eliminar='+ id ,"_self";
+}
+
+
 function eliminarCancha(id){
   if (confirm("¿Eliminar la cancha "+id+"?, todas las reservas relacioandas serán eliminadas" )) {
     window.location.href='canchas.php?eliminar='+ id ,"_self";
@@ -40,6 +45,12 @@ $(".hour_d").each(function(e) {
   $(this).text(hour);
 });
 
+$(".hour_dd").each(function(e) {
+  var date = new Date($(this).text());
+  var hour = (date.getHours() -12)+":"+date.getMinutes()+" pm";
+  $(this).text(hour);
+});
+
 $(".fecha").each(function(e) {
   var d = new Date($(this).text());
   var fecha = d.getFullYear() +
@@ -68,6 +79,16 @@ function intToHourAM(hour){
 }
 
 function intToHourAMl(hour){
+
+  if(hour<=11){
+      return hour+":00 am"
+  }else {
+      return (hour-13)+":59 pm";
+  }
+}
+
+function intToHourAMll(hour){
+
   if(hour<=11){
       return hour+":00 am"
   }else {
@@ -79,7 +100,6 @@ function showReservas(){
 
     var reservas = JSON.parse($('#back_reservas').val());
       reservas.forEach(function(valor, indice, array) {
-        alert(valor.id);
     });
 }
 
