@@ -13,7 +13,7 @@ if (isset($_GET["eliminar"])) {
   echo("<script type='text/javascript'>window.location.href='canchas.php';</script>");
 }
 
-// Si se registra un usuario
+// Si se registra una cancha
 if(isset($_POST["enviar"])){
   $consulta = "INSERT INTO `cancha` 
   VALUES (NULL,'".$_POST["nombre"]."')";
