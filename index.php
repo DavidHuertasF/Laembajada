@@ -263,6 +263,8 @@ echo '<script type="text/javascript">
   <div id="modalCotizar" class="modalt">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
+    <div id="back-e" class="regresar"></div>
+
       <div id="first-section">
       <img class="reservaStep" style="margin-bottom: 30px;" src="img/secondstep.png" alt="">
         <div class="first-section_content">
@@ -287,6 +289,8 @@ echo '<script type="text/javascript">
   <div id="modalNumberPerson" class="modalt">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
+    <div id="back-a" class="regresar"></div>
+      
       <div id="first-section">
         <img class="reservaStep" style="margin-bottom: 30px;" src="img/firststep.png" alt="">
         <div id="container" style="    width: 90%;">
@@ -298,7 +302,7 @@ echo '<script type="text/javascript">
               <p id="p_personas">01</p>
               <button type="button" class="button_change_persons" onclick="addPerson(<?php echo $canchasTotal ?>)" id="btn_add_person">+</button>
             </div>
-            <p class=" font p_note">*Cuantas personas?</p>
+            <p class=" font p_note">*Cuantas personas van a jugar?</p>
           </div>
         </div>
 
@@ -311,12 +315,15 @@ echo '<script type="text/javascript">
   <div id="modalFirst" class="modalt">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
+    <div id="back-b" class="regresar"></div>
+
       <div id="first-section">
         <img class="reservaStep" style="margin-bottom: 30px;" src="img/secondstep.png" alt="">
         <div id="container" style="    width: 90%;">
           <!-- # Canchas -->
           <div id="div-canchas-section">
             <p class=" font title_div">No. Canchas</p>
+            <p style="color: red">Elejiste <b id="persons"></b> personas</p>
             <div id="div_counter_canchas">
               <button id="btn_substract" class="button_change_canhcas" type="button" onclick="substractHour(<?php echo $canchasTotal ?>);">–</button>
               <p id="p_canchas">01</p>
@@ -350,7 +357,11 @@ echo '<script type="text/javascript">
 
             <div id="div_dates_in_hour">
               <!-- <button id="btn_substract_date" class="button_change_date" type="button" onclick="substractDate(<?php echo $canchasTotal ?>);">–</button> -->
-              <p class="" id="p_date_in_hour">Seleccione una fecha</p>
+              <div style="display: flex; width:120%; align-items: baseline;">
+              <p class="" id="p_date_in_hour">Seleccione una fecha</p> 
+              <p style="font-size: 13px;" id="p_date_in_hourss"></p>
+
+              </div>
               <!-- <button id="btn_add_date" type="button" class="button_change_date" onclick="addDate(<?php echo $canchasTotal ?>)" >+</button> -->
             </div>
 
@@ -371,7 +382,10 @@ echo '<script type="text/javascript">
   </div>
 
   <div id="modalSecond" class="modalt">
+
     <div class="modal-content-second font">
+  <div id="back-c" class="regresar"></div>
+
     <div class="cancelar-reserva"></div>
       <div id="second-section">
         <img class="reservaStep" style="
@@ -389,6 +403,8 @@ echo '<script type="text/javascript">
   <div id="modalThird" class="modalt">
     <div class="modal-content-third font">
     <div class="cancelar-reserva"></div>
+  <div id="back-d" class="regresar"></div>
+
       <div id="third-section">
       <img class="reservaStep" style="margin-bottom: 30px;" src="img/Thirdstep.png" alt="">
 

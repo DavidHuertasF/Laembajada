@@ -211,6 +211,14 @@ th {
   background-repeat: no-repeat;
 }
 
+.regresar{
+  background-image: url(../../img/back.png  );
+  width: 5vw;
+  height: 13%;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
 .cancelar-reserva:hover,
 .cancelar-reserva:focus {
   background-image: url("../../img/svg/close-icon-hover.svg");
@@ -303,7 +311,7 @@ th {
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  margin-left: -14vh;
+  margin-left: -80px;
   margin-top: -1vh;
   /* Position the tooltip */
   position: absolute;

@@ -21,11 +21,7 @@ function enableOnlyRangeOptions(hour) {
     for (let i = idx - 1; i >= 0; i--) {
       if (start) {
         if (hoursListGlobal[i] == hour) {
-          // console.log(
-          //   "El inmediatamente anterior es" +
-          //     hoursListGlobal[i] +
-          //     "correctamente por lo que se activa"
-          // );
+      
           $("#" + hour).attr("disabled", false);
           $("#" + hour).css("border", "red 1px solid");
           $("#" + hour).css("color", "black");
@@ -112,14 +108,14 @@ function enableOnlyRangeOptions(hour) {
       } else {
         if (fraction) {
           if (hoursListGlobal[i] == hour + x + "m") {
-            console.log(
-              "Luego tenemos una fraccion " +
-                hoursListGlobal[i] +
-                "(" +
-                (hour + x) +
-                ")" +
-                "que correspone, por lo que se activa"
-            );
+            // console.log(
+            //   "Luego tenemos una fraccion " +
+            //     hoursListGlobal[i] +
+            //     "(" +
+            //     (hour + x) +
+            //     ")" +
+            //     "que correspone, por lo que se activa"
+            // );
 
             $("#" + (hour + x) + "m").attr("disabled", false);
             $("#" + (hour + x) + "m").css("border", "red 1px solid");
@@ -128,40 +124,40 @@ function enableOnlyRangeOptions(hour) {
 
             fraction = false;
           } else {
-            console.log(
-              "Luego tenemos una fraccion que no correspone," +
-                hoursListGlobal[i] +
-                "(" +
-                (hour + x) +
-                ")" +
-                ", se termina el proceso"
-            );
+            // console.log(
+            //   "Luego tenemos una fraccion que no correspone," +
+            //     hoursListGlobal[i] +
+            //     "(" +
+            //     (hour + x) +
+            //     ")" +
+            //     ", se termina el proceso"
+            // );
             break;
           }
         } else {
           if (hoursListGlobal[i] == hour + x) {
-            console.log(
-              "Luego tenemos una hora " +
-                hoursListGlobal[i] +
-                "(" +
-                (hour + x) +
-                ")" +
-                "que correspone, por lo que se activa"
-            );
+            // console.log(
+            //   "Luego tenemos una hora " +
+            //     hoursListGlobal[i] +
+            //     "(" +
+            //     (hour + x) +
+            //     ")" +
+            //     "que correspone, por lo que se activa"
+            // );
             $("#" + (hour + x)).attr("disabled", false);
             $("#" + (hour + x)).css("border", "red 1px solid");
             $("#" + (hour + x)).css("color", "black");
 
             fraction = true;
           } else {
-            console.log(
-              "Luego tenemos una hora " +
-                hoursListGlobal[i] +
-                "(" +
-                (hour + x) +
-                ")" +
-                "que no correspone, por lo que no se activa"
-            );
+            // console.log(
+            //   "Luego tenemos una hora " +
+            //     hoursListGlobal[i] +
+            //     "(" +
+            //     (hour + x) +
+            //     ")" +
+            //     "que no correspone, por lo que no se activa"
+            // );
             break;
           }
         }
@@ -176,11 +172,11 @@ function enableOnlyRangeOptions(hour) {
     for (let i = idx - 1; i >= 0; i--) {
       if (start) {
         if (hoursListGlobal[i] == hour - 1 + "m") {
-          // console.log(
-          //   "El inmediatamente anterior es" +
-          //     hoursListGlobal[i] +
-          //     "correctamente por lo que se activa"
-          // );
+          console.log(
+            "Fraccion completa" +
+              hoursListGlobal[i] +
+              "correctamente por lo que se activa"
+          );
           $("#" + (hour - 1) + "m").attr("disabled", false);
           $("#" + (hour - 1) + "m").css("border", "red 1px solid");
           $("#" + (hour - 1) + "m").css("color", "black");
@@ -268,7 +264,7 @@ function enableOnlyRangeOptions(hour) {
         if (fraction) {
           if (hoursListGlobal[i] == hour + x + "m") {
             console.log(
-              "Luego tenemos una fraccion " +
+              "Fraccion individual escogida " +
                 hoursListGlobal[i] +
                 "(" +
                 (hour + x) +
@@ -466,7 +462,8 @@ function buttonHourFunction(hour, fraction) {
     resetFormularyToFirstStep();
   } else {
     //Si no hay rango y es el la primer seleccion
-
+    // log(getHoursActive());
+    // console.log('cambio');
     var off = false;
     var status = $("#" + hour).attr("name"); // estado del boton seleccionado (on, off)
 
@@ -609,6 +606,8 @@ function buttonHourFunction(hour, fraction) {
       activeButton(hour);
     }
   }
+  cambioxd();
+
 }
 
 function activeButton(id) {

@@ -197,6 +197,14 @@ th {
   background-repeat: no-repeat;
 }
 
+.regresar{
+  background-image: url(../../img/back.png  );
+  width: 4vw;
+  height: 11%;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
 .cancelar-reserva:hover,
 .cancelar-reserva:focus {
   background-image: url("../../img/svg/close-icon-hover.svg");

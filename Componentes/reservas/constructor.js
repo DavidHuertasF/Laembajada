@@ -6,9 +6,9 @@ $("#dtp_input2").attr("name", "horainicio");
 
 $(".form_date").datetimepicker({
   language: "es",
-  weekStart: 2,
+  weekStart: 1,
   autoclose: 1,
-  daysOfWeekDisabled: [0, 1],
+  // daysOfWeekDisabled: [0, 1],
   endDate: finishDate,
   startView: 2,
   startDate: new Date(),
@@ -68,6 +68,35 @@ $(".reserve-start").click(function(event) {
   $("#modalFirst").css("display", "block");
   $("#modalCotizar").css("display", "none");
 });
+
+$("#back-a").click(function(event) {
+  $("#modalExplicacion").css("display", "block");
+  $("#modalNumberPerson").css("display", "none");
+});
+
+$("#back-b").click(function(event) {
+  $("#modalNumberPerson").css("display", "block");
+  $("#modalFirst").css("display", "none");
+  back();
+  // alert('back');
+
+});
+
+$("#back-c").click(function(event) {
+  $("#modalFirst").css("display", "block");
+  $("#modalSecond").css("display", "none");
+});
+
+$("#back-d").click(function(event) {
+  $("#modalSecond").css("display", "block");
+  $("#modalThird").css("display", "none");
+});
+
+$("#back-e").click(function(event) {
+  $("#modalNumberPerson").css("display", "block");
+  $("#modalcotizar  ").css("display", "none");
+});
+
 
 $(".cancelar-reserva").click(function(event) {
   if (confirm("¿Desea cancelar la reservación?")) {

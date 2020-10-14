@@ -1,6 +1,12 @@
+let startt = true;
+
+function back(){
+  startt = false;
+};
+
 function resetFormularyToFirstStep() {
-
-
+  $("#p_date_in_hourss").text("");
+  startt = true;
 
   reservationDate = new Date($("#dtp_input2").val());
   reservationDate.addDays(1);
@@ -11,12 +17,12 @@ function resetFormularyToFirstStep() {
   var dayReservation = getDayOfYear(reservationDate) + 1;
 
   reservationIsCurrentDay = today == dayReservation;
-  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24];
+  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre 
 
   if (reservationIsCurrentDay) {
     //Si la reserva es para hoy quitar todas las horas que ya pasaron
     for (i = 0; i < hourToday; i++) {
-      var exist = hours.find(element => element == i);
+      var exist = hours.find((element) => element == i);
       if (exist === undefined) {
         // Si la hora no esta dentro de las horas de hoy
         hours.push(i); // agregarla
@@ -36,7 +42,7 @@ function diaSemana() {
   let options = {
     weekday: "short",
     month: "short",
-    day: "numeric"
+    day: "numeric",
   };
   stringDate = date.toLocaleDateString("es-MX", options);
   stringDate = stringDate.replace(" de", ".");
@@ -72,7 +78,7 @@ function getHoursAvailables(h) {
   }
 
   hVerificated = [];
-  hoursavailables.forEach(function(valor, indice, array) {
+  hoursavailables.forEach(function (valor, indice, array) {
     // Por cada hora disponible, verificar en bd que hayan las canchas necesarias para ese dia
 
     var dateExtra = reservationDate;
@@ -88,7 +94,7 @@ function getHoursAvailables(h) {
       d.getHours() +
       ":00:00";
 
-      varstringDateFraction =
+    varstringDateFraction =
       d.getFullYear() +
       "-" +
       zeroPadded(d.getMonth() + 1) +
@@ -98,8 +104,7 @@ function getHoursAvailables(h) {
       d.getHours() +
       ":30:00";
 
-
-    showReservasByDay(varstringDate); // Pone el dia y hora seleccionado en consulta con la bd y pone en variable html las canchas que estan reservadas para ese rango 
+    showReservasByDay(varstringDate); // Pone el dia y hora seleccionado en consulta con la bd y pone en variable html las canchas que estan reservadas para ese rango
     var canchasReservadasParaHora = $("#myInput").val(); //Canchas reservadas para esa fecha y hora
 
     var necesito = parseInt($("#p_canchas").text()); // Cuantas canchas necesita el usuario
@@ -110,12 +115,12 @@ function getHoursAvailables(h) {
       hVerificated.push(valor);
     }
 
-    showReservasByDay(varstringDateFraction);  //igual para las media horas
-    var canchasReservadasParaHora = $("#myInput").val(); 
-    var necesito = parseInt($("#p_canchas").text()); 
-    var hay = canchasTotal - canchasReservadasParaHora; 
+    showReservasByDay(varstringDateFraction); //igual para las media horas
+    var canchasReservadasParaHora = $("#myInput").val();
+    var necesito = parseInt($("#p_canchas").text());
+    var hay = canchasTotal - canchasReservadasParaHora;
     if (necesito <= hay) {
-      hVerificated.push(valor+'m');
+      hVerificated.push(valor + "m");
     }
 
     //  console.log("Canchas reservadas para el " + varstringDate + " --> " + $("#myInput").val());
@@ -140,9 +145,9 @@ function getHoursAvailables(h) {
   setHoursDisabled(pppp);
 
   var xm = [];
-  hoursavailables.forEach(function(valor, indice, array) {
+  hoursavailables.forEach(function (valor, indice, array) {
     xm.push(valor);
-    xm.push(valor+'m');
+    xm.push(valor + "m");
   });
 
   addHoursAvailables(hVerificated, xm);
@@ -157,7 +162,7 @@ function showReservasByDay(day) {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       $("#myInput").val(this.responseText);
     }
@@ -172,265 +177,344 @@ function setHoursDisabled(listHours) {
 }
 
 function desactivarSelecciones() {
-  if (
-    $(".form_date")
-      .find("input")
-      .val() == ""
-  ) {
+  if ($(".form_date").find("input").val() == "") {
     $(".active.day").removeClass("active");
   }
-  if (
-    $(".form_time")
-      .find("input")
-      .val() == ""
-  ) {
+  if ($(".form_time").find("input").val() == "") {
     $(".active.hour").removeClass("active");
   }
 }
 
-function confirmateHoursStep(){
+function confirmateHoursStep() {
   var disabled = false;
 
-  $('.noavailable').each(function(index, value){
-    if(this.name == 'on'){
+  $(".noavailable").each(function (index, value) {
+    if (this.name == "on") {
       disabled = true;
     }
   });
 
-  if(disabled){
-    
-      $("#modalFirst").css("display", "none");
-      $("#modalEspera").css("display", "block");
-      resetFormularyToFirstStep();
-  }else{
-    confirmateHours() ;
+  if (disabled) {
+    $("#modalFirst").css("display", "none");
+    $("#modalEspera").css("display", "block");
+    resetFormularyToFirstStep();
+  } else {
+
+    if(startt){
+      confirmateHours();
+    }
   }
 }
 
 function confirmateHours() {
- 
-    var hoursActive = getHoursActive();
+  var hoursActive = getHoursActive();
 
-    if (!hoursActive.length == 0) {
-      //Selecciono algo
-      if (hoursActive.length > 1) {
-        // Selecciono rango
+  if (!hoursActive.length == 0) {
+    //Selecciono algo
+    if (hoursActive.length > 1) {
+      // Selecciono rango
 
-        var inicio = hoursActive[0];
-        var fin = hoursActive[1];
+      var inicio = hoursActive[0];
+      var fin = hoursActive[1];
 
-        var inicioesmedio = false;
-        var finesmedio = false;
+      var inicioesmedio = false;
+      var finesmedio = false;
 
-        if (inicio.charAt(inicio.length - 1) == "m") {
-          inicioesmedio = true;
-        }
-
-        if (fin.charAt(fin.length - 1) == "m") {
-          finesmedio = true;
-        }
-
-        var reservationDateFinal = reservationDate;
-
-        var hourSelected = parseInt(hoursActive[0], 10);
-        var hourFinal = parseInt(hoursActive[1], 10);
-
-        reservationDate.setHours(hourSelected);
-
-        d = reservationDate.addDays(1);
-
-        if (inicioesmedio) {
-          $("#dtp_input2").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              d.getHours() +
-              ":30:00"
-          );
-        } else {
-          $("#dtp_input2").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              d.getHours() +
-              ":00:00"
-          );
-        }
-
-        if (finesmedio) {
-          $("#input-hora-fin").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              (hourFinal ) +
-              ":59:00"
-          );
-        } else {
-          $("#input-hora-fin").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              hourFinal +
-              ":29:00"
-          );
-        }
-
-        reservationDate = new Date($("#dtp_input2").val());
-        finishHour = new Date($("#input-hora-fin").val());
-
-        // console.log("Configurando rango .. ");
-      } else {
-        // Selecciono solo uno
-
-        var inicio = hoursActive[0];
-        var inicioesmedio = false;
-
-        if (inicio.charAt(inicio.length - 1) == "m") {
-          inicioesmedio = true;
-        }
-
-        var hourSelected = parseInt(hoursActive[0], 10);
-        reservationDate.setHours(hourSelected);
-
-        d = reservationDate.addDays(1);
-
-
-
-        if (inicioesmedio) {
-          $("#dtp_input2").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              d.getHours() +
-              ":30:00"
-          );
-
-            //  agrega la hora
-        $("#input-hora-fin").val(
-          d.getFullYear() +
-            "-" +
-            zeroPadded(d.getMonth() + 1) +
-            "-" +
-            zeroPadded(d.getDate()) +
-            " " +
-            (d.getHours()) +
-            ":59:00"
-        );
-        } else {
-          $("#dtp_input2").val(
-            d.getFullYear() +
-              "-" +
-              zeroPadded(d.getMonth() + 1) +
-              "-" +
-              zeroPadded(d.getDate()) +
-              " " +
-              d.getHours() +
-              ":00:00"
-          );
-
-          //  agrega la fraccion
-        $("#input-hora-fin").val(
-          d.getFullYear() +
-            "-" +
-            zeroPadded(d.getMonth() + 1) +
-            "-" +
-            zeroPadded(d.getDate()) +
-            " " +
-            (d.getHours()) +
-            ":29:00"
-        );
-        }
-
-        reservationDate = new Date($("#dtp_input2").val());
-        finishHour = new Date($("#input-hora-fin").val());
-
-        
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
       }
 
-      showCanchasByDate($("#dtp_input2").val(), $("#input-hora-fin").val());
-        $("#modalFirst").css("display", "none");
-        $("#modalSecond").css("display", "block");
-        readCanchasId();
+      if (fin.charAt(fin.length - 1) == "m") {
+        finesmedio = true;
+      }
+
+      var reservationDateFinal = reservationDate;
+
+      var hourSelected = parseInt(hoursActive[0], 10);
+      var hourFinal = parseInt(hoursActive[1], 10);
+
+      reservationDate.setHours(hourSelected);
+
+
+      if(start){
+        d = reservationDate.addDays(1);
+      }else{
+        d = reservationDate.addDays(1);
+
+      }
+
+      if (inicioesmedio) {
+        $("#dtp_input2").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":30:00"
+        );
+      } else {
+        $("#dtp_input2").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":00:00"
+        );
+      }
+
+      if (finesmedio) {
+        $("#input-hora-fin").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            hourFinal +
+            ":59:00"
+        );
+      } else {
+        $("#input-hora-fin").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            hourFinal +
+            ":29:00"
+        );
+      }
+
+      reservationDate = new Date($("#dtp_input2").val());
+      finishHour = new Date($("#input-hora-fin").val());
+
+      // console.log("Configurando rango .. ");
     } else {
-      alert("Seleccione una hora de reserva valida");
+      // Selecciono solo uno
+
+      var inicio = hoursActive[0];
+      var inicioesmedio = false;
+
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
+      }
+
+      var hourSelected = parseInt(hoursActive[0], 10);
+      reservationDate.setHours(hourSelected);
+
+      d = reservationDate.addDays(1);
+
+      if (inicioesmedio) {
+        $("#dtp_input2").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":30:00"
+        );
+
+        //  agrega la hora
+        $("#input-hora-fin").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":59:00"
+        );
+      } else {
+        $("#dtp_input2").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":00:00"
+        );
+
+        //  agrega la fraccion
+        $("#input-hora-fin").val(
+          d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":29:00"
+        );
+      }
+
+      reservationDate = new Date($("#dtp_input2").val());
+      finishHour = new Date($("#input-hora-fin").val());
     }
 
-    // console.log(
-    //   "Creando reserva para el "+reservationDate.getDate()+ "/" +(reservationDate.getMonth()+1)+ "/" +reservationDate.getFullYear()+" --> inicio- "+ dateToString(reservationDate) + " | final:- " + dateToString(finishHour)
-    // );
+    showCanchasByDate($("#dtp_input2").val(), $("#input-hora-fin").val()); // determina las canchas que están ocupadas
+    $("#modalFirst").css("display", "none");
+    $("#modalSecond").css("display", "block");
+    readCanchasId(); // muestra las que no están ocupadas
+  } else {
+    alert("Seleccione una hora de reserva valida");
+  }
 
-    
+  // console.log(
+  //   "Creando reserva para el "+reservationDate.getDate()+ "/" +(reservationDate.getMonth()+1)+ "/" +reservationDate.getFullYear()+" --> inicio- "+ dateToString(reservationDate) + " | final:- " + dateToString(finishHour)
+  // );
 }
 
-function dateToString(date){
+function cambioxd() {
+  let hoursActive = getHoursActive();
 
+  let hourSelected = parseInt(hoursActive[0], 10);
+
+
+    //Selecciono algo
+    if (hoursActive.length > 1) {
+
+      // Selecciono rango
+
+      var inicio = hoursActive[0];
+      var fin = hoursActive[1];
+
+      var inicioesmedio = false;
+      var finesmedio = false;
+
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
+      }
+
+      if (fin.charAt(fin.length - 1) == "m") {
+        finesmedio = true;
+      }
+
+      let hourFinal = parseInt(hoursActive[1], 10);
+      reservationDate.setHours(hourSelected);
+
+      d = reservationDate.addDays(1);
+
+      if (inicioesmedio) {
+        hourSelected = ((d.getHours()- 12 ) + ":30 pm");
+      } else {
+        hourSelected = ((d.getHours()-12) + ":00 pm");
+      }
+
+      if (finesmedio) {
+        hourFinal = ((hourFinal-12) + ":59 pm");
+      } else {
+        hourFinal = ((hourFinal-12) + ":29 pm");
+      }
+
+      $("#p_date_in_hourss").text(
+        "("+hourSelected+ " - " +  hourFinal + ")"
+      );
+    // alert(hourSelected+ "/" +  hourFinal);
+
+
+      // reservationDate = new Date($("#dtp_input2").val());
+      // finishHour = new Date($("#input-hora-fin").val());
+
+      // console.log("Configurando rango .. ");
+    } else {
+      // Selecciono solo uno
+
+      // alert('ok');
+      // hourSelected = parseInt(hoursActive[0], 10);
+
+      var inicio = hoursActive[0];
+      var inicioesmedio = false;
+
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
+      }
+
+     
+      if (inicioesmedio) {
+        hourFinal =  (hourSelected-12)+":59 pm";
+
+        hourSelected =  (hourSelected-12)+":30 pm";
+      } else {
+        hourFinal =  (hourSelected-12)+":29 pm";
+        hourSelected =  (hourSelected-12)+":00 pm";
+      }
+
+      // reservationDate = new Date($("#dtp_input2").val());
+      // finishHour = new Date($("#input-hora-fin").val());
+
+      $("#p_date_in_hourss").text(
+        "("+hourSelected+ " - " +  hourFinal+")"
+      );
+    }
+
+   
+  
+
+  // console.log(
+  //   "Creando reserva para el "+reservationDate.getDate()+ "/" +(reservationDate.getMonth()+1)+ "/" +reservationDate.getFullYear()+" --> inicio- "+ dateToString(reservationDate) + " | final:- " + dateToString(finishHour)
+  // );
+}
+
+function dateToString(date) {
   var minutes = date.getMinutes();
   var minutesString = "";
-  if(minutes < 10){
-    minutesString = "0" + minutes
-  }else{
+  if (minutes < 10) {
+    minutesString = "0" + minutes;
+  } else {
     minutesString = minutes;
   }
 
   if (date.getHours() <= 11) {
-    dateString = date.getHours() + ":"+minutesString+" am";
+    dateString = date.getHours() + ":" + minutesString + " am";
   } else {
-    dateString = date.getHours() - 12 + ":"+minutesString+" pm";
+    dateString = date.getHours() - 12 + ":" + minutesString + " pm";
   }
   return dateString;
 }
 
-
 function confirmateCanchas() {
-
   var actives = document.getElementsByName("onC").length;
   var canchasPeticion = parseInt($("#p_canchas").text());
 
   if (actives == canchasPeticion) {
-  
-  var resume =
-    stringDate +
-    "  | " +
-    dateToString(reservationDate) +
-    " - " +
-    dateToString(finishHour);
+    var resume =
+      stringDate +
+      "  | " +
+      dateToString(reservationDate) +
+      " - " +
+      dateToString(finishHour);
 
-  document.getElementsByName("onC").forEach(function(valor, indice, array) {
-    var cancha = valor.textContent;
-    resume = resume + " | " + cancha;
-  });
+    document.getElementsByName("onC").forEach(function (valor, indice, array) {
+      var cancha = valor.textContent;
+      resume = resume + " | " + cancha;
+    });
 
-  $("#resume_p").prepend(
-    "<span style='color: white;  font-size:19px;'>Resumen</span><br>" +
-      resume +
-      "</p>"
-  );
+    $("#resume_p").prepend(
+      "<span style='color: white;  font-size:19px;'>Resumen</span><br>" +
+        resume +
+        "</p>"
+    );
 
     $("#modalFirst").css("display", "none");
     $("#modalSecond").css("display", "none");
     $("#modalThird").css("display", "block");
-   
-}else{
-    alert("Seleccione "+canchasPeticion+" canchas para continuar");
-}
+  } else {
+    alert("Seleccione " + canchasPeticion + " canchas para continuar");
+  }
 }
 
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
   var date = new Date(this.valueOf());
   date.setDate(date.getDate() + days);
   return date;
@@ -443,10 +527,10 @@ function showCanchasByDate(datei, datef) {
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
-      // console.log( "Canchas ocupadas: " + this.responseText);
+      console.log( "Canchas ocupadas guardar con fechas:  " + datei + datef +": "+ this.responseText);
     }
   };
   xmlhttp.open(
@@ -474,7 +558,6 @@ function addHour(maxCanchas) {
   $("#p_canchas").text("0" + newHour);
 }
 
-
 function substractHour(maxCanchas) {
   $("#btn_add").attr("disabled", false);
   $("#btn_add").css("color", "red");
@@ -482,7 +565,6 @@ function substractHour(maxCanchas) {
 
   var actualHour = parseInt($("#p_canchas").text());
   var newHour = parseInt(actualHour) - 1;
- 
 
   if (newHour == minCanchas) {
     $("#btn_substract").attr("disabled", true);
@@ -492,9 +574,7 @@ function substractHour(maxCanchas) {
   $("#p_canchas").text("0" + newHour);
 }
 
-
 function addPerson(canchas) {
-
   maxPersonas = canchas * 8;
 
   $("#btn_substract_person").attr("disabled", false);
@@ -502,7 +582,7 @@ function addPerson(canchas) {
   $("#btn_substract_person").css("cursor", "pointer");
 
   $("#btn_substract_person").css("display", "block");
-  var actualPersons= parseInt($("#p_personas").text());
+  var actualPersons = parseInt($("#p_personas").text());
   var newPersons = parseInt(actualPersons) + 1;
 
   if (newPersons == maxPersonas) {
@@ -510,10 +590,10 @@ function addPerson(canchas) {
     $("#btn_add_person").css("color", "white");
     $("#btn_add_person").css("cursor", "auto");
   }
-  if(newPersons>9){
-   $("#p_personas").text(  newPersons);
-  }else{
-   $("#p_personas").text("0" + newPersons);
+  if (newPersons > 9) {
+    $("#p_personas").text(newPersons);
+  } else {
+    $("#p_personas").text("0" + newPersons);
   }
 }
 
@@ -534,16 +614,14 @@ function substractPerson() {
     $("#btn_substract_person").css("color", "white");
     $("#btn_substract_person").css("cursor", "auto");
   }
-  if(newHour>9){
-    $("#p_personas").text( newHour);
-
-  }else{
+  if (newHour > 9) {
+    $("#p_personas").text(newHour);
+  } else {
     $("#p_personas").text("0" + newHour);
-
   }
 }
 
-Array.prototype.remove = function() {
+Array.prototype.remove = function () {
   var what,
     a = arguments,
     L = a.length,
@@ -560,24 +638,30 @@ Array.prototype.remove = function() {
 function readCanchasId() {
   var x = "";
   $("#div_cancha").empty();
-  x = $("#inputprueba").text();
+  x = $("#inputprueba").text(); // canchas ocupadas
 
-  var canchasTotales = canchas;
-  var canchasOcupadas = [];
-  var canchasDisponibles = [];
+  console.log(x);
 
-  for (var i = 0; i < x.length; i++) {
-    var p = x.charAt(i);
-    if (p >= "0" && p <= "9") {
-      canchasOcupadas.push(p);
-    }
-  }
+  var canchasTotales = canchas; // todas las canchas lista
+  var canchasOcupadas = []; // canchas ocupadas lista
+  var canchasDisponibles = []; // canchas disponibles lista
 
+  console.log("recibe x:" + x);
+
+  // var canc hasOcupadas = x.split(",")
+  
+  var canchasOcupadas = x.split(",").map(function(item) {
+    return parseInt(item, 10);
+});
+
+ 
   for (var i = 0; i < canchasTotales.length; i++) {
-    if (!canchasOcupadas.includes(canchasTotales[i].id)) {
+    if (!canchasOcupadas.includes(parseInt(canchasTotales[i].id))) {
       canchasDisponibles.push(canchasTotales[i]);
     }
+    // console.log(canchasTotales[i].id);
   }
+  
 
   for (var i = 0; i < canchasDisponibles.length; i++) {
     var id = canchasDisponibles[i].id;
@@ -595,6 +679,10 @@ function readCanchasId() {
         "</p></div>"
     );
   }
+
+  console.log('totales: - '+canchasTotales);
+  console.log('Ocupadas: - '+canchasOcupadas);
+  console.log('Disponibles: - '+canchasDisponibles);
 }
 
 function confirmateReserva() {
@@ -610,31 +698,30 @@ function confirmateReserva() {
   if (nombre == "" || celular == "" || correo == "") {
     alert("falta algún dato obligatorio");
   } else {
-
-    var colorID = Math.floor(Math.random() * 11); 
+    var colorID = Math.floor(Math.random() * 11);
     creatUser();
-    document.getElementsByName("onC").forEach(function(valor, indice, array) {
+    document.getElementsByName("onC").forEach(function (valor, indice, array) {
       var id = valor.id;
       id = id.substring(0, id.length - 1);
 
       d = reservationDate;
       e = finishHour;
 
-      var minutesStart =d.getMinutes();
+      var minutesStart = d.getMinutes();
       var minutesStartString = "";
 
-      if(minutesStart < 10){
-        minutesStartString = "0" + minutesStart
-      }else{
+      if (minutesStart < 10) {
+        minutesStartString = "0" + minutesStart;
+      } else {
         minutesStartString = minutesStart;
       }
 
-      var minutesEnd =e.getMinutes();
+      var minutesEnd = e.getMinutes();
       var minutesEndString = "";
 
-      if(minutesEnd < 10){
-        minutesEndString = "0" + minutesEnd
-      }else{
+      if (minutesEnd < 10) {
+        minutesEndString = "0" + minutesEnd;
+      } else {
         minutesEndString = minutesEnd;
       }
 
@@ -646,7 +733,9 @@ function confirmateReserva() {
         zeroPadded(d.getDate()) +
         " " +
         d.getHours() +
-        ":"+minutesStartString+":00";
+        ":" +
+        minutesStartString +
+        ":00";
       var end =
         e.getFullYear() +
         "-" +
@@ -655,11 +744,38 @@ function confirmateReserva() {
         zeroPadded(e.getDate()) +
         " " +
         e.getHours() +
-        ":"+minutesEndString+":00";
+        ":" +
+        minutesEndString +
+        ":00";
       confirmate(start, end, id, colorID, comentario);
+      sendEmail();
     });
-    location.reload();
+
+
+
+
+
+
+
+    // location.reload();
   }
+}
+
+function sendEmail(){
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     alert("Su mensaje ha sido enviado ? "+ this.responseText);
+     location.reload();
+    }
+  };
+  xmlhttp.open("GET", "email.php");
+  xmlhttp.send();
+
 }
 
 function creatUser() {
@@ -672,7 +788,7 @@ function creatUser() {
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
     }
   };
@@ -698,7 +814,7 @@ function creatUserEspera() {
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
     }
   };
@@ -716,13 +832,12 @@ function creatUserEspera() {
 }
 
 function confirmate(start, end, cancha, colorID, comentario) {
-
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
     }
@@ -753,7 +868,7 @@ function confirmateEspera(start, end, comentario) {
   } else {
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
     }
@@ -769,53 +884,49 @@ function confirmateEspera(start, end, comentario) {
       "&qk=" +
       comentario +
       "&can=" +
-      canchas 
+      canchas
   );
   xmlhttp.send();
 }
 
 var actualPersons;
 var minCanchas;
-function confirmatePersons(maxCanchas){
-  actualPersons  = parseInt($("#p_personas").text());
-  minCanchas =parseInt(actualPersons/8.1) + 1;
+function confirmatePersons(maxCanchas) {
+  actualPersons = parseInt($("#p_personas").text());
+  minCanchas = parseInt(actualPersons / 8.1) + 1;
+  $("#persons").text(actualPersons);
 
-
-  if (maxCanchas ==  minCanchas){
+  if (maxCanchas == minCanchas) {
     $("#btn_add").attr("disabled", true);
     $("#btn_add").css("color", "white");
     $("#btn_add").css("cursor", "auto");
-
-    
   }
-    $("#btn_substract").attr("disabled", true);
-    $("#btn_substract").css("color", "white");
-    $("#btn_substract").css("cursor", "auto");
-  
-  $("#p_canchas").text("0" + (minCanchas));
+  $("#btn_substract").attr("disabled", true);
+  $("#btn_substract").css("color", "white");
+  $("#btn_substract").css("cursor", "auto");
 
-  if(actualPersons < 20){
+  $("#p_canchas").text("0" + minCanchas);
+
+  if (actualPersons < 20) {
     $("#modalNumberPerson").css("display", "none");
     $("#modalFirst").css("display", "block");
-  }else{
+  } else {
     $("#modalNumberPerson").css("display", "none");
     $("#modalCotizar").css("display", "block");
   }
 }
 
-function startReserva(){
+function startReserva() {
   $("#modalNumberPerson").css("display", "block");
   $("#modalExplicacion").css("display", "none");
 }
 
-
-function cambiarReserva(){
+function cambiarReserva() {
   $("#modalFirst").css("display", "block");
   $("#modalEspera").css("display", "none");
 }
 
-function entrarEspera(){
-  
+function entrarEspera() {
   reservationDate = new Date($("#dtp_input2").val());
   finishHour = new Date($("#input-hora-fin").val());
 
@@ -828,53 +939,52 @@ function entrarEspera(){
   if (nombre == "" || celular == "" || correo == "") {
     alert("falta algún dato obligatorio");
   } else {
-
     creatUserEspera();
-     
-      d = reservationDate;
-      e = finishHour;
 
-      var minutesStart =d.getMinutes();
-      var minutesStartString = "";
+    d = reservationDate;
+    e = finishHour;
 
-      if(minutesStart < 10){
-        minutesStartString = "0" + minutesStart
-      }else{
-        minutesStartString = minutesStart;
-      }
+    var minutesStart = d.getMinutes();
+    var minutesStartString = "";
 
-      var minutesEnd =e.getMinutes();
-      var minutesEndString = "";
+    if (minutesStart < 10) {
+      minutesStartString = "0" + minutesStart;
+    } else {
+      minutesStartString = minutesStart;
+    }
 
-      if(minutesEnd < 10){
-        minutesEndString = "0" + minutesEnd
-      }else{
-        minutesEndString = minutesEnd;
-      }
+    var minutesEnd = e.getMinutes();
+    var minutesEndString = "";
 
-      var start =
-        d.getFullYear() +
-        "-" +
-        zeroPadded(d.getMonth() + 1) +
-        "-" +
-        zeroPadded(d.getDate()) +
-        " " +
-        d.getHours() +
-        ":"+minutesStartString+":00";
-      var end =
-        e.getFullYear() +
-        "-" +
-        zeroPadded(e.getMonth() + 1) +
-        "-" +
-        zeroPadded(e.getDate()) +
-        " " +
-        e.getHours() +
-        ":"+minutesEndString+":00";
-       confirmateEspera(start, end, comentario);
-       location.reload();
+    if (minutesEnd < 10) {
+      minutesEndString = "0" + minutesEnd;
+    } else {
+      minutesEndString = minutesEnd;
+    }
+
+    var start =
+      d.getFullYear() +
+      "-" +
+      zeroPadded(d.getMonth() + 1) +
+      "-" +
+      zeroPadded(d.getDate()) +
+      " " +
+      d.getHours() +
+      ":" +
+      minutesStartString +
+      ":00";
+    var end =
+      e.getFullYear() +
+      "-" +
+      zeroPadded(e.getMonth() + 1) +
+      "-" +
+      zeroPadded(e.getDate()) +
+      " " +
+      e.getHours() +
+      ":" +
+      minutesEndString +
+      ":00";
+    confirmateEspera(start, end, comentario);
+    location.reload();
   }
-
 }
-
-
-

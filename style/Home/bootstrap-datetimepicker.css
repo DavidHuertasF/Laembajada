@@ -48,6 +48,7 @@
 	background: none;
 	color: #999999;
 	cursor: default;
+	min-width: 30px;
 }
 
 .datetimepicker table tr td.today,

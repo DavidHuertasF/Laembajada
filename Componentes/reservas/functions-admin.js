@@ -532,6 +532,8 @@ function addPerson(canchas) {
   var actualPersons= parseInt($("#p_personas").text());
   var newPersons = parseInt(actualPersons) + 1;
 
+
+
   if (newPersons == maxPersonas) {
     $("#btn_add_person").attr("disabled", true);
     $("#btn_add_person").css("color", "white");
@@ -752,10 +754,11 @@ var minCanchas;
 function confirmatePersons(maxCanchas){
 
 
-
   
   actualPersons  = parseInt($("#p_personas").text());
   minCanchas =parseInt(actualPersons/8.1) + 1;
+
+  console.log(newPersons);
 
 
   if (maxCanchas ==  minCanchas){
