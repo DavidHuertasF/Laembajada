@@ -62,7 +62,7 @@ require_once('PHPMailer/src/PHPMailer.php');
     //Set an alternative reply-to address
     $mail->addReplyTo('david.huertas@uptc.edu.co', 'Confirmar reserva');
     //Set who the message is to be sent to
-    $mail->addAddress('david.huertasf@gmail.com', $name);
+    $mail->addAddress($email, $name);
     $mail->AddEmbeddedImage('img/logo.png', 'logo_2u');
     //Set the subject line
     $mail->Subject = 'Completa tu reserva';

@@ -5,8 +5,8 @@ function back(){
 };
 
 function resetFormularyToFirstStep() {
-  $("#loadingi").css("display", "block");
-  setTimeout(function() {
+  // $("#loadingi").css("display", "block");
+  // setTimeout(function() {
     $("#p_date_in_hourss").text("");
     startt = true;
 
@@ -36,8 +36,8 @@ function resetFormularyToFirstStep() {
         getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
       }
     }
-    $("#loadingi").css("display", "none");
-  },1);
+    // $("#loadingi").css("display", "none");
+  // },1);
 }
 
 function diaSemana() {
