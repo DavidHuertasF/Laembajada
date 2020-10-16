@@ -154,21 +154,27 @@ function getHoursAvailables(h) {
 }
 
 function showReservasByDay(day) {
-  if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp = new XMLHttpRequest();
-  } else {
-    // code for IE6, IE5
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
 
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      $("#myInput").val(this.responseText);
+  $("#loadingi").css("display", "block");
+  setTimeout(function() {
+    if (window.XMLHttpRequest) {
+      // code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      // code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-  };
-  xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
-  xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        $("#myInput").val(this.responseText);
+      }
+    };
+    $("#loadingi").css("display", "block");
+    xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
+    xmlhttp.send();
+    $("#loadingi").css("display", "none");
+  },1);
 }
 
 function setHoursDisabled(listHours) {
@@ -687,73 +693,80 @@ function readCanchasId() {
 }
 
 function confirmateReserva() {
-  reservationDate = new Date($("#dtp_input2").val());
-  finishHour = new Date($("#input-hora-fin").val());
+  $("#loadingi").css("display", "block");
+  setTimeout(function() {
+    reservationDate = new Date($("#dtp_input2").val());
+    finishHour = new Date($("#input-hora-fin").val());
 
-  var nombre = $("#input_cliente_nombre").val();
-  var celular = $("#input_cliente_celular").val();
-  var correo = $("#input_cliente_correo").val();
-  var summary = $("#summaryp").html();
+    var nombre = $("#input_cliente_nombre").val();
+    var celular = $("#input_cliente_celular").val();
+    var correo = $("#input_cliente_correo").val();
+    var summary = $("#summaryp").html();
 
-  var comentario = $("#input_cliente_comentario").val();
+    var comentario = $("#input_cliente_comentario").val();
 
-  if (nombre == "" || celular == "" || correo == "") {
-    alert("falta algún dato obligatorio");
-  } else {
-    var colorID = Math.floor(Math.random() * 11);
-    creatUser();
-    document.getElementsByName("onC").forEach(function (valor, indice, array) {
-      var id = valor.id;
-      id = id.substring(0, id.length - 1);
+    if (nombre == "" || celular == "" || correo == "") {
+      alert("falta algún dato obligatorio");
+    } else {
+      var colorID = Math.floor(Math.random() * 11);
+      creatUser();
+      document.getElementsByName("onC").forEach(function (valor, indice, array) {
+        var id = valor.id;
+        id = id.substring(0, id.length - 1);
 
-      d = reservationDate;
-      e = finishHour;
+        d = reservationDate;
+        e = finishHour;
 
-      var minutesStart = d.getMinutes();
-      var minutesStartString = "";
+        var minutesStart = d.getMinutes();
+        var minutesStartString = "";
 
-      if (minutesStart < 10) {
-        minutesStartString = "0" + minutesStart;
-      } else {
-        minutesStartString = minutesStart;
-      }
+        if (minutesStart < 10) {
+          minutesStartString = "0" + minutesStart;
+        } else {
+          minutesStartString = minutesStart;
+        }
 
-      var minutesEnd = e.getMinutes();
-      var minutesEndString = "";
+        var minutesEnd = e.getMinutes();
+        var minutesEndString = "";
 
-      if (minutesEnd < 10) {
-        minutesEndString = "0" + minutesEnd;
-      } else {
-        minutesEndString = minutesEnd;
-      }
+        if (minutesEnd < 10) {
+          minutesEndString = "0" + minutesEnd;
+        } else {
+          minutesEndString = minutesEnd;
+        }
 
-      var start =
-        d.getFullYear() +
-        "-" +
-        zeroPadded(d.getMonth() + 1) +
-        "-" +
-        zeroPadded(d.getDate()) +
-        " " +
-        d.getHours() +
-        ":" +
-        minutesStartString +
-        ":00";
-      var end =
-        e.getFullYear() +
-        "-" +
-        zeroPadded(e.getMonth() + 1) +
-        "-" +
-        zeroPadded(e.getDate()) +
-        " " +
-        e.getHours() +
-        ":" +
-        minutesEndString +
-        ":00";
-      confirmate(start, end, id, colorID, comentario);
+        var start =
+          d.getFullYear() +
+          "-" +
+          zeroPadded(d.getMonth() + 1) +
+          "-" +
+          zeroPadded(d.getDate()) +
+          " " +
+          d.getHours() +
+          ":" +
+          minutesStartString +
+          ":00";
+        var end =
+          e.getFullYear() +
+          "-" +
+          zeroPadded(e.getMonth() + 1) +
+          "-" +
+          zeroPadded(e.getDate()) +
+          " " +
+          e.getHours() +
+          ":" +
+          minutesEndString +
+          ":00";
+        confirmate(start, end, id, colorID, comentario);
+      });
+      
       sendEmail(correo, nombre, summary);
-    });
-    // location.reload();
+      $("#loadingi").css("display", "none");
+      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      
+    location.reload();
   }
+},1);
 }
 
 function sendEmail(email, name, summary){
@@ -764,9 +777,9 @@ function sendEmail(email, name, summary){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
     //  alert("Su mensaje ha sido enviado ? "+ this.response);
-     location.reload();
+    //  location.reload();
     }
   };
   xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary, false);

@@ -127,6 +127,18 @@ echo '<script type="text/javascript">
 
 <body>
 
+
+
+
+<div id="loadingi" style=" display:none;  " class="load-wrapp">
+      <div class="load-3">
+        <p>Cargando</p>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+  </div>
+  
   <img style="width: 0px" src="https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms" alt="">
   <img style="width: 0px" src="https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56" alt="">
   <img style="width: 0px" src="https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm" alt="">
