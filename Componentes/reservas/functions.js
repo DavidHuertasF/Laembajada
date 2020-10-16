@@ -1,5 +1,5 @@
 let startt = true;
-
+$("#modalExplicacion").css("display", "block");
 function back(){
   startt = false;
 };
@@ -763,9 +763,9 @@ function sendEmail(email, name, summary){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
-     alert("Su mensaje ha sido enviado ? "+ this.response);
-    //  location.reload();
+      alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+    //  alert("Su mensaje ha sido enviado ? "+ this.response);
+     location.reload();
     }
   };
   xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary, false);

@@ -20,6 +20,31 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
 
 
 
+$dias_cierreA = "Select  
+contenido_es
+from 
+textos where id = '8'
+LIMIT 1;";
+$resultado_mostrarA = $conexion->consulta($dias_cierreA);
+while ($fila = mysqli_fetch_row($resultado_mostrarA["resultado"])) {
+  $terminosA = $fila[0];
+}
+
+
+$dias_cierreB = "Select  
+contenido_es
+from 
+textos where id = '9'
+LIMIT 1;";
+$resultado_mostrarB = $conexion->consulta($dias_cierreB);
+while ($fila = mysqli_fetch_row($resultado_mostrarB["resultado"])) {
+  $terminosB = $fila[0];
+}
+
+$terminosA = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $terminosA);
+$terminosB = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $terminosB);
+
+
 
 // Trae los textos para mostrarlos en el registro de reservas
 $mostrar_textos = "select * from textos";
@@ -106,7 +131,7 @@ echo '<script type="text/javascript">
   <img style="width: 0px" src="https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56" alt="">
   <img style="width: 0px" src="https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm" alt="">
   <div id="html"></div>
-
+<!-- 
 
   <script>
     $(document).ready(function() {
@@ -180,13 +205,13 @@ echo '<script type="text/javascript">
                         include "desktop-home.html";
                         ?>`);
     }
-  </script>
+  </script> -->
 
 
 
   <!-- Sistema de reservas -->
 
-  <div id="modalEspera" class="modalt">
+  <div id="modalEspera" class="modalt" style="display: none;">
     <div class="modal-content-third font" style="background: #ff000073;">
     <div class="cancelar-reserva"></div>
       <div id="third-section">
@@ -230,7 +255,7 @@ echo '<script type="text/javascript">
 
 
 
-  <div id="modalExplicacion" class="modalt">
+  <div id="modalExplicacion" class="modalt" style="display: none;">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
       <div id="first-section">
@@ -253,14 +278,14 @@ echo '<script type="text/javascript">
         </div>
         
         <button class=" font button_continuar" type="button" onclick="startReserva()">Continuar</button>
-        <p class="first-section_description">* La reserva no tiene costo ** La forma de juego se puede decidir en el momento de su reserva. <br>*** Pregunte por otras formas de juego con consumo de las otras cervezas de la casa o botellas de trago fuerte.</p>
+        <p class="first-section_description"><?php echo $terminosA; ?></p>
 
         <div></div>
       </div>
     </div>
   </div>
 
-  <div id="modalCotizar" class="modalt">
+  <div id="modalCotizar" class="modalt" style="display: none;">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
     <div id="back-e" class="regresar"></div>
@@ -286,7 +311,7 @@ echo '<script type="text/javascript">
     </div>
   </div>
 
-  <div id="modalNumberPerson" class="modalt">
+  <div id="modalNumberPerson" class="modalt" style="display: none;">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
     <div id="back-a" class="regresar"></div>
@@ -312,7 +337,7 @@ echo '<script type="text/javascript">
   </div>
 
 
-  <div id="modalFirst" class="modalt">
+  <div id="modalFirst" class="modalt" style="display: none;">
     <div class="modal-content font">
     <div class="cancelar-reserva"></div>
     <div id="back-b" class="regresar"></div>
@@ -381,7 +406,7 @@ echo '<script type="text/javascript">
     </div>
   </div>
 
-  <div id="modalSecond" class="modalt">
+  <div id="modalSecond" class="modalt" style="display: none;">
 
     <div class="modal-content-second font">
   <div id="back-c" class="regresar"></div>
@@ -397,10 +422,10 @@ echo '<script type="text/javascript">
       </div>
     </div>
     <!-- Enviar -->
-    <input class="btn btn-info" type="submit" name="enviar" value="Enviar" />
+    <!-- <input class="btn btn-info" type="submit" name="enviar" value="Enviar" /> -->
   </div>
 
-  <div id="modalThird" class="modalt">
+  <div id="modalThird" class="modalt" style="display: none;">
     <div class="modal-content-third font">
     <div class="cancelar-reserva"></div>
   <div id="back-d" class="regresar"></div>
@@ -424,9 +449,8 @@ echo '<script type="text/javascript">
 
             </div>
             <p>
-              <span style=" color:red; font-size:12px">*Te estaremos contactando para confirmar la reserva</span><br>
-              <span style="  color:red; font-size:12px">*La reserva se mantiene 15 minutos después de la hora fijada</span><br>
-              <span style="color:red; font-size:12px">*La reserva no tiene ningún costo</span>
+
+              <span style=" color:red; font-size:12px"><?php echo $terminosB; ?>
             </p>
           </div>
         </div>
@@ -469,17 +493,17 @@ echo '<script type="text/javascript">
 
 
   <!-- ______________________ MODAL PDF  ______________________ -->
-<div id="myModal-pdf" class="modal">
+<!-- <div id="myModal-pdf" class="modal"> -->
 
 <!-- Modal content -->
-<div class="modal-content-pdf">
+<!-- <div class="modal-content-pdf">
 <div class=" close-pdf"></div>
   <div>
   <iframe src="https://drive.google.com/file/d/1rolIoLIgGpS5MeiWvZFN2-fZ9o66Qz-Y/preview" style="width:100%;height:700px; border: none;"></iframe>
 </div>
 </div>
 
-</div>
+</div> -->
  <!-- ______________________ FIN MODAL PDF  ______________________ -->
 
 

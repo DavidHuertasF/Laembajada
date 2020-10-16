@@ -41,6 +41,8 @@ require_once('PHPMailer/src/PHPMailer.php');
     // $mail->Host = "smtp.gmail.com";
     // $mail->Port = 465; 
 
+    
+    #Godaddy configuration
 
     $mail->Host = 'localhost';
       $mail->Port = 25;
@@ -48,8 +50,7 @@ require_once('PHPMailer/src/PHPMailer.php');
       $mail->SMTPAuth = FALSE;
       $mail->SMTPAutoTLS = FALSE;
 
-
-
+    
     $mail->IsHTML(true);
     //Username to use for SMTP authentication
     $mail->Username = "reservastejolaembajada@gmail.com";
@@ -62,7 +63,7 @@ require_once('PHPMailer/src/PHPMailer.php');
     $mail->addAddress('david.huertasf@gmail.com', $name);
     $mail->AddEmbeddedImage('img/logo.png', 'logo_2u');
     //Set the subject line
-    $mail->Subject = 'Completa tu reserva #XXXXX';
+    $mail->Subject = 'Completa tu reserva';
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     $mail->msgHTML(
@@ -89,20 +90,20 @@ hr{
 
 </style>
 </head>
-    <body style='margin:50px;'>
-        <div style='margin-left:40px'>
+    <body style='margin:5vw;'>
+        <div style='margin-left:4vw'>
             <img src='cid:logo_2u'> <h2>".$name.", recibimos tu solicitud de reserva </h2><br/><div>"
             .$texto."</div>
         </div>
         <br/>
         <hr>
-        <div style='margin-left:40px'> <h3> Resumen de la reserva </h3> <p>
+        <div style='margin-left:4vw'> <h3> Resumen de la reserva </h3> <p>
             ".$summary.
             "</p>
         </div>
         <br/>
         <hr>
-        <div style='margin-left:40px'> 
+        <div style='margin-left:4vw'> 
             <h3> Información del cliente </h3> <p>"
             .$name."<br/>".$email."</p>
         </div>
