@@ -6,6 +6,7 @@ $conexion = new conexion();
 $email = ($_GET['email']);
 $name = ($_GET['name']);
 $summary = ($_GET['summary']);
+$calendar = ($_GET['calendar']);
 
 $dias_cierre = "Select  
 contenido_es
@@ -52,6 +53,7 @@ require_once('PHPMailer/src/PHPMailer.php');
 
     
     $mail->IsHTML(true);
+    $mail->Body=$template['html'];
     //Username to use for SMTP authentication
     $mail->Username = "reservastejolaembajada@gmail.com";
     $mail->Password = "reservastejolaembajadaadmin";
@@ -97,6 +99,13 @@ hr{
         </div>
         <br/>
         <hr>
+        <p>
+
+
+       <a href='".$calendar."'> 📆  Programa tu reserva en google Calendar </a>
+        </p>
+
+
         <div style='margin-left:4vw'> <h3> Resumen de la reserva </h3> <p>
             ".$summary.
             "</p>

@@ -536,7 +536,7 @@ echo '<script type="text/javascript">
 <script type="text/javascript" src="Componentes/reservas/functions.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/constructor.js" charset="UTF-8"></script>
 <script type="text/javascript" src="Componentes/reservas/hoursManager.js" charset="UTF-8"></script>
-
+<!-- 
 <script>
   var slides = document.querySelectorAll('#slides .slide');
   var currentSlide = 0;
@@ -547,6 +547,6 @@ echo '<script type="text/javascript">
       currentSlide = (currentSlide+1)%slides.length;
       slides[currentSlide].className = 'slide showing';
   }
-</script>
+</script> -->
 
 </html>

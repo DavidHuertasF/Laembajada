@@ -107,7 +107,7 @@ $qk = ($_GET['qk']);
     
 
         //  echo $canchasTotalConsulta." errores: ".$m;
-echo $clienteConsulta;
+echo $link_event;
     
 
 ?>

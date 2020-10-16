@@ -5,35 +5,39 @@ function back(){
 };
 
 function resetFormularyToFirstStep() {
-  $("#p_date_in_hourss").text("");
-  startt = true;
+  $("#loadingi").css("display", "block");
+  setTimeout(function() {
+    $("#p_date_in_hourss").text("");
+    startt = true;
 
-  reservationDate = new Date($("#dtp_input2").val());
-  reservationDate.addDays(1);
-  diaSemana();
-  var x = new Date();
-  var today = getDayOfYear(new Date());
-  var hourToday = x.getHours() + 1;
-  var dayReservation = getDayOfYear(reservationDate) + 1;
+    reservationDate = new Date($("#dtp_input2").val());
+    reservationDate.addDays(1);
+    diaSemana();
+    var x = new Date();
+    var today = getDayOfYear(new Date());
+    var hourToday = x.getHours() + 1;
+    var dayReservation = getDayOfYear(reservationDate) + 1;
 
-  reservationIsCurrentDay = today == dayReservation;
-  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre 
+    reservationIsCurrentDay = today == dayReservation;
+    var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre 
 
-  if (reservationIsCurrentDay) {
-    //Si la reserva es para hoy quitar todas las horas que ya pasaron
-    for (i = 0; i < hourToday; i++) {
-      var exist = hours.find((element) => element == i);
-      if (exist === undefined) {
-        // Si la hora no esta dentro de las horas de hoy
-        hours.push(i); // agregarla
+    if (reservationIsCurrentDay) {
+      //Si la reserva es para hoy quitar todas las horas que ya pasaron
+      for (i = 0; i < hourToday; i++) {
+        var exist = hours.find((element) => element == i);
+        if (exist === undefined) {
+          // Si la hora no esta dentro de las horas de hoy
+          hours.push(i); // agregarla
+        }
+      }
+      getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
+    } else {
+      if ($("#dtp_input2").val() != "") {
+        getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
       }
     }
-    getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
-  } else {
-    if ($("#dtp_input2").val() != "") {
-      getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
-    }
-  }
+    $("#loadingi").css("display", "none");
+  },1);
 }
 
 function diaSemana() {
@@ -123,8 +127,8 @@ function getHoursAvailables(h) {
       hVerificated.push(valor + "m");
     }
 
-    //  console.log("Canchas reservadas para el " + varstringDate + " --> " + $("#myInput").val());
-    // console.log("Canchas disponibles para el " + varstringDate + " --> " + hay);
+     console.log("Canchas reservadas para el " + varstringDate + " --> " + $("#myInput").val());
+    console.log("Canchas disponibles para el " + varstringDate + " --> " + hay);
   });
 
   var pppp = h;
@@ -155,8 +159,7 @@ function getHoursAvailables(h) {
 
 function showReservasByDay(day) {
 
-  $("#loadingi").css("display", "block");
-  setTimeout(function() {
+
     if (window.XMLHttpRequest) {
       // code for IE7+, Firefox, Chrome, Opera, Safari
       xmlhttp = new XMLHttpRequest();
@@ -167,14 +170,13 @@ function showReservasByDay(day) {
 
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        // alert(this.responseText);
         $("#myInput").val(this.responseText);
       }
     };
-    $("#loadingi").css("display", "block");
     xmlhttp.open("GET", "Componentes/reservas/getuser.php?q=" + day, false);
     xmlhttp.send();
-    $("#loadingi").css("display", "none");
-  },1);
+    
 }
 
 function setHoursDisabled(listHours) {
@@ -777,12 +779,14 @@ function sendEmail(email, name, summary){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
     //  alert("Su mensaje ha sido enviado ? "+ this.response);
     //  location.reload();
     }
   };
-  xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary, false);
+  var x =  $("#inputprueba").text()
+  // alert(x);
+  xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary+"&calendar="+ x, false);
   xmlhttp.send();
 
 }
