@@ -500,7 +500,8 @@ function confirmateCanchas() {
       resume = resume + " | " + cancha;
     });
 
-    $("#resume_p").prepend(
+    $("#resume_p").empty();
+    $("#resume_p").append(
       "<span style='color: white;  font-size:19px;'>Resumen</span><br><p id='summaryp'>" +
         resume +
         "</p>"

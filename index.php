@@ -457,7 +457,7 @@ echo '<script type="text/javascript">
         <button class="font button_continuar" type="button" onclick="confirmateReserva();">Reservar</button>
         <p style="color:white; font-size:12px">
           <span>Aceptas</span>
-          <span style="text-decoration: underline">Términos y condiciones</span>
+         <a target="blank" href="http://www.tejolaembajada.com/politica-tratamiento-datos/"> <span style="text-decoration: underline; color:white;">Términos y condiciones</span> </a>
         </p>
       </div>
     </div>
