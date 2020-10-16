@@ -36,17 +36,25 @@ require_once('PHPMailer/src/PHPMailer.php');
     $mail->SMTPDebug = 1; 
 
 
-    // $mail->SMTPAuth = true; 
-    // $mail->SMTPSecure = 'ssl'; 
-    // $mail->Host = "smtp.gmail.com";
-    // $mail->Port = 465; 
-
-
-    $mail->Host = 'localhost';
-      $mail->Port = 25;
-      $mail->SMTPSecure = FALSE;
+    $mail->SMTPAuth = true; 
+    $mail->SMTPSecure = 'ssl'; 
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; 
       $mail->SMTPAuth = FALSE;
-      $mail->SMTPAutoTLS = FALSE;
+      $mail->SMTPOptions = array(
+          'ssl' => array(
+            'verify_peer' => FALSE,
+            'verify_peer_name' => FALSE,
+            'allow_self_signed' => TRUE
+          )
+      );
+
+
+    // $mail->Host = 'localhost';
+    //   $mail->Port = 25;
+    //   $mail->SMTPSecure = FALSE;
+    //   $mail->SMTPAuth = FALSE;
+    //   $mail->SMTPAutoTLS = FALSE;
 
 
 
