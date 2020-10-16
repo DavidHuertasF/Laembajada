@@ -1,5 +1,24 @@
 
 <?php 
+include_once("conexion.php");
+$conexion = new conexion();
+
+$email = ($_GET['email']);
+$name = ($_GET['name']);
+$summary = ($_GET['summary']);
+
+$dias_cierre = "Select  
+contenido_es
+from 
+textos where id = '7'
+LIMIT 1;";
+$resultado_mostrar = $conexion->consulta($dias_cierre);
+while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
+  $texto = $fila[0];
+//   echo($dia);
+}
+
+$texto = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $texto);
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -10,31 +29,84 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require_once('PHPMailer/src/PHPMailer.php');
 
-$mail = new PHPMailer(true);
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer(); 
 
-try {
-    $mail->SMTPDebug = 2;                                        // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.gmail.com.';                   // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                 // Enable SMTP authentication
-    $mail->Username   = 'mesaagua8@gmail.com';       // SMTP username
-    $mail->Password   = 'mesaagua8admin';                 // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;    // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-    //Recipients
-    $mail->setFrom('mesaagua8@gmail.com', 'Sistema Mesa Agua');
-    $mail->addAddress('david.huertasf@gmail.com', 'administrador encargado');     // Add a recipient
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Nuevo Contacto';
-    // $mail->Body    = 'Nuevo Contacto';
-    $mail->Body    = '<p> w</p>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $mail->IsSMTP(); 
+    $mail->SMTPDebug = 1; 
+    $mail->SMTPAuth = true; 
+    $mail->SMTPSecure = 'ssl'; 
+    $mail->Host = "smtp.gmail.com";
+
+    $mail->Port = 465; 
+    $mail->IsHTML(true);
+    //Username to use for SMTP authentication
+    $mail->Username = "reservastejolaembajada@gmail.com";
+    $mail->Password = "reservastejolaembajadaadmin";
+    //Set who the message is to be sent from
+    $mail->setFrom('reservastejolaembajada@gmail.com', 'Tejo La Embajada');
+    //Set an alternative reply-to address
+    $mail->addReplyTo('david.huertas@uptc.edu.co', 'Confirmar reserva');
+    //Set who the message is to be sent to
+    $mail->addAddress('david.huertasf@gmail.com', $name);
+    $mail->AddEmbeddedImage('img/logo.png', 'logo_2u');
+    //Set the subject line
+    $mail->Subject = 'Completa tu reserva #XXXXX';
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+    $mail->msgHTML(
+    " <html>
+    <head>
+<style>
+*{
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+}
+span, p {
+    color: rgb(119,119,119);
+    line-height: 24px;
+    font-size: 16px;
+    margin: 0px;
 }
 
+h1,h2,h3{
+    color: #151230;
+}
 
+hr{
+    border-top: 1px dashed red;
+}
+
+</style>
+</head>
+    <body style='margin:50px;'>
+        <div style='margin-left:40px'>
+            <img src='cid:logo_2u'> <h2>".$name.", recibimos tu solicitud de reserva </h2><br/><div>"
+            .$texto."</div>
+        </div>
+        <br/>
+        <hr>
+        <div style='margin-left:40px'> <h3> Resumen de la reserva </h3> <p>
+            ".$summary.
+            "</p>
+        </div>
+        <br/>
+        <hr>
+        <div style='margin-left:40px'> 
+            <h3> Información del cliente </h3> <p>"
+            .$name."<br/>".$email."</p>
+        </div>
+    </body>
+    </html>
+    "
+
+    );
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'Confirma tu reserva de Tejo la Embajada';
+
+    //send the message, check for errors
+    if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message sent!";
+    }
 ?>

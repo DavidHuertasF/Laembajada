@@ -2,8 +2,6 @@
 include_once("../conexion.php");
 $conexion = new conexion();
 
-
-
 // Trae los textos para mostrarlos 
 $mostrar_textos = "select * from textos";
 $resultado_mostrar = $conexion->consulta($mostrar_textos);
@@ -16,7 +14,6 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   $dato["contenido_en"] = $fila[3];
   array_push($textos, $dato);
 }
-
 ?>
 
 
@@ -77,7 +74,6 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
         <th>Inglés</th>
         <th>Guardar cambios</th>
       </tr>
-
     </thead>
 
 
@@ -86,13 +82,11 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
         <tr>
           <td class="campo"><?php echo $textos[$i]["nombre"]; ?></td>
           <td class="id_cliente"> 
-            <textarea id="<?php echo $textos[$i]["id"];?>_es" rows="4" cols="50">
-              <?php echo $textos[$i]["contenido_es"]; ?>
-            </textarea>  </td>
+            <textarea id="<?php echo $textos[$i]["id"];?>_es" rows="4" cols="50"><?php echo $textos[$i]["contenido_es"]; ?></textarea>  
+          </td>
           <td class="id_cancha">
-           <textarea id="<?php echo $textos[$i]["id"];?>_en"  rows="4" cols="50">
-              <?php echo $textos[$i]["contenido_en"]; ?>
-            </textarea>  </td>
+           <textarea id="<?php echo $textos[$i]["id"];?>_en"  rows="4" cols="50"><?php echo $textos[$i]["contenido_en"]; ?></textarea> 
+           </td>
           </td>
           <td class="fecha_creacion">
          
@@ -127,5 +121,4 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   <script type="text/javascript" src="admin.js" charset="UTF-8"></script>
   <script type="text/javascript" src="constructor.js" charset="UTF-8"></script>
   <script type="text/javascript" src="table.js" charset="UTF-8"></script>
-
 </html>

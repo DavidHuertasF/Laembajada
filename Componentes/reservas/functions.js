@@ -501,7 +501,7 @@ function confirmateCanchas() {
     });
 
     $("#resume_p").prepend(
-      "<span style='color: white;  font-size:19px;'>Resumen</span><br>" +
+      "<span style='color: white;  font-size:19px;'>Resumen</span><br><p id='summaryp'>" +
         resume +
         "</p>"
     );
@@ -692,6 +692,7 @@ function confirmateReserva() {
   var nombre = $("#input_cliente_nombre").val();
   var celular = $("#input_cliente_celular").val();
   var correo = $("#input_cliente_correo").val();
+  var summary = $("#summaryp").html();
 
   var comentario = $("#input_cliente_comentario").val();
 
@@ -748,20 +749,13 @@ function confirmateReserva() {
         minutesEndString +
         ":00";
       confirmate(start, end, id, colorID, comentario);
-      sendEmail();
+      sendEmail(correo, nombre, summary);
     });
-
-
-
-
-
-
-
     // location.reload();
   }
 }
 
-function sendEmail(){
+function sendEmail(email, name, summary){
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
   } else {
@@ -769,11 +763,12 @@ function sendEmail(){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-     alert("Su mensaje ha sido enviado ? "+ this.responseText);
-     location.reload();
+      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+     alert("Su mensaje ha sido enviado ? "+ this.response);
+    //  location.reload();
     }
   };
-  xmlhttp.open("GET", "email.php");
+  xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary, false);
   xmlhttp.send();
 
 }
