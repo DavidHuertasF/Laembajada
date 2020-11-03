@@ -12,7 +12,7 @@ function resetFormularyToFirstStep() {
   var dayReservation = getDayOfYear(reservationDate) + 1;
 
   reservationIsCurrentDay = today == dayReservation;
-  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24];
+  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre
 
   if (reservationIsCurrentDay) {
     //Si la reserva es para hoy quitar todas las horas que ya pasaron

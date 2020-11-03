@@ -37,22 +37,23 @@ require_once('PHPMailer/src/PHPMailer.php');
     $mail->SMTPDebug = 1; 
 
 
-    // $mail->SMTPAuth = true; 
-    // $mail->SMTPSecure = 'ssl'; 
-    // $mail->Host = "smtp.gmail.com";
-    // $mail->Port = 465; 
+    $mail->SMTPAuth = true; 
+    $mail->SMTPSecure = 'ssl'; 
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; 
 
     
     #Godaddy configuration
 
-    $mail->Host = 'localhost';
-      $mail->Port = 25;
-      $mail->SMTPSecure = FALSE;
-      $mail->SMTPAuth = FALSE;
-      $mail->SMTPAutoTLS = FALSE;
+        // $mail->Host = 'localhost';
+        // $mail->Port = 25;
+        // $mail->SMTPSecure = FALSE;
+        // $mail->SMTPAuth = FALSE;
+        // $mail->SMTPAutoTLS = FALSE;
 
     
     $mail->IsHTML(true);
+    $mail->CharSet = 'UTF-8';
     $mail->Body=$template['html'];
     //Username to use for SMTP authentication
     $mail->Username = "reservastejolaembajada@gmail.com";

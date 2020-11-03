@@ -13,7 +13,6 @@ $(".form_date").datetimepicker({
   language: "es",
   weekStart: 2,
   autoclose: 1,
-  daysOfWeekDisabled: [0, 1],
   endDate: finishDate,
   startView: 2,
   startDate: new Date(),
