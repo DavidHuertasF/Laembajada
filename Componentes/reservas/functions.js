@@ -773,7 +773,7 @@ function confirmateReserva() {
 
 function sendEmail(email, name, summary){
   alert("entra a enviar email");
-
+//
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
   } else {
