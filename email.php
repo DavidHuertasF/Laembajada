@@ -30,12 +30,15 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require_once('PHPMailer/src/PHPMailer.php');
 
-    //Create a new PHPMailer instance
-    // $mail = new PHPMailer(); 
+    // Create a new PHPMailer instance
+  
+  
+    $mail = new PHPMailer(); 
 
-    // $mail->IsSMTP(); 
-    // $mail->SMTPDebug = 1; 
+    $mail->IsSMTP(); 
+    $mail->SMTPDebug = 1; 
 
+    # local configuration
 
     // $mail->SMTPAuth = true; 
     // $mail->SMTPSecure = 'ssl'; 
