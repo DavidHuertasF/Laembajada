@@ -54,7 +54,7 @@ require_once('PHPMailer/src/PHPMailer.php');
     
     $mail->IsHTML(true);
     $mail->CharSet = 'UTF-8';
-    // $mail->Body=$template['html'];
+    $mail->Body=$template['html'];
     //Username to use for SMTP authentication
     $mail->Username = "reservastejolaembajada@gmail.com";
     $mail->Password = "reservastejolaembajadaadmin";
