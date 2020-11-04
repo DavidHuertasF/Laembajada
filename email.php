@@ -31,25 +31,25 @@ require 'PHPMailer/src/SMTP.php';
 require_once('PHPMailer/src/PHPMailer.php');
 
     //Create a new PHPMailer instance
-    $mail = new PHPMailer(); 
+    // $mail = new PHPMailer(); 
 
-    $mail->IsSMTP(); 
-    $mail->SMTPDebug = 1; 
+    // $mail->IsSMTP(); 
+    // $mail->SMTPDebug = 1; 
 
 
-    $mail->SMTPAuth = true; 
-    $mail->SMTPSecure = 'ssl'; 
-    $mail->Host = "smtp.gmail.com";
-    $mail->Port = 465; 
+    // $mail->SMTPAuth = true; 
+    // $mail->SMTPSecure = 'ssl'; 
+    // $mail->Host = "smtp.gmail.com";
+    // $mail->Port = 465; 
 
     
     #Godaddy configuration
 
-        // $mail->Host = 'localhost';
-        // $mail->Port = 25;
-        // $mail->SMTPSecure = FALSE;
-        // $mail->SMTPAuth = FALSE;
-        // $mail->SMTPAutoTLS = FALSE;
+        $mail->Host = 'localhost';
+        $mail->Port = 25;
+        $mail->SMTPSecure = FALSE;
+        $mail->SMTPAuth = FALSE;
+        $mail->SMTPAutoTLS = FALSE;
 
     
     $mail->IsHTML(true);
