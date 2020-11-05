@@ -87,22 +87,22 @@ function enableOnlyRangeOptions(hour) {
     for (let i = idx + 1; i <= hoursListGlobal.length; i++) {
       if (start) {
         if (hoursListGlobal[i] == hour + 1) {
-          console.log(
-            "El inmediatamente posterior es" +
-              hoursListGlobal[i] +
-              "correctamente por lo que se activa"
-          );
+          // console.log(
+          //   "El inmediatamente posterior es" +
+          //     hoursListGlobal[i] +
+          //     "correctamente por lo que se activa"
+          // );
           $("#" + (hour + 1)).attr("disabled", false);
           $("#" + (hour + 1)).css("border", "red 1px solid");
           $("#" + (hour + 1)).css("color", "black");
           x++;
           start = false;
         } else {
-          console.log(
-            "El inmediatamente posterior " +
-              hoursListGlobal[i] +
-              " no corresponde, se termina el proceso"
-          );
+          // console.log(
+          //   "El inmediatamente posterior " +
+          //     hoursListGlobal[i] +
+          //     " no corresponde, se termina el proceso"
+          // );
           break;
         }
       } else {
@@ -172,11 +172,11 @@ function enableOnlyRangeOptions(hour) {
     for (let i = idx - 1; i >= 0; i--) {
       if (start) {
         if (hoursListGlobal[i] == hour - 1 + "m") {
-          console.log(
-            "Fraccion completa" +
-              hoursListGlobal[i] +
-              "correctamente por lo que se activa"
-          );
+          // console.log(
+          //   "Fraccion completa" +
+          //     hoursListGlobal[i] +
+          //     "correctamente por lo que se activa"
+          // );
           $("#" + (hour - 1) + "m").attr("disabled", false);
           $("#" + (hour - 1) + "m").css("border", "red 1px solid");
           $("#" + (hour - 1) + "m").css("color", "black");
@@ -263,14 +263,14 @@ function enableOnlyRangeOptions(hour) {
       } else {
         if (fraction) {
           if (hoursListGlobal[i] == hour + x + "m") {
-            console.log(
-              "Fraccion individual escogida " +
-                hoursListGlobal[i] +
-                "(" +
-                (hour + x) +
-                ")" +
-                "que correspone, por lo que se activa"
-            );
+            // console.log(
+            //   "Fraccion individual escogida " +
+            //     hoursListGlobal[i] +
+            //     "(" +
+            //     (hour + x) +
+            //     ")" +
+            //     "que correspone, por lo que se activa"
+            // );
 
             $("#" + (hour + x) + "m").attr("disabled", false);
             $("#" + (hour + x) + "m").css("border", "red 1px solid");
@@ -355,7 +355,7 @@ function addHoursAvailables(hoursList, hoursavailables) {
 
   // console.log(xm);
 
-   console.log("horas disponibles para el dia y canchas seleccionadas: " + hoursList );
+  //  console.log("horas disponibles para el dia y canchas seleccionadas: " + hoursList );
 
   xm.forEach(function(valor, indice, array) {
     var x = valor + "";
@@ -605,11 +605,11 @@ function buttonHourFunction(hour, fraction) {
           });
       } else {
         // si es el primero que se activa revisar su rango apto
-        console.log(
-          "Seleccionado" +
-            hour +
-            " ... activado el proceso para determinar su rango"
-        );
+        // console.log(
+        //   "Seleccionado" +
+        //     hour +
+        //     " ... activado el proceso para determinar su rango"
+        // );
         enableOnlyRangeOptions(hour);
       }
     }

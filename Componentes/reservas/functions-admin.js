@@ -845,7 +845,7 @@ function confirmate(start, end, cancha, colorID, comentario) {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
     }
-    console.log(this.responseText);
+    // console.log(this.responseText);
     // alert(this.responseText);
   };
   xmlhttp.open(
@@ -872,7 +872,7 @@ function confirmatePersons(maxCanchas){
   actualPersons  = parseInt($("#p_personas").text());
   minCanchas =parseInt(actualPersons/8.1) + 1;
 
-  console.log(newPersons);
+  // console.log(newPersons);
 
 
   if (maxCanchas ==  minCanchas){
