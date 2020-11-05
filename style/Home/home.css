@@ -456,6 +456,7 @@ body {
   position: fixed;
     z-index: 100;
     width: 100vw;
+    top: 0;
     padding-top: 43vh;
     font-size: 3vw;
     height: 100vh;

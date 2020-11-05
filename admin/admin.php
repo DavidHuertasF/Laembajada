@@ -196,7 +196,7 @@ echo '<script type="text/javascript">
 
   
 
-  <table id="customers">
+  <table data-order='[[ 0, "desc" ]]' id="customers">
     <thead align="center">
       <tr>
         <th  class="last_left"><img style="width: 30px" src="../img/barcode.png" alt=""></th>

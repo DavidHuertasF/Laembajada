@@ -107,7 +107,8 @@ $qk = ($_GET['qk']);
     
 
         //  echo $canchasTotalConsulta." errores: ".$m;
-echo $link_event;
-    
+$id = substr($link_event,42);
+// echo $id;
+echo ('https://calendar.google.com/calendar/u/0/r/eventedit/duplicate/'.$id);
 
 ?>

@@ -135,9 +135,8 @@ th {
 
 
 #div_dates_in_hour{
-  margin-top: -21px;
-  margin-bottom: -14px;
-  height: 45px;
+  margin-bottom: 20px;
+  min-height: 30px;
 }
 
 

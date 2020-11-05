@@ -1,34 +1,38 @@
 function resetFormularyToFirstStep() {
-  $("#modalSecond").css("display", "none");
-  $("#modalThird").css("display", "none");
+  $("#loadingi").css("display", "flex");
+  setTimeout(function() {
+    $("#modalSecond").css("display", "none");
+    $("#modalThird").css("display", "none");
 
-  $("#div_cancha").empty();;
-  reservationDate = new Date($("#dtp_input2").val());
-  reservationDate.addDays(1);
-  diaSemana();
-  var x = new Date();
-  var today = getDayOfYear(new Date());
-  var hourToday = x.getHours() + 1;
-  var dayReservation = getDayOfYear(reservationDate) + 1;
+    $("#div_cancha").empty();;
+    reservationDate = new Date($("#dtp_input2").val());
+    reservationDate.addDays(1);
+    diaSemana();
+    var x = new Date();
+    var today = getDayOfYear(new Date());
+    var hourToday = x.getHours() + 1;
+    var dayReservation = getDayOfYear(reservationDate) + 1;
 
-  reservationIsCurrentDay = today == dayReservation;
-  var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre
+    reservationIsCurrentDay = today == dayReservation;
+    var hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 23, 24]; //horas que nos e abre
 
-  if (reservationIsCurrentDay) {
-    //Si la reserva es para hoy quitar todas las horas que ya pasaron
-    for (i = 0; i < hourToday; i++) {
-      var exist = hours.find(element => element == i);
-      if (exist === undefined) {
-        // Si la hora no esta dentro de las horas de hoy
-        hours.push(i); // agregarla
+    if (reservationIsCurrentDay) {
+      //Si la reserva es para hoy quitar todas las horas que ya pasaron
+      for (i = 0; i < hourToday; i++) {
+        var exist = hours.find(element => element == i);
+        if (exist === undefined) {
+          // Si la hora no esta dentro de las horas de hoy
+          hours.push(i); // agregarla
+        }
+      }
+      getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
+    } else {
+      if ($("#dtp_input2").val() != "") {
+        getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
       }
     }
-    getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
-  } else {
-    if ($("#dtp_input2").val() != "") {
-      getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
-    }
-  }
+    $("#loadingi").css("display", "none");
+  },1);
 }
 
 function diaSemana() {
@@ -423,6 +427,114 @@ function dateToString(date){
   return dateString;
 }
 
+function cambioxd() {
+  let hoursActive = getHoursActive();
+
+  let hourSelected = parseInt(hoursActive[0], 10);
+
+
+    //Selecciono algo
+    if (hoursActive.length > 1) {
+
+      // Selecciono rango
+
+      var inicio = hoursActive[0];
+      var fin = hoursActive[1];
+
+      var inicioesmedio = false;
+      var finesmedio = false;
+
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
+      }
+
+      if (fin.charAt(fin.length - 1) == "m") {
+        finesmedio = true;
+      }
+
+      let hourFinal = parseInt(hoursActive[1], 10);
+      reservationDate.setHours(hourSelected);
+
+      d = reservationDate.addDays(1);
+
+      if (inicioesmedio) {
+        hourSelected = ((d.getHours()- 12 ) + ":30 pm");
+      } else {
+        hourSelected = ((d.getHours()-12) + ":00 pm");
+      }
+
+      if (finesmedio) {
+        hourFinal = ((hourFinal-12) + ":59 pm");
+      } else {
+        hourFinal = ((hourFinal-12) + ":29 pm");
+      }
+
+      $("#p_date_in_hourss").text(
+        "("+hourSelected+ " - " +  hourFinal + ")"
+      );
+    // alert(hourSelected+ "/" +  hourFinal);
+
+
+      // reservationDate = new Date($("#dtp_input2").val());
+      // finishHour = new Date($("#input-hora-fin").val());
+
+      // console.log("Configurando rango .. ");
+    } else {
+      // Selecciono solo uno
+
+      // alert('ok');
+      // hourSelected = parseInt(hoursActive[0], 10);
+
+      var inicio = hoursActive[0];
+      var inicioesmedio = false;
+
+      if (inicio.charAt(inicio.length - 1) == "m") {
+        inicioesmedio = true;
+      }
+
+     
+      if (inicioesmedio) {
+        hourFinal =  (hourSelected-12)+":59 pm";
+
+        hourSelected =  (hourSelected-12)+":30 pm";
+      } else {
+        hourFinal =  (hourSelected-12)+":29 pm";
+        hourSelected =  (hourSelected-12)+":00 pm";
+      }
+
+      // reservationDate = new Date($("#dtp_input2").val());
+      // finishHour = new Date($("#input-hora-fin").val());
+
+      $("#p_date_in_hourss").text(
+        "("+hourSelected+ " - " +  hourFinal+")"
+      );
+    }
+
+   
+  
+
+  // console.log(
+  //   "Creando reserva para el "+reservationDate.getDate()+ "/" +(reservationDate.getMonth()+1)+ "/" +reservationDate.getFullYear()+" --> inicio- "+ dateToString(reservationDate) + " | final:- " + dateToString(finishHour)
+  // );
+}
+
+function dateToString(date) {
+  var minutes = date.getMinutes();
+  var minutesString = "";
+  if (minutes < 10) {
+    minutesString = "0" + minutes;
+  } else {
+    minutesString = minutes;
+  }
+
+  if (date.getHours() <= 11) {
+    dateString = date.getHours() + ":" + minutesString + " am";
+  } else {
+    dateString = date.getHours() - 12 + ":" + minutesString + " pm";
+  }
+  return dateString;
+}
+
 
 function confirmateCanchas() {
 
@@ -627,6 +739,8 @@ function readCanchasId() {
 }
 
 function confirmateReserva() {
+  $("#loadingi").css("display", "flex");
+  setTimeout(function() {
   reservationDate = new Date($("#dtp_input2").val());
   finishHour = new Date($("#input-hora-fin").val());
 
@@ -687,8 +801,10 @@ function confirmateReserva() {
         ":"+minutesEndString+":00";
       confirmate(start, end, id, colorID, comentario);
     });
+      alert("Reserva realizada");
     location.reload();
   }
+},1);
 }
 
 function creatUser() {
@@ -753,8 +869,6 @@ var actualPersons;
 var minCanchas;
 function confirmatePersons(maxCanchas){
 
-
-  
   actualPersons  = parseInt($("#p_personas").text());
   minCanchas =parseInt(actualPersons/8.1) + 1;
 

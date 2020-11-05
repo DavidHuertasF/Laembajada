@@ -321,10 +321,23 @@ function enableOnlyRangeOptions(hour) {
   }
 }
 
-hoursListGlobal = [];
+var hoursListGlobal = [];
+var houtlll = [];
+
+function resetHours(){
+  // console.log("Disponibles = "+ houtlll.length + " de --> " +hoursListGlobal.length);
+  addHoursAvailables(houtlll, hoursListGlobal);
+  $("#p_date_in_hourss").text("");
+  $("#modalSecond").css("display", "none");
+  $("#modalThird").css("display", "none");
+}
+
 
 function addHoursAvailables(hoursList, hoursavailables) {
+  // console.log("Disponibles = "+ hoursList.length + " de --> " +hoursavailables.length);
   hoursListGlobal = hoursavailables;
+  houtlll = hoursList;
+
   $("#div-hora").empty();
   var xs = [];
   var xm = [];
@@ -459,7 +472,7 @@ function buttonHourFunction(hour, fraction) {
 
   if (actives > 1) {
     // si ya hay un rango reiniciar
-    resetFormularyToFirstStep();
+    resetHours();
   } else {
     //Si no hay rango y es el la primer seleccion
     // log(getHoursActive());
@@ -471,7 +484,7 @@ function buttonHourFunction(hour, fraction) {
     //activado
     if (status == "on") {
       // Habilitar todo
-      resetFormularyToFirstStep();
+      resetHours();
       off = true;
     }
     //desactivado

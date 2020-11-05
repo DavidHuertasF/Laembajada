@@ -127,7 +127,7 @@ echo '<script type="text/javascript">
 
 <body>
 
-
+<input id="email" type="text" value='' style=" display:none">
 
 
 <div id="loadingi" style=" display:none;  " class="load-wrapp">
@@ -139,9 +139,9 @@ echo '<script type="text/javascript">
       </div>
   </div>
   
-  <img style="width: 0px" src="https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms" alt="">
-  <img style="width: 0px" src="https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56" alt="">
-  <img style="width: 0px" src="https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm" alt="">
+  <!-- <img style="width: 0px" src="https://drive.google.com/uc?id=1ouSFlKSPS-IrgbE4NQl8kUg6p0WFCvms" alt=""> -->
+  <!-- <img style="width: 0px" src="https://drive.google.com/uc?id=1866ao6GQPQ02Jowe-9ZLOoN1ZZmk_m56" alt=""> -->
+  <!-- <img style="width: 0px" src="https://drive.google.com/uc?id=1tIMfIljNviIDmq0s1HBPSdE4GuSBgWJm" alt=""> -->
   <div id="html"></div>
 <!-- 
 
@@ -466,7 +466,7 @@ echo '<script type="text/javascript">
             </p>
           </div>
         </div>
-        <button class="font button_continuar" type="button" onclick="confirmateReserva();">Reservar</button>
+        <button id="button_conf" class="font button_continuar" type="button" onclick="confirmateReserva();">Reservar</button>
         <p style="color:white; font-size:12px">
           <span>Aceptas</span>
          <a target="blank" href="http://www.tejolaembajada.com/politica-tratamiento-datos/"> <span style="text-decoration: underline; color:white;">Términos y condiciones</span> </a>
@@ -496,9 +496,9 @@ echo '<script type="text/javascript">
 
     <p type="text" style=" 
     height: 32px;" name="" id="inputprueba"> </p>
-    <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
+    
+  <input style="border: solid 1px;height: 46px;width: 140px;position: fixed;z-index: 20;top: 20;" type="text" id="myInput" value="ok">
   </div>
-
 
 
   <!-- FIN Sistema de reservas -->

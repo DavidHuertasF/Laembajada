@@ -171,7 +171,8 @@ echo '<script type="text/javascript">
 
               <div id="div_dates_in_hour">
                 <!-- <button id="btn_substract_date" class="button_change_date" type="button" onclick="substractDate(<?php echo $canchasTotal ?>);">–</button> -->
-                <p class="" style="    font-size: 9px;" id="p_date_in_hour">Seleccione una fecha</p>
+                <p class="" style=" margin:0;   font-size: 13px;" id="p_date_in_hour">Seleccione una fecha</p>
+                <p style=" margin:0;  font-size: 13px;" id="p_date_in_hourss"></p>
                 <!-- <button id="btn_add_date" type="button" class="button_change_date" onclick="addDate(<?php echo $canchasTotal ?>)" >+</button> -->
               </div>
 
@@ -195,6 +196,7 @@ echo '<script type="text/javascript">
           <div id="div_cancha">
           </div>
           <button class=" font button_continuar" type="button" onclick="confirmateCanchas();">Continuar</button>
+
         </div>
       </div>
       <!-- Enviar -->
@@ -224,6 +226,25 @@ echo '<script type="text/javascript">
         </div>
       </div>
     </div>
+
+    <div id="loadingi" style=" 
+    width: 100vw;
+    position: fixed;
+    background: #00000085;
+    height: 100vh;
+    top: 0;
+    display:none;      
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px; " class="load-wrapp">
+      <div class="load-3">
+        <p>Cargando</p>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+  </div>
   </div>
 
 </div>

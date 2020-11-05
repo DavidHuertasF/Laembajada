@@ -5,8 +5,8 @@ function back(){
 };
 
 function resetFormularyToFirstStep() {
-  // $("#loadingi").css("display", "block");
-  // setTimeout(function() {
+  $("#loadingi").css("display", "block");
+  setTimeout(function() {
     $("#p_date_in_hourss").text("");
     startt = true;
 
@@ -36,8 +36,8 @@ function resetFormularyToFirstStep() {
         getHoursAvailables(hours); // Traer las reservas de ese día para quitarlas si no son compatibles
       }
     }
-    // $("#loadingi").css("display", "none");
-  // },1);
+    $("#loadingi").css("display", "none");
+  },1);
 }
 
 function diaSemana() {
@@ -74,6 +74,7 @@ function getHoursAvailables(h) {
 
   var canchas = parseInt($("#p_canchas").text());
   var hoursavailables = [];
+  
   for (var i = 0; i < 24; i++) {
     // horas no disponibles a disponibles
     if (!h.includes(i)) {
@@ -127,8 +128,8 @@ function getHoursAvailables(h) {
       hVerificated.push(valor + "m");
     }
 
-     console.log("Canchas reservadas para el " + varstringDate + " --> " + $("#myInput").val());
-    console.log("Canchas disponibles para el " + varstringDate + " --> " + hay);
+    //  console.log("Canchas reservadas para el " + varstringDate + " --> " + $("#myInput").val());
+    // console.log("Canchas disponibles para el " + varstringDate + " --> " + hay);
   });
 
   var pppp = h;
@@ -694,8 +695,31 @@ function readCanchasId() {
   console.log('Disponibles: - '+canchasDisponibles);
 }
 
+
+function validateemail(email){
+  let api = `http://apilayer.net/api/check?access_key=1fde025a1bd5a467fe9be00603fd543a&email=`+email+`&smtp=1&format=1` ;
+  //  alert('api: '+api);
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let emailok = JSON.parse(this.response);
+        $("#email").val(emailok.smtp_check);
+        // alert(this.response);
+    }
+  };
+  
+  xmlhttp.open("GET", api, false);
+  xmlhttp.send();
+}
+
 function confirmateReserva() {
+  $('#button_conf').prop('disabled', true);
   $("#loadingi").css("display", "block");
+
   setTimeout(function() {
     reservationDate = new Date($("#dtp_input2").val());
     finishHour = new Date($("#input-hora-fin").val());
@@ -705,75 +729,87 @@ function confirmateReserva() {
     var correo = $("#input_cliente_correo").val();
     var summary = $("#summaryp").html();
 
-    var comentario = $("#input_cliente_comentario").val();
+ // no comment to validate email
+    validateemail(correo);
+    let emailValidate =  $("#email").val();
 
-    if (nombre == "" || celular == "" || correo == "") {
-      alert("falta algún dato obligatorio");
-    } else {
-      var colorID = Math.floor(Math.random() * 11);
-      creatUser();
-      document.getElementsByName("onC").forEach(function (valor, indice, array) {
-        var id = valor.id;
-        id = id.substring(0, id.length - 1);
 
-        d = reservationDate;
-        e = finishHour;
+    // let emailValidate = 'true';
 
-        var minutesStart = d.getMinutes();
-        var minutesStartString = "";
+    if (emailValidate === 'true'){
+      var comentario = $("#input_cliente_comentario").val();
 
-        if (minutesStart < 10) {
-          minutesStartString = "0" + minutesStart;
-        } else {
-          minutesStartString = minutesStart;
-        }
+      if (nombre == "" || celular == "" || correo == "") {
+        alert("falta algún dato obligatorio");
+      } else {
+        var colorID = Math.floor(Math.random() * 11);
+        creatUser();
+        document.getElementsByName("onC").forEach(function (valor, indice, array) {
+          var id = valor.id;
+          id = id.substring(0, id.length - 1);
 
-        var minutesEnd = e.getMinutes();
-        var minutesEndString = "";
+          d = reservationDate;
+          e = finishHour;
 
-        if (minutesEnd < 10) {
-          minutesEndString = "0" + minutesEnd;
-        } else {
-          minutesEndString = minutesEnd;
-        }
+          var minutesStart = d.getMinutes();
+          var minutesStartString = "";
 
-        var start =
-          d.getFullYear() +
-          "-" +
-          zeroPadded(d.getMonth() + 1) +
-          "-" +
-          zeroPadded(d.getDate()) +
-          " " +
-          d.getHours() +
-          ":" +
-          minutesStartString +
-          ":00";
-        var end =
-          e.getFullYear() +
-          "-" +
-          zeroPadded(e.getMonth() + 1) +
-          "-" +
-          zeroPadded(e.getDate()) +
-          " " +
-          e.getHours() +
-          ":" +
-          minutesEndString +
-          ":00";
-        confirmate(start, end, id, colorID, comentario);
-      });
-      
-      sendEmail(correo, nombre, summary);
-      $("#loadingi").css("display", "none");
-      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
-      
-    location.reload();
+          if (minutesStart < 10) {
+            minutesStartString = "0" + minutesStart;
+          } else {
+            minutesStartString = minutesStart;
+          }
+
+          var minutesEnd = e.getMinutes();
+          var minutesEndString = "";
+
+          if (minutesEnd < 10) {
+            minutesEndString = "0" + minutesEnd;
+          } else {
+            minutesEndString = minutesEnd;
+          }
+
+          var start =
+            d.getFullYear() +
+            "-" +
+            zeroPadded(d.getMonth() + 1) +
+            "-" +
+            zeroPadded(d.getDate()) +
+            " " +
+            d.getHours() +
+            ":" +
+            minutesStartString +
+            ":00";
+          var end =
+            e.getFullYear() +
+            "-" +
+            zeroPadded(e.getMonth() + 1) +
+            "-" +
+            zeroPadded(e.getDate()) +
+            " " +
+            e.getHours() +
+            ":" +
+            minutesEndString +
+            ":00";
+          confirmate(start, end, id, colorID, comentario);
+        });
+        
+        sendEmail(correo, nombre, summary);
+        $("#loadingi").css("display", "none");
+        // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      // location.reload();
   }
+}else{
+  $("#loadingi").css("display", "none");
+  $('#button_conf').prop('disabled', false);
+
+  alert('Por favor revisa tu correo electrónico y vuelve a intentarlo');
+}
 },1);
 }
 
 function sendEmail(email, name, summary){
-  alert("entra a enviar email");
-//
+  // alert("entra a enviar email");
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
   } else {
@@ -781,15 +817,16 @@ function sendEmail(email, name, summary){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      // alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
-     alert("Su mensaje ha sido enviado ? "+ this.response);
-    //  location.reload();
+       alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      location.reload();
+
     }
   };
   var x =  $("#inputprueba").text()
   // alert(x);
   xmlhttp.open("GET", "email.php?email=" + email + "&name=" + name + "&summary=" + summary+"&calendar="+ x, false);
   xmlhttp.send();
+  window.open("https://www.tejolaembajada.com");
 
 }
 
@@ -855,8 +892,9 @@ function confirmate(start, end, cancha, colorID, comentario) {
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
+      // alert(this.responseText);
     }
-    console.log(this.responseText);
+    // console.log(this.responseText);
     // alert(this.responseText);
   };
   xmlhttp.open(
@@ -887,8 +925,8 @@ function confirmateEspera(start, end, comentario) {
     if (this.readyState == 4 && this.status == 200) {
       $("#inputprueba").text(this.responseText);
     }
-    console.log(this.responseText);
-    alert(this.responseText);
+    // console.log(this.responseText);
+    // alert(this.responseText);
   };
   xmlhttp.open(
     "GET",
