@@ -135,6 +135,12 @@ echo '<script type="text/javascript">
     justify-content: space-evenly;">
     <div id="modalFirst" class="modalt">
       <div class="modal-content font">
+        <div style=" display:none;  
+       margin-left: -4ex;
+    width: 54ex;
+    background: rgb(0 0 0 / 20%);
+    height: 85ex;
+    position: absolute;" id="no-touch"></div>
         <div id="first-section">
           <div id="container" >
             <!-- # Canchas -->

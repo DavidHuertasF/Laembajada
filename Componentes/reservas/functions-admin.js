@@ -1,3 +1,7 @@
+$( "#no-touch" ).click(function() {
+  location.reload();
+});
+
 function resetFormularyToFirstStep() {
   $("#loadingi").css("display", "flex");
   setTimeout(function() {
@@ -397,6 +401,7 @@ function confirmateHours() {
 
       showCanchasByDate($("#dtp_input2").val(), $("#input-hora-fin").val());
         $("#modalSecond").css("display", "block");
+        $("#no-touch").css("display", "block");
         readCanchasId();
     } else {
       alert("Seleccione una hora de reserva valida");
