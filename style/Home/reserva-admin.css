@@ -4,7 +4,7 @@
   font-weight: bold;
 }
 
-td{
+td {
   font-size: 13px;
 }
 .p_note {
@@ -21,14 +21,15 @@ td{
 
 #div_counter_canchas button {
   font-size: 25px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: red;
-    outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  outline: none;
 }
 
-#p_canchas, #p_personas {
+#p_canchas,
+#p_personas {
   font-size: 25px;
   color: red;
   font-weight: bold;
@@ -66,7 +67,6 @@ th {
   padding: 15px;
 }
 
-
 .button_continuar {
   border: solid red 2px;
   background: white;
@@ -89,10 +89,11 @@ th {
   padding: 8px 30px 20px 30px;
 }
 
-#first-section, #second-section{
+#first-section,
+#second-section {
   display: flex;
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 .inputhide {
@@ -104,23 +105,22 @@ th {
 
 #div-fecha-section,
 #div-hora-section,
-
 #div-canchas-section {
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
-#div-hora{
+#div-hora {
   display: grid;
   justify-items: center;
-  grid-template-columns: 90px  90px 90px 90px;
+  grid-template-columns: 90px 90px 90px 90px;
 }
 
-#div-hora-section  {
+#div-hora-section {
   text-align: center;
   margin-bottom: 1px;
   color: red;
- font-weight: bold;
+  font-weight: bold;
 }
 
 #div-hora {
@@ -131,14 +131,10 @@ th {
   border: none;
 }
 
-
-
-
-#div_dates_in_hour{
+#div_dates_in_hour {
   margin-bottom: 20px;
   min-height: 30px;
 }
-
 
 #div-hora button {
   width: 90%;
@@ -146,8 +142,6 @@ th {
   border: solid red 1px;
   padding: 3%;
   margin-bottom: 8%;
-
- 
 }
 #div-hora button:last-child {
   margin-bottom: 0%;
@@ -162,29 +156,29 @@ th {
 }
 
 /* The Modal (background)  _______________________________________________________________________*/
-.modalt {
-}
+/* .modalt {
+} */
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe91;
   margin: 6% auto;
   padding: 20px;
-
 }
 
-.modal-content-second, .modal-content,  .modal-content-third {
+.modal-content-second,
+.modal-content,
+.modal-content-third {
   margin: 10px;
   border: solid black 2px;
   box-shadow: 0px 1px 15px 6px rgba(0, 0, 0, 0.16);
 }
 
-
-.modal-content-second .cancelar-reserva, .modal-content-third .cancelar-reserva  {
+.modal-content-second .cancelar-reserva,
+.modal-content-third .cancelar-reserva {
   right: 7.6%;
   margin-top: 12px;
 }
-
 
 /* The Close Button */
 .cancelar-reserva {
@@ -196,8 +190,8 @@ th {
   background-repeat: no-repeat;
 }
 
-.regresar{
-  background-image: url(../../img/back.png  );
+.regresar {
+  background-image: url(../../img/back.png);
   width: 4vw;
   height: 11%;
   position: absolute;
@@ -216,40 +210,40 @@ th {
   margin: 5px;
 }
 
-#div_cancha{
-      display: grid;
-      grid-template-columns: 120px 120px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-evenly;
-      margin-bottom: 20%;
+#div_cancha {
+  display: grid;
+  grid-template-columns: 120px 120px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20%;
 }
 
-.button_scroll{
+.button_scroll {
   color: red;
   font-size: 18px;
   cursor: pointer;
   font-weight: bolder;
 }
 
-  #third-section{
-    display: flex;
-    padding: 0% 30% 2% 30%;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  #third-section input{
-    border: 2px red solid;
-    height: 30px;
-    margin-bottom: 10%;
-    padding: 15px;
-    margin: 6% 5% 0% 5%;
-    font-family: "belwe", sans-serif;
+#third-section {
+  display: flex;
+  padding: 0% 30% 2% 30%;
+  align-items: center;
+  flex-direction: column;
 }
 
-#third-section input:last-child{
+#third-section input {
+  border: 2px red solid;
+  height: 30px;
+  margin-bottom: 10%;
+  padding: 15px;
+  margin: 6% 5% 0% 5%;
+  font-family: "belwe", sans-serif;
+}
+
+#third-section input:last-child {
   height: 70px;
   margin-bottom: 10%;
   padding: 2px;
@@ -298,12 +292,10 @@ th {
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  margin-left: -10vh;
+  margin-left: -80px;
   margin-top: -1vh;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
-    visibility: visible;
+  visibility: visible;
 }
-
-

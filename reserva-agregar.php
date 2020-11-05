@@ -162,7 +162,9 @@ echo '<script type="text/javascript">
                     cursor: pointer;
                     width: 0px;
         "><span class=""></span></span>
-              <input type="hidden" id="dtp_input2" value="" /><br />
+              <input id="dtp_input2" value="" /><br />
+              <p type="text" style=" display:none;
+    height: 32px;" name="" id="inputprueba"> </p>
             </div>
 
             <!-- Hora  -->
