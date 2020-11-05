@@ -697,7 +697,7 @@ function readCanchasId() {
 
 
 function validateemail(email){
-  let api = `http://apilayer.net/api/check?access_key=1fde025a1bd5a467fe9be00603fd543a&email=`+email+`&smtp=1&format=1` ;
+  let api = `https://apilayer.net/api/check?access_key=1fde025a1bd5a467fe9be00603fd543a&email=`+email+`&smtp=1&format=1` ;
   //  alert('api: '+api);
   if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
