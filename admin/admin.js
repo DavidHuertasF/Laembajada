@@ -34,25 +34,25 @@ function confirmarReserva(id){
 
 
 $(".hour_c").each(function(e) {
-   var date = new Date($(this).text());
+   var date = new Date($(this).text().replace(/\s/, 'T')+'Z');
    var hour = intToHourAM(date.getHours());
    $(this).text(hour);
 });
 
 $(".hour_d").each(function(e) {
-  var date = new Date($(this).text());
+  var date = new Date($(this).text().replace(/\s/, 'T')+'Z');
   var hour = intToHourAMl(date.getHours());
   $(this).text(hour);
 });
 
 $(".hour_dd").each(function(e) {
-  var date = new Date($(this).text());
+  var date = new Date($(this).text().replace(/\s/, 'T')+'Z');
   var hour = (date.getHours() -12)+":"+date.getMinutes()+" pm";
   $(this).text(hour);
 });
 
 $(".fecha").each(function(e) {
-  var d = new Date($(this).text());
+  var d = new Date($(this).text().replace(/\s/, 'T')+'Z');
   var fecha = d.getFullYear() +
   "-" +
   zeroPadded(d.getMonth() + 1) +
