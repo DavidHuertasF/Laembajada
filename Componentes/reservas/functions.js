@@ -42,7 +42,7 @@ function resetFormularyToFirstStep() {
 
 function diaSemana() {
   var x = document.getElementById("dtp_input2");
-  let date = new Date(x.value.replace(/-+/g, "/").replace(/\s/, "T")+"Z");
+  let date = new Date(x.value.replace(/-+/g, "/").replace(/\s/, "T")+"");
   let options = {
     weekday: "short",
     month: "short",
@@ -261,7 +261,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":30:00Z"
+            ":30:00"
         );
       } else {
         $("#dtp_input2").val(
@@ -272,7 +272,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":00:00Z"
+            ":00:00"
         );
       }
 
@@ -285,7 +285,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             hourFinal +
-            ":59:00Z"
+            ":59:00"
         );
       } else {
         $("#input-hora-fin").val(
@@ -296,7 +296,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             hourFinal +
-            ":29:00Z"
+            ":29:00"
         );
       }
 
@@ -328,7 +328,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":30:00Z"
+            ":30:00"
         );
 
         //  agrega la hora
@@ -340,7 +340,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":59:00Z"
+            ":59:00"
         );
       } else {
         $("#dtp_input2").val(
@@ -351,7 +351,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":00:00Z"
+            ":00:00"
         );
 
         //  agrega la fraccion
@@ -363,7 +363,7 @@ function confirmateHours() {
             zeroPadded(d.getDate()) +
             "T" +
             d.getHours() +
-            ":29:00Z"
+            ":29:00"
         );
       }
 
