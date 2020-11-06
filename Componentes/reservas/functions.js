@@ -95,7 +95,7 @@ function getHoursAvailables(h) {
       zeroPadded(d.getMonth() + 1) +
       "-" +
       zeroPadded(d.getDate()) +
-      " " +
+      "T" +
       d.getHours() +
       ":00:00";
 
@@ -105,7 +105,7 @@ function getHoursAvailables(h) {
       zeroPadded(d.getMonth() + 1) +
       "-" +
       zeroPadded(d.getDate()) +
-      " " +
+      "T" +
       d.getHours() +
       ":30:00";
 
@@ -774,7 +774,7 @@ function confirmateReserva() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
             ":" +
             minutesStartString +
@@ -785,7 +785,7 @@ function confirmateReserva() {
             zeroPadded(e.getMonth() + 1) +
             "-" +
             zeroPadded(e.getDate()) +
-            " " +
+            "T" +
             e.getHours() +
             ":" +
             minutesEndString +
@@ -1020,7 +1020,7 @@ function entrarEspera() {
       zeroPadded(d.getMonth() + 1) +
       "-" +
       zeroPadded(d.getDate()) +
-      " " +
+      "T" +
       d.getHours() +
       ":" +
       minutesStartString +
@@ -1031,7 +1031,7 @@ function entrarEspera() {
       zeroPadded(e.getMonth() + 1) +
       "-" +
       zeroPadded(e.getDate()) +
-      " " +
+      "T" +
       e.getHours() +
       ":" +
       minutesEndString +
