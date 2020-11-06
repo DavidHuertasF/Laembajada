@@ -74,9 +74,8 @@ th {
 .button_continuar {
   border: solid red 3.5px;
   color: red;
-  height: 40px;
-  width: 150px;
   cursor:pointer;
+  background: white;
   margin-top: 25px;
   display: block;
   margin-left: auto;
@@ -150,6 +149,7 @@ th {
   width: 60%;
   background: transparent;
   border: solid red 1px;
+      height: 50px; 
   padding: 3%;
   margin-bottom: 8%;
 
@@ -213,10 +213,10 @@ th {
 
 .regresar{
   background-image: url(../../img/back.png  );
-  width: 5vw;
-  height: 13%;
   position: absolute;
   background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
 }
 
 .cancelar-reserva:hover,

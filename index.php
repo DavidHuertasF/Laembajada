@@ -445,7 +445,7 @@ echo '<script type="text/javascript">
       <div id="third-section">
       <img class="reservaStep" style="margin-bottom: 30px;" src="img/Thirdstep.png" alt="">
 
-        <img class="reservaStep" src="img/datosStep.png" alt="">
+        <!-- <img class="reservaStep" src="img/datosStep.png" alt=""> -->
         <div id="reservaStepflex" style="display:flex; margin-top:25px;">
           <div  class="font"  style="display:flex; flex-direction:column; margin-top:30px;">
             <input id="input_cliente_nombre" type="text" placeholder="Nombre Apellido*">
