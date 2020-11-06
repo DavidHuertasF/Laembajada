@@ -10,7 +10,7 @@ function resetFormularyToFirstStep() {
     $("#p_date_in_hourss").text("");
     startt = true;
 
-    reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
+    reservationDate = new Date($("#dtp_input2").val());
     reservationDate.addDays(1);
     diaSemana();
     var x = new Date();
@@ -259,9 +259,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":30:00"
+            ":30:00Z"
         );
       } else {
         $("#dtp_input2").val(
@@ -270,9 +270,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":00:00"
+            ":00:00Z"
         );
       }
 
@@ -283,9 +283,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             hourFinal +
-            ":59:00"
+            ":59:00Z"
         );
       } else {
         $("#input-hora-fin").val(
@@ -294,14 +294,14 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             hourFinal +
-            ":29:00"
+            ":29:00Z"
         );
       }
 
-      reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-      finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+      reservationDate = new Date($("#dtp_input2").val());
+      finishHour = new Date($("#input-hora-fin").val());
 
       // console.log("Configurando rango .. ");
     } else {
@@ -326,9 +326,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":30:00"
+            ":30:00Z"
         );
 
         //  agrega la hora
@@ -338,9 +338,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":59:00"
+            ":59:00Z"
         );
       } else {
         $("#dtp_input2").val(
@@ -349,9 +349,9 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":00:00"
+            ":00:00Z"
         );
 
         //  agrega la fraccion
@@ -361,14 +361,14 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             d.getHours() +
-            ":29:00"
+            ":29:00Z"
         );
       }
 
-      reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-      finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+      reservationDate = new Date($("#dtp_input2").val());
+      finishHour = new Date($("#input-hora-fin").val());
     }
 
     showCanchasByDate($("#dtp_input2").val(), $("#input-hora-fin").val()); // determina las canchas que están ocupadas
@@ -495,7 +495,6 @@ function dateToString(date) {
 function confirmateCanchas() {
   var actives = document.getElementsByName("onC").length;
   var canchasPeticion = parseInt($("#p_canchas").text());
-
   if (actives == canchasPeticion) {
     var resume =
       stringDate +
@@ -721,8 +720,8 @@ function confirmateReserva() {
   $("#loadingi").css("display", "block");
 
   setTimeout(function() {
-    reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-    finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+    reservationDate = new Date($("#dtp_input2").val());
+    finishHour = new Date($("#input-hora-fin").val());
 
     var nombre = $("#input_cliente_nombre").val();
     var celular = $("#input_cliente_celular").val();
@@ -980,8 +979,8 @@ function cambiarReserva() {
 }
 
 function entrarEspera() {
-  reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-  finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+  reservationDate = new Date($("#dtp_input2").val());
+  finishHour = new Date($("#input-hora-fin").val());
 
   var nombre = $("#input_cliente_nombre_espera").val();
   var celular = $("#input_cliente_celular_espera").val();
