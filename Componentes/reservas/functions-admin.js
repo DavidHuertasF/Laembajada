@@ -9,7 +9,7 @@ function resetFormularyToFirstStep() {
     $("#modalThird").css("display", "none");
 
     $("#div_cancha").empty();;
-    reservationDate = new Date($("#dtp_input2").val());
+    reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
     reservationDate.addDays(1);
     diaSemana();
     var x = new Date();
@@ -41,7 +41,7 @@ function resetFormularyToFirstStep() {
 
 function diaSemana() {
   var x = document.getElementById("dtp_input2");
-  let date = new Date(x.value.replace(/-+/g, "/"));
+  let date = new Date(x.value.replace(/-+/g, "/").replace(/\s/, "T")+"Z");
   let options = {
     weekday: "short",
     month: "short",
@@ -324,8 +324,8 @@ function confirmateHours() {
           );
         }
 
-        reservationDate = new Date($("#dtp_input2").val());
-        finishHour = new Date($("#input-hora-fin").val());
+        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
+        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
 
         // console.log("Configurando rango .. ");
       } else {
@@ -393,8 +393,8 @@ function confirmateHours() {
         );
         }
 
-        reservationDate = new Date($("#dtp_input2").val());
-        finishHour = new Date($("#input-hora-fin").val());
+        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
+        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
 
         
       }
@@ -746,8 +746,8 @@ function readCanchasId() {
 function confirmateReserva() {
   $("#loadingi").css("display", "flex");
   setTimeout(function() {
-  reservationDate = new Date($("#dtp_input2").val());
-  finishHour = new Date($("#input-hora-fin").val());
+  reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
+  finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
 
   var nombre = $("#input_cliente_nombre").val();
   var celular = $("#input_cliente_celular").val();

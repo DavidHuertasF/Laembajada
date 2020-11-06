@@ -27,7 +27,7 @@ while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   $dato["dia"] = $dia;
   $dato["eliminar"] = "<img  style='cursor: pointer;'   onclick='habilitarDia(" . $dato['id'] . "," . $dato['dia'] . ")' id='switch_btn' src='img/switch.png'></img>";
   echo '<script type="text/javascript">
-  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/")));
+  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/").replace(/\s/, "T")+"Z"));
    </script>';
   array_push($dias, $dato);
 }

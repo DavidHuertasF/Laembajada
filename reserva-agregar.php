@@ -12,7 +12,7 @@ $resultado_mostrar = $conexion->consulta($dias_cierre);
 while ($fila = mysqli_fetch_row($resultado_mostrar["resultado"])) {
   $dia = $fila[1];
   echo '<script type="text/javascript">
-  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/")));
+  cancelados.push(new Date(("' . $dia  . '").replace(/-/g,"/").replace(/\s/, "T")+"Z"));
    </script>';
 }
 
