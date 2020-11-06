@@ -9,7 +9,7 @@ function resetFormularyToFirstStep() {
     $("#modalThird").css("display", "none");
 
     $("#div_cancha").empty();;
-    reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
+    reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T"));
     reservationDate.addDays(1);
     diaSemana();
     var x = new Date();
@@ -41,7 +41,7 @@ function resetFormularyToFirstStep() {
 
 function diaSemana() {
   var x = document.getElementById("dtp_input2");
-  let date = new Date(x.value.replace(/-+/g, "/").replace(/\s/, "T")+"Z");
+  let date = new Date(x.value.replace(/-+/g, "/").replace(/\s/, "T"));
   let options = {
     weekday: "short",
     month: "short",
@@ -93,7 +93,7 @@ function getHoursAvailables(h) {
       zeroPadded(d.getMonth() + 1) +
       "-" +
       zeroPadded(d.getDate()) +
-      " " +
+      "T" +
       d.getHours() +
       ":00:00";
 
@@ -103,7 +103,7 @@ function getHoursAvailables(h) {
       zeroPadded(d.getMonth() + 1) +
       "-" +
       zeroPadded(d.getDate()) +
-      " " +
+      "T" +
       d.getHours() +
       ":30:00";
 
@@ -283,7 +283,7 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               d.getHours() +
               ":30:00"
           );
@@ -294,7 +294,7 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               d.getHours() +
               ":00:00"
           );
@@ -307,7 +307,7 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               (hourFinal ) +
               ":59:00"
           );
@@ -318,14 +318,14 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               hourFinal +
               ":29:00"
           );
         }
 
-        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T"));
+        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T"));
 
         // console.log("Configurando rango .. ");
       } else {
@@ -352,7 +352,7 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               d.getHours() +
               ":30:00"
           );
@@ -364,7 +364,7 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             (d.getHours()) +
             ":59:00"
         );
@@ -375,7 +375,7 @@ function confirmateHours() {
               zeroPadded(d.getMonth() + 1) +
               "-" +
               zeroPadded(d.getDate()) +
-              " " +
+              "T" +
               d.getHours() +
               ":00:00"
           );
@@ -387,14 +387,14 @@ function confirmateHours() {
             zeroPadded(d.getMonth() + 1) +
             "-" +
             zeroPadded(d.getDate()) +
-            " " +
+            "T" +
             (d.getHours()) +
             ":29:00"
         );
         }
 
-        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+        reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T"));
+        finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T"));
 
         
       }
@@ -746,8 +746,8 @@ function readCanchasId() {
 function confirmateReserva() {
   $("#loadingi").css("display", "flex");
   setTimeout(function() {
-  reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T")+"Z");
-  finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T")+"Z");
+  reservationDate = new Date($("#dtp_input2").val().replace(/\s/, "T"));
+  finishHour = new Date($("#input-hora-fin").val().replace(/\s/, "T"));
 
   var nombre = $("#input_cliente_nombre").val();
   var celular = $("#input_cliente_celular").val();
@@ -792,7 +792,7 @@ function confirmateReserva() {
         zeroPadded(d.getMonth() + 1) +
         "-" +
         zeroPadded(d.getDate()) +
-        " " +
+        "T" +
         d.getHours() +
         ":"+minutesStartString+":00";
       var end =
@@ -801,7 +801,7 @@ function confirmateReserva() {
         zeroPadded(e.getMonth() + 1) +
         "-" +
         zeroPadded(e.getDate()) +
-        " " +
+        "T" +
         e.getHours() +
         ":"+minutesEndString+":00";
       confirmate(start, end, id, colorID, comentario);

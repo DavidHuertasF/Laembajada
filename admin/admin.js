@@ -83,7 +83,7 @@ function intToHourAMl(hour){
   if(hour<=11){
       return hour+":00 am"
   }else {
-      return (hour-13)+":59 pm";
+      return (hour-12)+":59 pm";
   }
 }
 
@@ -92,7 +92,7 @@ function intToHourAMll(hour){
   if(hour<=11){
       return hour+":00 am"
   }else {
-      return (hour-13)+":59 pm";
+      return (hour-12)+":59 pm";
   }
 }
 
