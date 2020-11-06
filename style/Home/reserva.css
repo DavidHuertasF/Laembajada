@@ -111,6 +111,7 @@ th {
 #div-hora,
 #div-canchas-section {
   width: 17rem;
+    height: 18rem;
     display: flex;
     margin: 1%;
     flex-direction: column;
@@ -128,6 +129,7 @@ th {
 
 #div-hora {
   width: 200px;
+  height: 124px;
   overflow-y: scroll;
   overflow: hidden;
   align-items: center;
