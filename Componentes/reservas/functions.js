@@ -730,7 +730,7 @@ function confirmateReserva() {
 
  // no comment to validate email
     validateemail(correo);
-    let emailValidate =  $("#email").val();
+    let emailValidate =  $("#email").val().replace(/\s+/g, "");
 
 
     // let emailValidate = 'true';
