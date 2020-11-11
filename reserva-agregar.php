@@ -168,8 +168,8 @@ echo '<script type="text/javascript">
                     cursor: pointer;
                     width: 0px;
         "><span class=""></span></span>
-              <input id="dtp_input2" value="" /><br />
-                <input  style="" id="input-hora-fin" type="datetime" class="form-control" name="horafin" value=""><br />
+              <input style="display: none;" id="dtp_input2" value="" /><br />
+                <input  style="display: none;" id="input-hora-fin" type="datetime" class="form-control" name="horafin" value=""><br />
               <p type="text" style=" display:none;
     height: 32px;" name="" id="inputprueba"> </p>
             </div>
