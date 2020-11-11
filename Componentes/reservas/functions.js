@@ -816,8 +816,8 @@ function sendEmail(email, name, summary){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      alert(this.responseText);
-      //  alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
+      // alert(this.responseText);
+       alert("Reserva realizada, porfavor siga las instrucciones que hemos enviado su correo");
       location.reload();
 
     }
